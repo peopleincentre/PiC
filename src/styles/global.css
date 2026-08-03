@@ -1,0 +1,88 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  color: #222;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+/* Layout */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.hero {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-tagline {
+  margin-bottom: 0;
+}
+
+.hero-intro {
+  margin-bottom: 0;
+  max-width: 900px;
+}
+
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.actions a {
+  text-decoration: none;
+  border: 0px solid #222;
+  padding: 0.7rem 1.2rem;
+}
+
+
+@media (max-width: 700px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+}
+
+

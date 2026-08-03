@@ -1,0 +1,119 @@
+---
+const { project } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+
+const {
+  title,
+  summary,
+  country,
+  startYear,
+  endYear,
+  client,
+  coverImage
+} = project.data;
+
+console.log("IMAGE:", coverImage);
+---
+
+<a
+  href={`${base}work/projects/${project.id}/`}
+  class="card-link"
+>
+  <article class="card">
+
+   {coverImage && (
+    <div class="image-wrapper">
+     <img
+      src={`${base}${coverImage.replace(/^\//, "")}`}
+      alt={title}
+      class="card-image"
+     />
+    </div>
+   )}
+
+    <div class="card-content">
+
+      <h3>{title}</h3>
+
+      <p class="summary">
+        {summary}
+      </p>
+
+      <div class="meta">
+        <p>
+          <strong>Country:</strong> {country}
+        </p>
+
+        <p>
+          <strong>Period:</strong>
+           {endYear
+             ? `${startYear}–${endYear}`
+             : startYear}
+        </p>
+
+        <p>
+          <strong>Client:</strong> {client}
+        </p>
+      </div>
+
+    </div>
+
+  </article>
+</a>
+
+<style>
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: white;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.image-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.summary {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.meta {
+  font-size: 0.95rem;
+}
+
+.meta p {
+  margin: 0.4rem 0;
+}
+
+</style>

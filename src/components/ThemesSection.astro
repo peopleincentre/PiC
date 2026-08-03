@@ -1,0 +1,81 @@
+---
+import ThemeCard from "./ThemeCard.astro";
+
+const themes = [
+  {
+    title: "Reinforcing People's Resilience to Disasters",
+    description:
+      "Supporting communities and institutions in disaster recovery, resilient housing, risk reduction and locally appropriate solutions.",
+    link: "/work/resilience"
+  },
+
+  {
+    title: "Restructuring Human Interventions for Ecological Balance",
+    description:
+      "Exploring sustainable relationships between people and nature through water management, wastewater reuse, ecological restoration and responsible interventions.",
+    link: "/work/ecological-balance"
+  },
+
+  {
+    title: "Reclaiming Urban Space for the People",
+    description:
+      "Working towards inclusive cities through people-centred planning, housing and public spaces.",
+    link: "/work/urban-space"
+  },
+
+  {
+    title: "Other Institutional Initiatives",
+    description:
+      "Creating and managing platforms for research, learning, capacity building and knowledge exchange.",
+    link: "/work/institutional-initiatives"
+  }
+];
+
+---
+
+<section>
+
+  <h2>
+    Thematic Areas of Work
+  </h2>
+
+
+  <div class="grid">
+
+    {
+      themes.map((theme) => (
+        <ThemeCard
+          title={theme.title}
+          description={theme.description}
+          link={theme.link}
+        />
+      ))
+    }
+
+  </div>
+
+</section>
+
+
+<style>
+
+section {
+  padding: 0rem 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+
+@media (max-width: 700px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>

@@ -1,0 +1,59 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<header>
+  <nav>
+    <a href="/">People in Centre</a>
+
+    <div class="menu">
+      <a href={base}>Home</a>
+      <a href={`${base}about/`}>About Us</a>
+      <a href={`${base}work/`}>Our Work</a>
+      <a href={`${base}resources/`}>Knowledge Resources</a>
+      <a href={`${base}contact/`}>Contact</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav > a {
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .menu {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @media (max-width: 700px) {
+    nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .menu {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+  }
+</style>

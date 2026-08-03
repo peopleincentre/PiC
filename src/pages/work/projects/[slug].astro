@@ -1,0 +1,260 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: {
+      slug: project.id,
+    },
+    props: {
+      project,
+    },
+  }));
+}
+
+const { project } = Astro.props;
+
+const {
+  title,
+  summary,
+  description,
+  country,
+  location,
+  startYear,
+  endYear,
+  client,
+  partners,
+  coverImage,
+  gallery,
+} = project.data;
+
+const base = import.meta.env.BASE_URL;
+
+const { Content } = await render(project);
+
+---
+
+<BaseLayout title={title}>
+
+  <main class="project-page">
+
+    {coverImage && (
+      <img
+        src={`${base}${coverImage.replace(/^\//, "")}`}
+        alt={title}
+        class="hero-image"
+      />
+    )}
+
+    <h1>{title}</h1>
+
+    <p class="summary">
+      {summary}
+    </p>
+
+	<div class="project-meta">
+
+		<div>
+			<strong>Country</strong>
+			<span>{country}</span>
+		</div>
+
+	{location && (
+    <div>
+      <strong>Location</strong>
+      <span>{location}</span>
+    </div>
+  )}
+
+  <div>
+    <strong>Period</strong>
+    <span>
+      {endYear ? `${startYear}–${endYear}` : startYear}
+    </span>
+  </div>
+
+
+
+  {partners && (
+    <div>
+      <strong>Collaboration</strong>
+      <span>
+        {Array.isArray(partners)
+          ? partners.join(", ")
+          : partners}
+      </span>
+    </div>
+  )}
+
+</div>
+
+
+    <article class="content">
+      <Content />
+    </article>
+
+{gallery && gallery.length > 0 && (
+
+  <section class="gallery">
+
+    <h2>Gallery</h2>
+
+    <div class="gallery-grid">
+
+      {
+        gallery.map((item) => (
+
+          <div class="gallery-item">
+
+            <img
+              src={`${base}${item.image.replace(/^\//, "")}`}
+              alt={item.caption || title}
+              class="gallery-image"
+            />
+
+            {item.caption && (
+              <p class="gallery-caption">
+                {item.caption}
+              </p>
+            )}
+
+          </div>
+
+        ))
+      }
+
+    </div>
+
+  </section>
+
+)}
+  
+  </main>
+
+</BaseLayout>
+
+
+<style>
+
+.project-page {
+
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+
+}
+
+
+.hero-image {
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+
+}
+
+
+h1 {
+
+  margin-bottom: 1rem;
+
+}
+
+
+.summary {
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 1rem 2rem;
+  margin: 2rem 0 3rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.project-meta div {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-meta strong {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.project-meta span {
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .project-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content {
+
+  line-height: 1.75;
+  font-size: 1.05rem;
+
+}
+
+
+.content h2 {
+
+  margin-top: 2.5rem;
+
+}
+
+
+.gallery {
+
+  margin-top: 4rem;
+
+}
+
+
+.gallery-grid {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+
+}
+
+
+.gallery-grid img {
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+
+}
+
+
+@media (max-width: 600px) {
+
+  .project-page {
+
+    padding: 1.5rem 1rem;
+
+  }
+
+}
+
+</style>

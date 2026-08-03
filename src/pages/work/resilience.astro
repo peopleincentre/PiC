@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = await getCollection("projects");
+
+const resilienceProjects = projects.filter((project) =>
+  project.data.themes.includes("resilience")
+);
+---
+
+<BaseLayout title="Reinforcing People's Resilience to Disasters">
+
+<h1>
+  Reinforcing People's Resilience to Disasters
+</h1>
+
+<p class="theme-intro">
+  Resilience lies at the heart of People in Centre's work. We support communities, institutions and governments in preparing for, responding to and recovering from disasters while reducing future risks. Our work spans housing recovery, owner-driven reconstruction, technical guidance, policy development and capacity strengthening across diverse contexts in Asia and Africa.
+
+</p>
+
+<h2>
+  Selected Projects
+</h2>
+
+<div class="project-grid">
+  {
+    resilienceProjects.map((project) => (
+      <ProjectCard project={project} />
+    ))
+  }
+</div>
+
+</BaseLayout>
+
+<style>
+
+.theme-intro {
+  max-width: 900px;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 380px));
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: start;
+}
+
+</style>
+
+

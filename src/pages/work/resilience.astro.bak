@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = await getCollection("projects");
+
+const resilienceProjects = projects.filter((project) =>
+  project.data.themes.includes("resilience")
+);
+
+---
+
+<BaseLayout title="Reinforcing People's Resilience to Disasters">
+
+  <main>
+
+    <h1>
+      Reinforcing People's Resilience to Disasters
+    </h1>
+
+    <p>
+      Supporting communities and institutions in disaster
+      recovery, resilient housing, risk reduction and
+      locally appropriate solutions.
+    </p>
+
+
+    <h2>
+      Projects
+    </h2>
+
+
+{
+  resilienceProjects.map((project) => (
+    <ProjectCard project={project} />
+  ))
+}
+
+
+  </main>
+
+</BaseLayout>

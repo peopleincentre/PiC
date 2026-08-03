@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+
+const {
+  title = "People in Centre"
+} = Astro.props;
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{title}</title>
+</head>
+
+<body>
+  <Header />
+
+  <main class="container">
+    <slot />
+  </main>
+</body>
+</html>

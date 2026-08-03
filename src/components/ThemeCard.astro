@@ -1,0 +1,53 @@
+---
+const {
+  title,
+  description,
+  link
+} = Astro.props;
+---
+
+<article class="card">
+
+  <h3>{title}</h3>
+
+  <p>
+    {description}
+  </p>
+
+  <a href={link}>
+    View Projects →
+  </a>
+
+</article>
+
+
+<style>
+.card {
+  padding-top: 1rem;
+  padding-bottom: 0;
+  border: 1px solid #ddd;
+  height: 100%;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+
+@media (max-width: 700px) {
+  .card {
+    padding: 1.25rem;
+  }
+}
+
+</style>
