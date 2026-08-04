@@ -35,6 +35,8 @@ gallery:
 
  - image: /images/projects/myanmar-sagaing/myanmar-sagaing-04.jpg
    caption: Disbursing installment for enabling houseowners to reconstruct transitional shelters
+
+featured: true
 ---
 **Brief Description**
 

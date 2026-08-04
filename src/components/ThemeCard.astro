@@ -1,15 +1,21 @@
 ---
+const base = import.meta.env.BASE_URL;
 const {
   title,
   description,
+  image,
   link
 } = Astro.props;
 ---
 
-<article class="card">
+<article class="theme-card">
 
   <h3>{title}</h3>
-
+  <img
+   src={`${base}${image}`}
+   alt={title}
+   class="theme-image"
+  />
   <p>
     {description}
   </p>
@@ -22,32 +28,6 @@ const {
 
 
 <style>
-.card {
-  padding-top: 1rem;
-  padding-bottom: 0;
-  border: 1px solid #ddd;
-  height: 100%;
-}
 
-.card h3 {
-  margin-top: 0;
-}
-
-.card p {
-  margin-bottom: 1.5rem;
-}
-
-.card a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-}
-
-
-@media (max-width: 700px) {
-  .card {
-    padding: 1.25rem;
-  }
-}
 
 </style>

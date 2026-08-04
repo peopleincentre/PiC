@@ -4,7 +4,12 @@ const base = import.meta.env.BASE_URL;
 
 <header>
   <nav>
-    <a href="/">People in Centre</a>
+    <a href={base} class="site-brand">
+    <img
+      src={`${base}images/logo.png`}
+      alt="People in Centre"
+    />
+    </a>
 
     <div class="menu">
       <a href={base}>Home</a>
@@ -17,10 +22,30 @@ const base = import.meta.env.BASE_URL;
 </header>
 
 <style>
-  header {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #ddd;
-  }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  padding: 1rem 1rem;
+  background: var(--color-heading);
+  color: white;
+  border-bottom: none;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: white;
+}
+
+.site-brand img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
 
   nav {
     display: flex;
@@ -29,6 +54,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   nav > a {
+    font-family: "Roboto Slab", serif;
     font-weight: bold;
     text-decoration: none;
     color: inherit;
@@ -36,12 +62,20 @@ const base = import.meta.env.BASE_URL;
 
   .menu {
     display: flex;
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
 
-  .menu a {
-    text-decoration: none;
-    color: inherit;
+ .menu a {
+  text-decoration: none;
+  color: inherit;
+  font-family: "Roboto Slab", serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  }
+
+ .menu a:hover {
+  opacity: 0.8;
   }
 
   @media (max-width: 700px) {
@@ -55,5 +89,6 @@ const base = import.meta.env.BASE_URL;
       text-align: center;
       gap: 0.75rem;
     }
+ 
   }
 </style>

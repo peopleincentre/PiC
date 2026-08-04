@@ -30,6 +30,7 @@ gallery:
   - image: /images/projects/afghanistan-herat/afghanistan-herat-02.jpg
     caption: Consulting with the community leaders
 
+featured: true
 ---
 
 People in Centre supported the development of technical guidelines and training materials for safer reconstruction in earthquake-affected areas of Afghanistan. The work focused on improving the seismic performance of traditional construction systems while retaining local knowledge, materials and building practices.

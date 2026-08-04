@@ -28,6 +28,8 @@ gallery:
 
   - image: /images/projects/somalia-deyr-floods/somalia-deyr-floods-02.jpg
     caption: Community reconstructing Aqal type of house
+
+featured: true
 ---
 **Brief Description**
 

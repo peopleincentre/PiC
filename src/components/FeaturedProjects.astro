@@ -1,0 +1,90 @@
+---
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+
+const projects = (await getCollection("projects"))
+  .filter(({ data }) => data.featured)
+  ;
+---
+
+<section class="home-section home-projects">
+
+  <div class="section-header">
+
+  <h1>Featured Projects</h1>
+
+</div>
+
+<div class="project-strip-wrapper">
+
+  <button
+    class="project-arrow project-arrow-left"
+    id="projects-prev"
+    aria-label="Previous projects"
+  >
+    ‹
+  </button>
+
+  <button
+    class="project-arrow project-arrow-right"
+    id="projects-next"
+    aria-label="Next projects"
+  >
+    ›
+  </button>
+
+  <div
+    class="project-strip"
+    id="project-strip"
+  >
+
+    {
+      projects.map((project) => (
+        <a
+          href={`${base}work/projects/${project.id}/`}
+          class="project-card"
+        >
+
+          {
+            project.data.coverImage && (
+              <img
+                src={`${base}${project.data.coverImage.replace(/^\//, "")}`}
+                alt={project.data.title}
+              />
+            )
+          }
+
+<div class="project-card-content">
+  <h4>{project.data.title}</h4>
+</div>
+
+        </a>
+      ))   
+    }
+  </div>
+</div>  
+
+</section>
+
+<script>
+  const strip = document.getElementById("project-strip");
+
+  document
+    .getElementById("projects-next")
+    ?.addEventListener("click", () => {
+      strip?.scrollBy({
+        left: 300,
+        behavior: "smooth"
+      });
+    });
+
+  document
+    .getElementById("projects-prev")
+    ?.addEventListener("click", () => {
+      strip?.scrollBy({
+        left: -300,
+        behavior: "smooth"
+      });
+    });
+</script>

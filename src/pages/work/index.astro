@@ -1,94 +1,198 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
 const base = import.meta.env.BASE_URL;
+
 ---
+<BaseLayout title:"Our Work">
+Our work spans recovery and reconstruction after disasters, 
+ecological stewardship, people-centred urban development, and 
+institutional strengthening. Across these areas, we work with 
+communities, governments, universities and development partners to 
+create practical, locally grounded solutions.
 
-<BaseLayout title="Our Work">
+<section class="theme-section ecology">
+    <img
+    src={`${base}images/themes/ecological-balance.jpg`}
+    alt="Ecological Balance"
+    class="theme-image"
+    />
 
-<h1>
-  Our Work
-</h1>
+  <div class="theme-content">
 
-<p>
-  People in Centre works across four thematic areas that
-  seek to strengthen resilience, restore ecological balance,
-  reclaim urban space for people, and build institutional
-  capacities for learning and action.
-</p>
-
-<div class="themes">
-
-  <a class="theme-card" href={`${base}work/resilience/`}>
-    <h2>Reinforcing People's Resilience to Disasters</h2>
-    <p>
-      Supporting communities, governments and institutions in
-      disaster recovery, resilient housing, risk reduction and
-      reconstruction through people-centred approaches.
-    </p>
-  </a>
-
-  <a class="theme-card" href={`${base}work/ecological-balance/`}>
     <h2>Restructuring Human Interventions for Ecological Balance</h2>
-    <p>
-      Working on water, sanitation, wastewater reuse,
-      environmental restoration and sustainable resource
-      management.
+     <p class="theme-geographies">
+     India
     </p>
-  </a>
 
-  <a class="theme-card" href={`${base}work/urban-space/`}>
+    <p>
+     Human interventions have brought us close to destruction through 
+     resource exploitation and system collapse. As climate change 
+     accelerates and natural resources—especially water—face severe 
+     scarcity, human development must adapt. We critically evaluate and 
+     redesign interventions to promote environmental sustainability, 
+     resource revitalization, and social equity. By centering community 
+     rights, water governance, and adaptive management, our work bridges 
+     technical aspects with inclusive policy frameworks—enabling 
+     ecosystems and local communities to thrive together. Our partners 
+     include the International Water Management Institute, Aga Khan Rural 
+     Support Programme, Tata Trusts, WAPCOS, and Ambuja Foundation. 
+    </p>
+
+    <h3>Range of Work</h3>
+    <p class="theme-services">
+       Ecological resources planning · Implementation guidelines ·
+       Policy analysis and advisory support · Technical guidelines · Capacity building
+    </p>
+ 
+    <a
+      href={`${base}work/ecological-balance/`}
+      class="theme-button"
+    >
+      View Projects
+    </a>
+
+  </div>
+  
+   
+</section>
+
+<section class="theme-section resilience">
+
+  <div class="theme-content">
+
+    <h2>Reinforcing People's Resilience to Disasters</h2>
+    <p class="theme-geographies">
+     India | Nepal | Afghanistan | Indonesia | Myanmar | Somalia | Mozambique
+    </p>
+
+    <p>
+      Natural hazards pose significant risks to our well being. The 
+      risks are particularly high for the poor and vulnerable. 
+      People’s capacities need to be reinforced for disaster risk 
+      mitigation and management. This thematic area focuses on 
+      mainstreaming disaster risk management into development planning,  
+      specific risk mitigation planning, post-disaster reconstruction 
+      and recovery.  Our key partners include National Disaster Management 
+      Authority (NDMA), Gujarat State Management Authority (GSDMA), 
+      Gujarat Institute of Disaster Management (GIDM), UNDP, 
+      Canadian International Development Agency (CIDA), 
+      Owner Driven Reconstruction Collaborative (ODRC), Earthquake 
+      Engineering Research Institute (EERI), Hunnarshala, and UNNATI.
+     </p>
+
+    <h3>Range of Work</h3>
+    <p class="theme-services">
+       Post-disaster needs assessment · Recovery planning and facilitation · 
+       Policy support  · Technical guidelines · Capacity building · Monitoring
+       and evaluation
+	</p>
+   
+
+    <a
+      href={`${base}work/resilience/`}
+      class="theme-button"
+    >
+      View Projects
+    </a>
+
+  </div>
+  
+    <img
+    src={`${base}images/themes/resilience.jpg`}
+    alt="Resilience"
+    class="theme-image"
+    />  
+
+</section>
+
+<section class="theme-section urban">
+    <img
+    src={`${base}images/themes/urban-space.jpg`}
+    alt="Reclaiming Urban Space"
+    class="theme-image"
+    />
+
+  <div class="theme-content">
+
     <h2>Reclaiming Urban Space for the People</h2>
-    <p>
-      Addressing housing, settlements, public spaces and urban
-      services with a focus on equity and inclusion.
+     <p class="theme-geographies">
+     India
     </p>
-  </a>
 
-  <a class="theme-card" href={`${base}work/institutional-initiatives/`}>
-    <h2>Other Institutional Initiatives</h2>
     <p>
-      Advanced Certificate Programme on Research in Political
-      Economy, fellowships and capacity-building initiatives.
+      Urban space has been usurped by the market. The informal 
+      workers and dwellers have no ownership and protection. The urban 
+      space is no more humane. This thematic area focuses on issues of 
+      urban planning and development with an idea to work towards making 
+      cities for its people. We provide research, planning, monitoring 
+      and evaluation services. Our partners include Municipal 
+      Corporations, NGOs and local communities. 
     </p>
-  </a>
 
-</div>
+    <h3>Range of Work</h3>
+    <p class="theme-services">
+       Ecological resources planning · Implementation guidelines ·
+       Policy analysis and advisory support · Technical guidelines · Capacity building
+    </p>
+ 
+    <a
+      href={`${base}work/urban-space/`}
+      class="theme-button"
+    >
+      View Projects
+    </a>
+
+  </div>
+  
+   
+</section>
+
+<section class="theme-section capacity">
+
+  <div class="theme-content">
+
+    <h2>Re-grounding Research in Socio-Economic Community Realities</h2>
+    <p class="theme-geographies">
+     In-person: India
+    </p>
+     <p class="theme-geographies">
+     Online: Africa | Latin America | South East Asia | Europe | North America
+    </p>
+
+    <p>
+      Traditional academic curricula often fall short of equipping young 
+      researchers and practitioners with the socio economic field-based 
+      realities of development, economics, technology, and governance. 
+      We facilitate alternative educational programs, certificate courses, 
+      and practical research platforms that take learning beyond college 
+      classrooms. By mentoring students and emerging scholars in 
+      field-anchored socio-economic research with interdisciplinary 
+      analysis, we nurture a new generation of researchers capable of 
+      tackling real-world social and developmental challenges. Our partners 
+      include International Development Economics Associates (IDEAs).
+     </p>
+
+    <h3>Range of Work</h3>
+    <p class="theme-services">
+       Facilitation and management of certificate course 
+	</p>
+   
+
+    <a
+      href={`${base}work/other-initiatives/`}
+      class="theme-button"
+    >
+      View Projects
+    </a>
+
+  </div>
+  
+    <img
+    src={`${base}images/themes/resilience.jpg`}
+    alt="Resilience"
+    class="theme-image"
+    />  
+
+</section>
 
 </BaseLayout>
-
-<style>
-
-.themes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.theme-card {
-  display: block;
-  padding: 2rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  text-decoration: none;
-  color: inherit;
-  background: #fff;
-  transition: transform 0.2s ease;
-}
-
-.theme-card:hover {
-  transform: translateY(-4px);
-}
-
-.theme-card h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.theme-card p {
-  margin-bottom: 0;
-  line-height: 1.6;
-}
-
-</style>

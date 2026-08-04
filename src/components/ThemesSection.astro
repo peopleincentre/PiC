@@ -6,6 +6,7 @@ const themes = [
     title: "Reinforcing People's Resilience to Disasters",
     description:
       "Supporting communities and institutions in disaster recovery, resilient housing, risk reduction and locally appropriate solutions.",
+    image: "/images/themes/resilience.jpg",  
     link: "/work/resilience"
   },
 
@@ -13,6 +14,7 @@ const themes = [
     title: "Restructuring Human Interventions for Ecological Balance",
     description:
       "Exploring sustainable relationships between people and nature through water management, wastewater reuse, ecological restoration and responsible interventions.",
+    image: "/images/themes/ecological-balance.jpg",  
     link: "/work/ecological-balance"
   },
 
@@ -20,33 +22,36 @@ const themes = [
     title: "Reclaiming Urban Space for the People",
     description:
       "Working towards inclusive cities through people-centred planning, housing and public spaces.",
+    image: "/images/themes/urban-space.jpg", 
     link: "/work/urban-space"
   },
 
   {
-    title: "Other Institutional Initiatives",
+    title: "Re-grounding Research in Socio-Economic Community Realities",
     description:
       "Creating and managing platforms for research, learning, capacity building and knowledge exchange.",
+    image: "/images/themes/institutional-initiatives.jpg", 
     link: "/work/institutional-initiatives"
   }
 ];
 
 ---
 
-<section>
+<section class="home-themes">
 
-  <h2>
+  <h1>
     Thematic Areas of Work
-  </h2>
+  </h1>
 
 
-  <div class="grid">
+  <div class="theme-grid">
 
     {
       themes.map((theme) => (
         <ThemeCard
           title={theme.title}
           description={theme.description}
+          image={theme.image}
           link={theme.link}
         />
       ))
@@ -60,10 +65,10 @@ const themes = [
 <style>
 
 section {
-  padding: 0rem 2rem;
+  padding: 2rem 2rem;
 }
 
-.grid {
+.theme-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -71,8 +76,7 @@ section {
 
 
 @media (max-width: 700px) {
-
-  .grid {
+  .theme-grid {
     grid-template-columns: 1fr;
   }
 

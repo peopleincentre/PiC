@@ -140,49 +140,42 @@ const { Content } = await render(project);
 <style>
 
 .project-page {
-
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
-
 }
 
 
 .hero-image {
-
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   border-radius: 8px;
-
 }
 
 
 h1 {
-
-  margin-bottom: 1rem;
-
+  margin-bottom: 0.25rem;
+  line-height: 2.5rem
 }
 
 
 .summary {
-
   font-size: 1.15rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .project-meta {
   display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 1fr));
-  gap: 1rem 2rem;
-  margin: 2rem 0 3rem;
-  padding: 1.2rem 0;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  gap: 0.5rem 0.25rem;
+  margin: 1rem 0 1rem;
+  padding: 0 0;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
 }
 
 .project-meta div {
@@ -207,52 +200,39 @@ h1 {
 }
 
 .content {
-
-  line-height: 1.75;
-  font-size: 1.05rem;
-
+  line-height: 1.5;
+  font-size: 1.0rem;
 }
 
 
 .content h2 {
-
   margin-top: 2.5rem;
-
 }
 
 
 .gallery {
-
-  margin-top: 4rem;
-
+  margin-top: 2rem;
 }
 
 
 .gallery-grid {
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-
 }
 
 
 .gallery-grid img {
-
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 6px;
-
 }
 
 
 @media (max-width: 600px) {
-
   .project-page {
-
     padding: 1.5rem 1rem;
-
   }
 
 }
