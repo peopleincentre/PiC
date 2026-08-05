@@ -55,124 +55,273 @@ function paperLink(pdf) {
 
 const videoById = new Map(videos.map((v) => [v.data.youtube, v]));
 const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
+
+const papersCount = papers.length;
+const videosCount = videos.length;
+
+const iconDoc = `
+  <svg class="tab-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm0 2.5L18.5 9H14V4.5zM8 13h8v2H8zm0 4h8v2H8z"/>
+  </svg>`;
+
+const iconPlay = `
+  <svg class="tab-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path fill="currentColor" d="M8 5.14v13.72c0 .8.87 1.3 1.56.88l11-6.86a1.04 1.04 0 0 0 0-1.76l-11-6.86A1.03 1.03 0 0 0 8 5.14z"/>
+  </svg>`;
+
+const themeIcons = {
+  "ecological-balance": `
+    <svg class="group-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+    </svg>`,
+  resilience: `
+    <svg class="group-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path fill="currentColor" d="M12 2l2.4 4.6L19.6 7l-3.5 3.4.9 5.1L12 13.2l-5 2.3.9-5.1L4.4 7l5.2-.4L12 2z"/>
+    </svg>`,
+  "urban-space": `
+    <svg class="group-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path fill="currentColor" d="M10 2v6H3a1 1 0 0 0-1 1v10h2v2h2v-2h12v2h2v-2h2V9a1 1 0 0 0-1-1h-7V2h-2zM5 16h2v3H5v-3zm4 0h2v3H9v-3zm4 0h2v3h-2v-3zm4 0h2v3h-2v-3z"/>
+    </svg>`,
+};
 ---
 
 <BaseLayout title="Knowledge Resources">
 
 <main class="resources-page">
 
-<h1>Knowledge Resources</h1>
+<header class="page-head">
+  <h1>Knowledge Resources</h1>
+  <p class="page-intro">
+    Research papers, publications and films by People in Centre, organised by
+    thematic area.
+  </p>
+</header>
 
-<p class="page-intro">
-  Research papers, publications and films by People in Centre, organised by
-  thematic area.
-</p>
+<div
+  class="tabs"
+  role="tablist"
+  aria-label="Knowledge resources"
+  id="resources-tabs"
+>
+  <button
+    class="tab"
+    id="tab-papers"
+    role="tab"
+    aria-selected="true"
+    aria-controls="panel-papers"
+    data-target="papers"
+    type="button"
+  >
+    <Fragment set:html={iconDoc} />
+    <span class="tab-label">Research Papers &amp; Publications</span>
+    <span class="tab-count">{papersCount}</span>
+  </button>
 
-<section class="resource-section">
+  <button
+    class="tab"
+    id="tab-videos"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-videos"
+    data-target="videos"
+    type="button"
+  >
+    <Fragment set:html={iconPlay} />
+    <span class="tab-label">Videos &amp; Films</span>
+    <span class="tab-count">{videosCount}</span>
+  </button>
+</div>
 
-<h2>Research Papers and Publications</h2>
-
-{paperThemes.map((theme) => {
-  const themePapers = papers
-    .filter((p) => p.data.themes.includes(theme.id))
-    .sort(byYearDesc);
-  if (themePapers.length === 0) return null;
-  return (
-    <div
-      class="group"
-      style={`--accent: ${theme.accent}`}
-    >
-      <h3>{theme.label}</h3>
-      <ul class="papers-grid">
-        {themePapers.map((paper) => {
-          const link = paperLink(paper.data.pdf);
-          return (
-            <li class="paper-card">
-              <span class="paper-year">{paper.data.year}</span>
-              <span class="paper-citation">{paper.data.summary}</span>
-              {link && (
-                <a
-                  class="paper-link"
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View resource
-                  <span class="arrow">→</span>
-                </a>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-})}
-
+<section
+  class="tab-panel"
+  id="panel-papers"
+  role="tabpanel"
+  aria-labelledby="tab-papers"
+  data-panel="papers"
+>
+  {paperThemes.map((theme) => {
+    const themePapers = papers
+      .filter((p) => p.data.themes.includes(theme.id))
+      .sort(byYearDesc);
+    if (themePapers.length === 0) return null;
+    return (
+      <div
+        class="group"
+        style={`--accent: ${theme.accent}`}
+      >
+        <h3>
+          <Fragment set:html={themeIcons[theme.id] || ""} />
+          <span class="group-title">{theme.label}</span>
+          <span class="group-count">
+            {themePapers.length}{" "}
+            {themePapers.length === 1 ? "paper" : "papers"}
+          </span>
+        </h3>
+        <ul class="papers-grid">
+          {themePapers.map((paper) => {
+            const link = paperLink(paper.data.pdf);
+            return (
+              <li class="paper-card">
+                <span class="paper-year">{paper.data.year}</span>
+                <span class="paper-citation">{paper.data.summary}</span>
+                {link && (
+                  <a
+                    class="paper-link"
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View resource
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  })}
 </section>
 
-<section class="resource-section">
-
-<h2>Videos and Films</h2>
-
-{featuredVideo && (
-  <div class="featured-video">
-    <div class="video-embed">
-      <iframe
-        src={`https://www.youtube.com/embed/${featuredVideo.data.youtube}`}
-        title={featuredVideo.data.title}
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <h3>{featuredVideo.data.title}</h3>
-    <p>{featuredVideo.data.summary}</p>
-  </div>
-)}
-
-{videoGroups.map((group) => {
-  const groupVideos = group.youtubeIds
-    .map((id) => videoById.get(id))
-    .filter(Boolean);
-  if (groupVideos.length === 0) return null;
-  return (
-    <div
-      class="group"
-      style={`--accent: ${group.accent}`}
-    >
-      <h3>{group.title}</h3>
-      <div class="videos-grid">
-        {groupVideos.map((video) => (
-          <a
-            class="video-card"
-            href={`https://www.youtube.com/watch?v=${video.data.youtube}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="video-thumb">
-              <img
-                src={`https://img.youtube.com/vi/${video.data.youtube}/0.jpg`}
-                alt={video.data.title}
-                loading="lazy"
-              />
-              <span class="play" aria-hidden="true"></span>
-            </div>
-            <h4>{video.data.title}</h4>
-            <p>{video.data.summary}</p>
-            <span class="video-watch">Watch on YouTube</span>
-          </a>
-        ))}
+<section
+  class="tab-panel"
+  id="panel-videos"
+  role="tabpanel"
+  aria-labelledby="tab-videos"
+  data-panel="videos"
+  hidden
+>
+  {featuredVideo && (
+    <div class="featured-video">
+      <div class="video-embed">
+        <iframe
+          src={`https://www.youtube.com/embed/${featuredVideo.data.youtube}`}
+          title={featuredVideo.data.title}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
+      <h3>{featuredVideo.data.title}</h3>
+      <p>{featuredVideo.data.summary}</p>
     </div>
-  );
-})}
+  )}
 
+  {videoGroups.map((group) => {
+    const groupVideos = group.youtubeIds
+      .map((id) => videoById.get(id))
+      .filter(Boolean);
+    if (groupVideos.length === 0) return null;
+    return (
+      <div
+        class="group"
+        style={`--accent: ${group.accent}`}
+      >
+        <h3>
+          <Fragment set:html={iconPlay} />
+          <span class="group-title">{group.title}</span>
+          <span class="group-count">
+            {groupVideos.length} {groupVideos.length === 1 ? "video" : "videos"}
+          </span>
+        </h3>
+        <div class="videos-grid">
+          {groupVideos.map((video) => (
+            <a
+              class="video-card"
+              href={`https://www.youtube.com/watch?v=${video.data.youtube}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="video-thumb">
+                <img
+                  src={`https://img.youtube.com/vi/${video.data.youtube}/0.jpg`}
+                  alt={video.data.title}
+                  loading="lazy"
+                />
+                <span class="play" aria-hidden="true"></span>
+              </div>
+              <h4>{video.data.title}</h4>
+              <p>{video.data.summary}</p>
+              <span class="video-watch">Watch on YouTube</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    );
+  })}
 </section>
 
 </main>
 
 </BaseLayout>
+
+<script>
+  const tabs = Array.from(document.querySelectorAll("#resources-tabs .tab"));
+  const panels = Array.from(document.querySelectorAll("[data-panel]"));
+
+  function activate(target) {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.target === target;
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+      tab.tabIndex = active ? 0 : -1;
+    });
+
+    panels.forEach((panel) => {
+      if (panel.dataset.panel === target) {
+        panel.removeAttribute("hidden");
+      } else {
+        panel.setAttribute("hidden", "");
+      }
+    });
+
+    const activeTab = tabs.find((tab) => tab.dataset.target === target);
+    if (activeTab) {
+      activeTab.focus();
+    }
+  }
+
+  function tabFromHash() {
+    const hash = window.location.hash.replace("#", "");
+    return hash === "videos" ? "videos" : "papers";
+  }
+
+  function setHash(target, update = true) {
+    if (update && window.location.hash !== `#${target}`) {
+      history.replaceState(null, "", `#${target}`);
+    }
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = tab.dataset.target;
+      setHash(target);
+      activate(target);
+    });
+
+    tab.addEventListener("keydown", (event) => {
+      const current = tabs.indexOf(tab);
+      let next = null;
+
+      if (event.key === "ArrowRight") next = tabs[(current + 1) % tabs.length];
+      if (event.key === "ArrowLeft")
+        next = tabs[(current - 1 + tabs.length) % tabs.length];
+      if (event.key === "Home") next = tabs[0];
+      if (event.key === "End") next = tabs[tabs.length - 1];
+
+      if (next) {
+        event.preventDefault();
+        next.click();
+      }
+    });
+  });
+
+  window.addEventListener("hashchange", () => {
+    activate(tabFromHash());
+  });
+
+  activate(tabFromHash());
+</script>
 
 <style>
 
@@ -182,8 +331,8 @@ const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
   padding: 2rem 1.5rem;
 }
 
-.resources-page h1 {
-  margin-bottom: 0.5rem;
+.page-head h1 {
+  margin: 0 0 0.5rem;
   line-height: 2.5rem;
 }
 
@@ -191,33 +340,128 @@ const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
   max-width: 700px;
   color: #666;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin: 0 0 1.75rem;
 }
 
-.resource-section {
-  margin-bottom: 3rem;
+/* Tabs */
+
+.tabs {
+  display: inline-flex;
+  gap: 0.5rem;
+  background: #e8ecee;
+  padding: 0.375rem;
+  border-radius: 999px;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 }
 
-.resource-section > h2 {
-  margin-bottom: 1.5rem;
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  background: transparent;
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.tab:hover {
+  background: rgba(35, 64, 74, 0.08);
+}
+
+.tab[aria-selected="true"] {
+  background: var(--color-heading);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(35, 64, 74, 0.3);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-urban);
+  outline-offset: 2px;
+}
+
+.tab-icon {
+  display: block;
+}
+
+.tab-count {
+  background: rgba(35, 64, 74, 0.12);
+  color: var(--color-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.tab[aria-selected="true"] .tab-count {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+/* Panels */
+
+.tab-panel[hidden] {
+  display: none;
+}
+
+/* Groups */
 
 .group {
   margin-bottom: 2.25rem;
+  background: color-mix(in srgb, var(--accent) 6%, #fff);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, #fff);
+  border-radius: 14px;
+  padding: 1.5rem;
 }
 
 .group > h3 {
-  margin-bottom: 1rem;
-  padding-left: 0.75rem;
-  border-left: 4px solid var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.25rem;
+  padding: 0 0 0.75rem;
+  border-bottom: 2px solid color-mix(in srgb, var(--accent) 25%, #fff);
+  color: var(--accent);
+  font-size: 1.15rem;
+  line-height: 1.3;
 }
+
+.group-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.group-title {
+  color: var(--color-heading);
+}
+
+.group-count {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* Papers */
 
 .papers-grid {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
 }
 
@@ -229,12 +473,13 @@ const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .paper-card:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .paper-year {
@@ -272,6 +517,8 @@ const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
 .paper-link:hover .arrow {
   transform: translateX(3px);
 }
+
+/* Videos */
 
 .featured-video {
   background: #fff;
@@ -323,12 +570,13 @@ const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
   color: inherit;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .video-card:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .video-thumb {
@@ -369,7 +617,7 @@ const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
 }
 
 .video-card:hover .play {
-  background: rgba(0, 0, 0, 0.75);
+  background: var(--accent);
   transform: translate(-50%, -50%) scale(1.08);
 }
 
@@ -400,8 +648,23 @@ const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
     padding: 1.5rem 1rem;
   }
 
-  .papers-grid {
+  .tabs {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .tab {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .papers-grid,
+  .videos-grid {
     grid-template-columns: 1fr;
+  }
+
+  .group-count {
+    display: none;
   }
 }
 

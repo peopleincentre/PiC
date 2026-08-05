@@ -1,198 +1,373 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
 const base = import.meta.env.BASE_URL;
 
+const themes = [
+  {
+    id: "ecological-balance",
+    name: "Restructuring Human Interventions for Ecological Balance",
+    geographies: "India",
+    image: "/images/themes/ecological-balance.jpg",
+    accent: "var(--color-ecology)",
+    link: "/work/ecological-balance/",
+    description:
+      "Human interventions have brought us close to destruction through resource exploitation and system collapse. As climate change accelerates and natural resources—especially water—face severe scarcity, human development must adapt. We critically evaluate and redesign interventions to promote environmental sustainability, resource revitalization, and social equity. By centering community rights, water governance, and adaptive management, our work bridges technical aspects with inclusive policy frameworks—enabling ecosystems and local communities to thrive together.",
+    services:
+      "Ecological resources planning · Implementation guidelines · Policy analysis and advisory support · Technical guidelines · Capacity building",
+  },
+  {
+    id: "resilience",
+    name: "Reinforcing People's Resilience to Disasters",
+    geographies: "India | Nepal | Afghanistan | Indonesia | Myanmar | Somalia | Mozambique",
+    image: "/images/themes/resilience.jpg",
+    accent: "var(--color-resilience)",
+    link: "/work/resilience/",
+    description:
+      "Natural hazards pose significant risks to our well being. The risks are particularly high for the poor and vulnerable. People's capacities need to be reinforced for disaster risk mitigation and management. This thematic area focuses on mainstreaming disaster risk management into development planning, specific risk mitigation planning, post-disaster reconstruction and recovery. Our key partners include National Disaster Management Authority (NDMA), Gujarat State Management Authority (GSDMA), Gujarat Institute of Disaster Management (GIDM), UNDP, Canadian International Development Agency (CIDA), Owner Driven Reconstruction Collaborative (ODRC), Earthquake Engineering Research Institute (EERI), Hunnarshala, and UNNATI.",
+    services:
+      "Post-disaster needs assessment · Recovery planning and facilitation · Policy support · Technical guidelines · Capacity building · Monitoring and evaluation",
+  },
+  {
+    id: "urban-space",
+    name: "Reclaiming Urban Space for the People",
+    geographies: "India",
+    image: "/images/themes/urban-space.jpg",
+    accent: "var(--color-urban)",
+    link: "/work/urban-space/",
+    description:
+      "Urban space has been usurped by the market. The informal workers and dwellers have no ownership and protection, and the urban space is no more humane. This thematic area focuses on issues of urban planning and development with an idea to work towards making cities for its people. We provide research, planning, monitoring and evaluation services. Our partners include Municipal Corporations, NGOs and local communities.",
+    services:
+      "Urban research and planning · Monitoring and evaluation · Policy support · Community participation",
+  },
+  {
+    id: "institutional-initiatives",
+    name: "Reconnecting Research with the Socio-Economic Realities of Communities",
+    geographies: "In-person: India · Online: Africa | Latin America | South East Asia | Europe | North America",
+    image:
+      "/images/projects/advanced-certificate-programme-on-research-in-political-economy/advanced-certificate-programme-on-research-in-political-economy-cover.jpg",
+    accent: "var(--color-capacity)",
+    link: "/work/institutional-initiatives/",
+    description:
+      "Traditional academic curricula often fall short of equipping young researchers and practitioners with the socio economic field-based realities of development, economics, technology, and governance. We facilitate alternative educational programs, certificate courses, and practical research platforms that take learning beyond college classrooms. By mentoring students and emerging scholars in field-anchored socio-economic research with interdisciplinary analysis, we nurture a new generation of researchers capable of tackling real-world social and developmental challenges. Our partners include International Development Economics Associates (IDEAs).",
+    services: "Facilitation and management of certificate course",
+  },
+];
 ---
+
 <BaseLayout title="Our Work">
-Our work spans recovery and reconstruction after disasters, 
-ecological stewardship, people-centred urban development, and 
-institutional strengthening. Across these areas, we work with 
-communities, governments, universities and development partners to 
-create practical, locally grounded solutions.
 
-<section class="theme-section ecology">
-    <img
-    src={`${base}images/themes/ecological-balance.jpg`}
-    alt="Ecological Balance"
-    class="theme-image"
-    />
+<main class="work-page">
 
-  <div class="theme-content">
+<header class="work-head">
+  <h1>Our Work</h1>
+  <p>
+    Our work spans recovery and reconstruction after disasters, ecological
+    stewardship, people-centred urban development, and institutional
+    strengthening. Across these areas, we work with communities, governments,
+    universities and development partners to create practical, locally grounded
+    solutions.
+  </p>
+</header>
 
-    <h2>Restructuring Human Interventions for Ecological Balance</h2>
-     <p class="theme-geographies">
-     India
-    </p>
+<div class="themes-accordion">
 
-    <p>
-     Human interventions have brought us close to destruction through 
-     resource exploitation and system collapse. As climate change 
-     accelerates and natural resources—especially water—face severe 
-     scarcity, human development must adapt. We critically evaluate and 
-     redesign interventions to promote environmental sustainability, 
-     resource revitalization, and social equity. By centering community 
-     rights, water governance, and adaptive management, our work bridges 
-     technical aspects with inclusive policy frameworks—enabling 
-     ecosystems and local communities to thrive together. Our partners 
-     include the International Water Management Institute, Aga Khan Rural 
-     Support Programme, Tata Trusts, WAPCOS, and Ambuja Foundation. 
-    </p>
-
-    <h3>Range of Work</h3>
-    <p class="theme-services">
-       Ecological resources planning · Implementation guidelines ·
-       Policy analysis and advisory support · Technical guidelines · Capacity building
-    </p>
- 
-    <a
-      href={`${base}work/ecological-balance/`}
-      class="theme-button"
+{
+  themes.map((theme) => (
+    <section
+      class="theme-item"
+      style={`--accent: ${theme.accent}`}
+      data-theme={theme.id}
     >
-      View Projects
-    </a>
+      <h2>
+        <button
+          class="theme-toggle"
+          type="button"
+          id={`toggle-${theme.id}`}
+          aria-expanded="false"
+          aria-controls={`panel-${theme.id}`}
+        >
+          <img
+            src={`${base}${theme.image.replace(/^\//, "")}`}
+            alt=""
+            class="theme-thumb"
+            loading="lazy"
+          />
+          <span class="theme-title-block">
+            <span class="theme-name">{theme.name}</span>
+            <span class="theme-geographies">{theme.geographies}</span>
+          </span>
+          <span class="theme-plus" aria-hidden="true"></span>
+        </button>
+      </h2>
 
-  </div>
-  
-   
-</section>
+      <div
+        class="theme-panel"
+        id={`panel-${theme.id}`}
+        role="region"
+        aria-labelledby={`toggle-${theme.id}`}
+      >
+        <div class="theme-panel-inner">
+          <p>{theme.description}</p>
+          <h3>Range of Work</h3>
+          <p class="theme-services">{theme.services}</p>
+          <a
+            href={`${base}${theme.link.replace(/^\//, "")}`}
+            class="theme-button"
+          >
+            View Projects →
+          </a>
+        </div>
+      </div>
+    </section>
+  ))
+}
 
-<section class="theme-section resilience">
+</div>
 
-  <div class="theme-content">
-
-    <h2>Reinforcing People's Resilience to Disasters</h2>
-    <p class="theme-geographies">
-     India | Nepal | Afghanistan | Indonesia | Myanmar | Somalia | Mozambique
-    </p>
-
-    <p>
-      Natural hazards pose significant risks to our well being. The 
-      risks are particularly high for the poor and vulnerable. 
-      People’s capacities need to be reinforced for disaster risk 
-      mitigation and management. This thematic area focuses on 
-      mainstreaming disaster risk management into development planning,  
-      specific risk mitigation planning, post-disaster reconstruction 
-      and recovery.  Our key partners include National Disaster Management 
-      Authority (NDMA), Gujarat State Management Authority (GSDMA), 
-      Gujarat Institute of Disaster Management (GIDM), UNDP, 
-      Canadian International Development Agency (CIDA), 
-      Owner Driven Reconstruction Collaborative (ODRC), Earthquake 
-      Engineering Research Institute (EERI), Hunnarshala, and UNNATI.
-     </p>
-
-    <h3>Range of Work</h3>
-    <p class="theme-services">
-       Post-disaster needs assessment · Recovery planning and facilitation · 
-       Policy support  · Technical guidelines · Capacity building · Monitoring
-       and evaluation
-	</p>
-   
-
-    <a
-      href={`${base}work/resilience/`}
-      class="theme-button"
-    >
-      View Projects
-    </a>
-
-  </div>
-  
-    <img
-    src={`${base}images/themes/resilience.jpg`}
-    alt="Resilience"
-    class="theme-image"
-    />  
-
-</section>
-
-<section class="theme-section urban">
-    <img
-    src={`${base}images/themes/urban-space.jpg`}
-    alt="Reclaiming Urban Space"
-    class="theme-image"
-    />
-
-  <div class="theme-content">
-
-    <h2>Reclaiming Urban Space for the People</h2>
-     <p class="theme-geographies">
-     India
-    </p>
-
-    <p>
-      Urban space has been usurped by the market. The informal 
-      workers and dwellers have no ownership and protection. The urban 
-      space is no more humane. This thematic area focuses on issues of 
-      urban planning and development with an idea to work towards making 
-      cities for its people. We provide research, planning, monitoring 
-      and evaluation services. Our partners include Municipal 
-      Corporations, NGOs and local communities. 
-    </p>
-
-    <h3>Range of Work</h3>
-    <p class="theme-services">
-       Ecological resources planning · Implementation guidelines ·
-       Policy analysis and advisory support · Technical guidelines · Capacity building
-    </p>
- 
-    <a
-      href={`${base}work/urban-space/`}
-      class="theme-button"
-    >
-      View Projects
-    </a>
-
-  </div>
-  
-   
-</section>
-
-<section class="theme-section capacity">
-
-  <div class="theme-content">
-
-    <h2>Re-grounding Research in Socio-Economic Community Realities</h2>
-    <p class="theme-geographies">
-     In-person: India
-    </p>
-     <p class="theme-geographies">
-     Online: Africa | Latin America | South East Asia | Europe | North America
-    </p>
-
-    <p>
-      Traditional academic curricula often fall short of equipping young 
-      researchers and practitioners with the socio economic field-based 
-      realities of development, economics, technology, and governance. 
-      We facilitate alternative educational programs, certificate courses, 
-      and practical research platforms that take learning beyond college 
-      classrooms. By mentoring students and emerging scholars in 
-      field-anchored socio-economic research with interdisciplinary 
-      analysis, we nurture a new generation of researchers capable of 
-      tackling real-world social and developmental challenges. Our partners 
-      include International Development Economics Associates (IDEAs).
-     </p>
-
-    <h3>Range of Work</h3>
-    <p class="theme-services">
-       Facilitation and management of certificate course 
-	</p>
-   
-
-    <a
-      href={`${base}work/institutional-initiatives/`}
-      class="theme-button"
-    >
-      View Projects
-    </a>
-
-  </div>
-  
-    <img
-    src={`${base}images/themes/resilience.jpg`}
-    alt="Resilience"
-    class="theme-image"
-    />  
-
-</section>
+</main>
 
 </BaseLayout>
+
+<script>
+  const items = Array.from(
+    document.querySelectorAll(".themes-accordion .theme-item")
+  );
+
+  items.forEach((item) => {
+    const toggle = item.querySelector(".theme-toggle");
+    const panel = document.getElementById(toggle.getAttribute("aria-controls"));
+
+    toggle.addEventListener("click", () => {
+      const isOpen = item.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+      if (isOpen) {
+        items.forEach((other) => {
+          if (other !== item) {
+            other.classList.remove("open");
+            other
+              .querySelector(".theme-toggle")
+              .setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+    });
+  });
+</script>
+
+<style>
+
+.work-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.work-head h1 {
+  margin: 0 0 0.5rem;
+  line-height: 2.5rem;
+}
+
+.work-head p {
+  max-width: 760px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.themes-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.theme-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.theme-item.open {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-color: color-mix(in srgb, var(--accent) 40%, #fff);
+}
+
+.theme-item h2 {
+  margin: 0;
+}
+
+.theme-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.theme-toggle:hover .theme-name {
+  color: var(--accent);
+}
+
+.theme-thumb {
+  width: 120px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.theme-title-block {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.theme-name {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-heading);
+  transition: color 0.2s ease;
+}
+
+.theme-geographies {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.theme-plus {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.theme-plus::before,
+.theme-plus::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 2px;
+}
+
+.theme-plus::before {
+  width: 18px;
+  height: 2.5px;
+}
+
+.theme-plus::after {
+  width: 2.5px;
+  height: 18px;
+}
+
+.theme-item.open .theme-plus {
+  transform: rotate(45deg);
+}
+
+.theme-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.theme-item.open .theme-panel {
+  grid-template-rows: 1fr;
+}
+
+.theme-panel-inner {
+  overflow: hidden;
+  padding: 0 1.25rem;
+}
+
+.theme-item.open .theme-panel-inner {
+  padding-bottom: 1.5rem;
+}
+
+.theme-panel-inner p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.theme-panel-inner h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.theme-services {
+  font-size: 0.95rem;
+}
+
+.theme-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.theme-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .work-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .theme-toggle {
+    gap: 0.9rem;
+    padding: 0.85rem 1rem;
+    align-items: flex-start;
+  }
+
+  .theme-thumb {
+    width: 88px;
+    height: 66px;
+  }
+
+  .theme-name {
+    font-size: 1.05rem;
+  }
+
+  .theme-plus {
+    width: 34px;
+    height: 34px;
+  }
+
+  .theme-panel-inner {
+    padding: 0 1rem;
+  }
+
+  .theme-item.open .theme-panel-inner {
+    padding-bottom: 1.25rem;
+  }
+}
+
+</style>
