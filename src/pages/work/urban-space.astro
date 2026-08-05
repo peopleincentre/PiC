@@ -1,21 +1,75 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = await getCollection("projects");
+
+const themeProjects = projects
+  .filter((project) =>
+    project.data.themes.includes("urban-space")
+  )
+  .sort(
+    (a, b) =>
+      (b.data.endYear ?? b.data.startYear ?? 0) -
+      (a.data.endYear ?? a.data.startYear ?? 0)
+  );
 ---
 
 <BaseLayout title="Reclaiming Urban Space for the People">
 
-  <main>
+<h1>
+  Reclaiming Urban Space for the People
+</h1>
 
-    <h1>
-      Reclaiming Urban Space for the People
-    </h1>
+<p class="theme-intro">
+  Urban space has been usurped by the market. The informal workers and dwellers
+  have no ownership and protection, and urban space is no more humane. This
+  thematic area focuses on issues of urban planning and development with an idea
+  to work towards making cities for its people. We provide research, planning,
+  monitoring and evaluation services. Our partners include Municipal
+  Corporations, NGOs and local communities.
+</p>
 
-    <p>
-      Working towards inclusive cities through people-centred
-      planning, housing, public spaces and interventions
-      that place communities at the centre of urban change.
-    </p>
+<h2>
+  Projects
+</h2>
 
-  </main>
+<div class="project-grid">
+  {
+    themeProjects.map((project) => (
+      <ProjectCard project={project} />
+    ))
+  }
+</div>
 
 </BaseLayout>
+
+<style>
+
+.theme-intro {
+  max-width: 900px;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1100px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>

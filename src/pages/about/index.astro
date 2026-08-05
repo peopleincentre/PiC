@@ -1,38 +1,116 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="About Us">
 
-<main>
+<main class="about-page">
 
 <h1>About People in Centre</h1>
 
 <p>
-People in Centre (PiC) is an interdisciplinary practice,
-research and learning organisation working towards
-socially just, ecologically responsible and people-centred
-approaches to development.
+  People in Centre (PiC) is an interdisciplinary practice, research and learning
+  organisation working towards socially just, ecologically responsible and
+  people-centred approaches to development.
 </p>
 
 <p>
-PiC works at the intersection of disaster resilience,
-ecological balance, urban transformation and
-institutional learning. Our work spans research,
-technical assistance, policy support, capacity building
-and field implementation across multiple countries.
+  PiC works at the intersection of disaster resilience, ecological balance,
+  urban transformation and institutional learning. Our work spans research,
+  technical assistance, policy support, capacity building and field
+  implementation across multiple countries.
 </p>
 
 <h2>What We Do</h2>
 
 <ul>
-<li>Research and knowledge generation</li>
-<li>Technical assistance and advisory services</li>
-<li>Capacity building and training</li>
-<li>Policy and programme development</li>
-<li>Socio-technical facilitation</li>
+  <li>Research and knowledge generation</li>
+  <li>Technical assistance and advisory services</li>
+  <li>Capacity building and training</li>
+  <li>Policy and programme development</li>
+  <li>Socio-technical facilitation</li>
 </ul>
+
+<div class="about-nav">
+
+<a class="about-link" href={`${base}about/team/`}>
+  <strong>Team</strong>
+  <span>Meet the core and past team behind People in Centre.</span>
+</a>
+
+<a class="about-link" href={`${base}about/directors-shareholders/`}>
+  <strong>Directors &amp; Shareholders</strong>
+  <span>Information on the governance structure of the organisation.</span>
+</a>
+
+<a class="about-link" href={`${base}about/annual-reports/`}>
+  <strong>Annual Reports</strong>
+  <span>Year-wise annual reports of People in Centre.</span>
+</a>
+
+</div>
 
 </main>
 
 </BaseLayout>
+
+<style>
+
+.about-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.about-page h1 {
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-page p {
+  margin-bottom: 1rem;
+}
+
+.about-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.about-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.about-link strong {
+  font-family: "Roboto Slab", serif;
+  color: var(--color-heading);
+  font-size: 1.1rem;
+}
+
+.about-link span {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.about-link:hover {
+  border-color: var(--color-heading);
+}
+
+@media (max-width: 600px) {
+  .about-page {
+    padding: 1.5rem 1rem;
+  }
+}
+
+</style>

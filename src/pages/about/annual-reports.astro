@@ -1,17 +1,110 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+
+const reports = (await getCollection("annual-reports")).sort(
+  (a, b) => b.data.year - a.data.year
+);
 ---
 
 <BaseLayout title="Annual Reports">
 
-<main>
+<main class="reports-page">
 
 <h1>Annual Reports</h1>
 
-<p>
-Year wise.
-</p>
+<div class="reports-grid">
+
+{reports.map((report) => (
+  <a
+    class="report-card"
+    href={report.data.pdf}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {report.data.cover && (
+      <img
+        src={`${base}${report.data.cover.replace(/^\//, "")}`}
+        alt={report.data.title}
+        loading="lazy"
+      />
+    )}
+    <h3>{report.data.title}</h3>
+    {report.data.summary && <p>{report.data.summary}</p>}
+    <span class="report-download">Download</span>
+  </a>
+))}
+
+</div>
 
 </main>
 
 </BaseLayout>
+
+<style>
+
+.reports-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.reports-page h1 {
+  margin-bottom: 2rem;
+  line-height: 2.5rem;
+}
+
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.report-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.report-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.report-card p {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.report-card:hover {
+  border-color: var(--color-heading);
+}
+
+.report-download {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--color-urban);
+}
+
+@media (max-width: 600px) {
+  .reports-page {
+    padding: 1.5rem 1rem;
+  }
+}
+
+</style>

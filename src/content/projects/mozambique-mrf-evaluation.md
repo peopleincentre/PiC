@@ -44,3 +44,5 @@ The assessment included document review, field visits, stakeholder consultations
 
 The evaluation identified lessons for future post-disaster recovery programmes and provided recommendations on financing mechanisms, institutional arrangements, monitoring systems and approaches for strengthening recovery planning and implementation. The findings contributed to discussions on improving national recovery systems and enhancing preparedness for future climate-related disasters.
 
+The evaluation report can be accessed via [this link](https://erc.undp.org/evaluation/evaluations/detail/13694) on UNDP's Independent Evaluation Office website.
+

@@ -1,0 +1,408 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const papers = await getCollection("papers");
+const videos = await getCollection("videos");
+
+const paperThemes = [
+  {
+    id: "ecological-balance",
+    label: "Restructuring Human Interventions for Ecological Balance",
+    accent: "var(--color-ecology)",
+  },
+  {
+    id: "resilience",
+    label: "Reinforcing People's Capacities to Reduce Disaster Risks",
+    accent: "var(--color-resilience)",
+  },
+  {
+    id: "urban-space",
+    label: "Reclaiming Urban Space for the People",
+    accent: "var(--color-urban)",
+  },
+];
+
+const videoGroups = [
+  {
+    title: "On Water and Wastewater",
+    accent: "var(--color-ecology)",
+    youtubeIds: [
+      "yIM46clCXRw",
+      "QSxx8KnOZUk",
+      "ES4TaT05S-I",
+      "qZUxptX1018",
+      "Ny2365kjbqQ",
+      "A4rK4imBcrk",
+    ],
+  },
+  {
+    title: "On Post Disaster Housing Reconstruction",
+    accent: "var(--color-resilience)",
+    youtubeIds: ["kw-mK5uV5v8"],
+  },
+];
+
+const featuredYoutubeId = "7CVk94W4dEI";
+
+function byYearDesc(a, b) {
+  return (b.data.year ?? 0) - (a.data.year ?? 0);
+}
+
+function paperLink(pdf) {
+  return (pdf || "").startsWith("http") ? pdf : null;
+}
+
+const videoById = new Map(videos.map((v) => [v.data.youtube, v]));
+const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
+---
+
+<BaseLayout title="Knowledge Resources">
+
+<main class="resources-page">
+
+<h1>Knowledge Resources</h1>
+
+<p class="page-intro">
+  Research papers, publications and films by People in Centre, organised by
+  thematic area.
+</p>
+
+<section class="resource-section">
+
+<h2>Research Papers and Publications</h2>
+
+{paperThemes.map((theme) => {
+  const themePapers = papers
+    .filter((p) => p.data.themes.includes(theme.id))
+    .sort(byYearDesc);
+  if (themePapers.length === 0) return null;
+  return (
+    <div
+      class="group"
+      style={`--accent: ${theme.accent}`}
+    >
+      <h3>{theme.label}</h3>
+      <ul class="papers-grid">
+        {themePapers.map((paper) => {
+          const link = paperLink(paper.data.pdf);
+          return (
+            <li class="paper-card">
+              <span class="paper-year">{paper.data.year}</span>
+              <span class="paper-citation">{paper.data.summary}</span>
+              {link && (
+                <a
+                  class="paper-link"
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View resource
+                  <span class="arrow">→</span>
+                </a>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+})}
+
+</section>
+
+<section class="resource-section">
+
+<h2>Videos and Films</h2>
+
+{featuredVideo && (
+  <div class="featured-video">
+    <div class="video-embed">
+      <iframe
+        src={`https://www.youtube.com/embed/${featuredVideo.data.youtube}`}
+        title={featuredVideo.data.title}
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <h3>{featuredVideo.data.title}</h3>
+    <p>{featuredVideo.data.summary}</p>
+  </div>
+)}
+
+{videoGroups.map((group) => {
+  const groupVideos = group.youtubeIds
+    .map((id) => videoById.get(id))
+    .filter(Boolean);
+  if (groupVideos.length === 0) return null;
+  return (
+    <div
+      class="group"
+      style={`--accent: ${group.accent}`}
+    >
+      <h3>{group.title}</h3>
+      <div class="videos-grid">
+        {groupVideos.map((video) => (
+          <a
+            class="video-card"
+            href={`https://www.youtube.com/watch?v=${video.data.youtube}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="video-thumb">
+              <img
+                src={`https://img.youtube.com/vi/${video.data.youtube}/0.jpg`}
+                alt={video.data.title}
+                loading="lazy"
+              />
+              <span class="play" aria-hidden="true"></span>
+            </div>
+            <h4>{video.data.title}</h4>
+            <p>{video.data.summary}</p>
+            <span class="video-watch">Watch on YouTube</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+})}
+
+</section>
+
+</main>
+
+</BaseLayout>
+
+<style>
+
+.resources-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.resources-page h1 {
+  margin-bottom: 0.5rem;
+  line-height: 2.5rem;
+}
+
+.page-intro {
+  max-width: 700px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.resource-section {
+  margin-bottom: 3rem;
+}
+
+.resource-section > h2 {
+  margin-bottom: 1.5rem;
+}
+
+.group {
+  margin-bottom: 2.25rem;
+}
+
+.group > h3 {
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--accent);
+}
+
+.papers-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.paper-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.paper-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.paper-year {
+  align-self: flex-start;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.paper-citation {
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.paper-link {
+  align-self: flex-start;
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.paper-link .arrow {
+  transition: transform 0.2s ease;
+}
+
+.paper-link:hover .arrow {
+  transform: translateX(3px);
+}
+
+.featured-video {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.featured-video h3 {
+  margin: 0 0 0.5rem;
+}
+
+.featured-video p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.video-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.video-thumb {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.video-thumb img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.play::after {
+  content: "";
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 4px;
+}
+
+.video-card:hover .play {
+  background: rgba(0, 0, 0, 0.75);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-card h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.video-card p {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-watch {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .resources-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .papers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>

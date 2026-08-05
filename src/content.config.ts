@@ -20,9 +20,9 @@ const projects = defineCollection({
   title: z.string(),
   summary: z.string(),
   description: z.string(),
-  country: z.string(),
+  country: z.string().optional(),
   location: z.string().optional(),
-  startYear: z.number(),
+  startYear: z.number().optional(),
   endYear: z.number().optional(),
   client: z.string().optional(),
   partners: z.array(z.string()).optional(),
@@ -42,25 +42,6 @@ const projects = defineCollection({
      caption: z.string().optional(),
     })
    ).optional(),
-  featured: z.boolean().default(false),
-  }),
-});
-
-
-const reports = defineCollection({
-  loader: glob({
-    pattern: "**/*.md",
-    base: "./src/content/reports",
-  }),
-
-  schema: z.object({
-    title: z.string(),
-    year: z.number(),
-    authors: z.string().optional(),
-    summary: z.string(),
-    pdf: z.string(),
-
-    themes,
   }),
 });
 
@@ -92,7 +73,7 @@ const videos = defineCollection({
 
   schema: z.object({
     title: z.string(),
-    year: z.number(),
+    year: z.number().optional(),
     summary: z.string(),
     youtube: z.string(),
 
@@ -109,9 +90,28 @@ const team = defineCollection({
 
   schema: z.object({
     name: z.string(),
-    designation: z.string(),
+    category: z.enum(["core", "past"]),
+    designation: z.string().optional(),
     photo: z.string().optional(),
+    email: z.string().optional(),
     bio: z.string(),
+  }),
+});
+
+
+const governance = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/governance",
+  }),
+
+  schema: z.object({
+    name: z.string(),
+    kind: z.enum(["director", "shareholder"]),
+    designation: z.string().optional(),
+    photo: z.string().optional(),
+    bio: z.string().optional(),
+    isShareholder: z.boolean().default(false),
   }),
 });
 
@@ -123,8 +123,10 @@ const annualReports = defineCollection({
   }),
 
   schema: z.object({
+    title: z.string(),
     year: z.number(),
-    summary: z.string(),
+    summary: z.string().optional(),
+    cover: z.string().optional(),
     pdf: z.string(),
   }),
 });
@@ -132,9 +134,9 @@ const annualReports = defineCollection({
 
 export const collections = {
   projects,
-  reports,
   papers,
   videos,
   team,
+  governance,
   "annual-reports": annualReports,
 };

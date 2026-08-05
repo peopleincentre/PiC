@@ -1,0 +1,15 @@
+---
+title: "Analysis of proposed Street Vendors’ Scheme in Ahmedabad"
+summary: "People in Centre carried out an analysis of the proposed Street Vendors’ Scheme for Ahmedabad to understand its implication on vendors. The scheme prepared by CEPT for AMC organises the vending zones into three categories; green, amber and red. People in Centre worked with SEWA team to collect data for Isanpur Town Planning area, to…"
+description: "**People in Centre **carried out an analysis of the proposed Street Vendors’ Scheme for Ahmedabad to understand its implication on vendors. The scheme prepared by CEPT for AMC organises the vending zones into three categories; green, amber and red. People in Centre worked with SEWA team to collect data for Isanpur Town Planning area, to verify vendor-friendliness of the proposed scheme. The analysis showed that the red, amber and green zonations need to be reviewed, in terms of the demarcations. The present zonation scheme does not support vending as livelihood activity and focuses only on easy flow of vehicular traffic. As heavily concentrated vending areas would become red zone in the proposed scheme, vending would not be allowed on the wider streets. Such streets provide more possibilities for customer interactions than the smaller streets, and avoids direct clash for space with individual owners. However, in the current proposal, the vendors would be forced to move to narrower streets leading to direct confrontation with house owners, and also away from their potential clientèle who are mainly near public spaces and cross junctions."
+endYear: 2011
+
+themes:
+  - urban-space
+featured: false
+
+coverImage: /images/projects/analysis-of-proposed-street-vendors-scheme-for-ahmedabad-with-isanpur-tp-scheme-as-case-study/analysis-of-proposed-street-vendors-scheme-for-ahmedabad-with-isanpur-tp-scheme-as-case-study-cover.jpg
+
+---
+
+**People in Centre **carried out an analysis of the proposed Street Vendors’ Scheme for Ahmedabad to understand its implication on vendors. The scheme prepared by CEPT for AMC organises the vending zones into three categories; green, amber and red. People in Centre worked with SEWA team to collect data for Isanpur Town Planning area, to verify vendor-friendliness of the proposed scheme. The analysis showed that the red, amber and green zonations need to be reviewed, in terms of the demarcations. The present zonation scheme does not support vending as livelihood activity and focuses only on easy flow of vehicular traffic. As heavily concentrated vending areas would become red zone in the proposed scheme, vending would not be allowed on the wider streets. Such streets provide more possibilities for customer interactions than the smaller streets, and avoids direct clash for space with individual owners. However, in the current proposal, the vendors would be forced to move to narrower streets leading to direct confrontation with house owners, and also away from their potential clientèle who are mainly near public spaces and cross junctions.

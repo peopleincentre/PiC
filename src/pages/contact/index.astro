@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact Us">
+
+<main class="contact-page">
+
+<h1>Contact Us</h1>
+
+<p>
+  To connect with People in Centre, send a mail to
+  <a href="mailto:office@peopleincentre.org">office@peopleincentre.org</a>
+  or call at
+  <a href="tel:+918401604315">+91 8401604315</a>.
+</p>
+
+<div class="contact-card">
+  <h2>General Enquiries</h2>
+  <p>
+    <a href="mailto:office@peopleincentre.org">office@peopleincentre.org</a>
+  </p>
+  <p>
+    <a href="tel:+918401604315">+91 8401604315</a>
+  </p>
+</div>
+
+<div class="contact-card">
+  <h2>Office Administration & Accounts</h2>
+  <p>
+    <a href="mailto:assist@peopleincentre.org">assist@peopleincentre.org</a>
+  </p>
+</div>
+
+</main>
+
+</BaseLayout>
+
+<style>
+
+.contact-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.contact-page h1 {
+  margin-bottom: 1rem;
+  line-height: 2.5rem;
+}
+
+.contact-page p {
+  margin-bottom: 1rem;
+}
+
+.contact-page a {
+  color: var(--color-urban);
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.contact-card p {
+  margin: 0.4rem 0;
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 1.5rem 1rem;
+  }
+}
+
+</style>

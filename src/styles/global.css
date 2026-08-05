@@ -24,6 +24,7 @@ body {
 body {
   background: var(--color-bg);
   color: var(--color-text);
+  overflow-x: hidden;
 }
 
 h1,
@@ -65,44 +66,6 @@ h3 {
   .container {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-}
-
-.hero {
-  background: var(--color-surface);
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.hero h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 0;
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-}
-
-.hero-tagline {
-  margin-bottom: 0;
-}
-
-.hero-intro {
-  margin-bottom: 0;
-  max-width: 100%;
-}
-
-@media (max-width: 700px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-  .hero-content h1 {
-    font-size: 2rem;
   }
 }
 

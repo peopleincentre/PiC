@@ -1,21 +1,76 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = await getCollection("projects");
+
+const themeProjects = projects
+  .filter((project) =>
+    project.data.themes.includes("ecological-balance")
+  )
+  .sort(
+    (a, b) =>
+      (b.data.endYear ?? b.data.startYear ?? 0) -
+      (a.data.endYear ?? a.data.startYear ?? 0)
+  );
 ---
 
 <BaseLayout title="Restructuring Human Interventions for Ecological Balance">
 
-  <main>
+<h1>
+  Restructuring Human Interventions for Ecological Balance
+</h1>
 
-    <h1>
-      Restructuring Human Interventions for Ecological Balance
-    </h1>
+<p class="theme-intro">
+  Human interventions have brought us perilously close to destruction.
+  Environmental resources have been exploited and natural systems are under
+  severe threat of collapse. There is an urgent need to rethink our
+  interventions for sustainable use of environmental resources. This thematic
+  area focuses on planning and management of natural resources, particularly
+  water, vegetation and land. Our partners include Aga Khan Rural Support
+  Programme, Tata Trusts, WAPCOS, Hindustan Lever, Ambuja Foundation and others.
+</p>
 
-    <p>
-      Exploring sustainable relationships between people and
-      nature through water management, wastewater reuse,
-      ecological restoration and responsible interventions.
-    </p>
+<h2>
+  Projects
+</h2>
 
-  </main>
+<div class="project-grid">
+  {
+    themeProjects.map((project) => (
+      <ProjectCard project={project} />
+    ))
+  }
+</div>
 
 </BaseLayout>
+
+<style>
+
+.theme-intro {
+  max-width: 900px;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1100px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>

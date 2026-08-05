@@ -1,0 +1,151 @@
+---
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("projects");
+
+const COUNTRY_KEYWORDS = {
+  Afghanistan: /afghanistan/,
+  Bhutan: /bhutan/,
+  India: /india/,
+  Indonesia: /indonesia|sulawesi/,
+  Myanmar: /myanmar/,
+  Mozambique: /mozambique/,
+  Nepal: /nepal/,
+  Somalia: /somalia/,
+  "Sri Lanka": /sri\s*lanka|srilanka/,
+  "Timor-Leste": /timor[\s-]?leste/,
+};
+
+const countrySet = new Set();
+
+for (const project of allProjects) {
+  const { title, summary, description, location, country } = project.data;
+  const haystack = [title, summary, description, location, country]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+  for (const [name, pattern] of Object.entries(COUNTRY_KEYWORDS)) {
+    if (pattern.test(haystack)) countrySet.add(name);
+  }
+}
+
+const countryCount = countrySet.size;
+const projectCount = allProjects.length;
+---
+
+<section class="home-section impact-section">
+  <div class="section-header">
+    <h1>Our Impact</h1>
+    <p class="impact-subtitle">
+      Numbers from our work across geographies and thematic areas.
+    </p>
+  </div>
+
+  <div class="impact-grid">
+    <div class="impact-card">
+      <span class="impact-number">{countryCount}</span>
+      <span class="impact-label">Countries worked in</span>
+    </div>
+
+    <div class="impact-card impact-card-projects">
+      <span class="impact-number">{projectCount}</span>
+      <span class="impact-label">Projects managed</span>
+      <ul class="impact-categories">
+        <li>Assessment and evaluation</li>
+        <li>Project implementation and Facilitation</li>
+        <li>Research and Communication</li>
+      </ul>
+    </div>
+
+    <div class="impact-card">
+      <span class="impact-number">40,000+</span>
+      <span class="impact-label">Households supported</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .impact-section {
+    background: var(--color-surface);
+    padding: 3rem 2rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-header h1 {
+    margin: 0 0 0.5rem;
+  }
+
+  .impact-subtitle {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.95rem;
+  }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .impact-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 180px;
+  }
+
+  .impact-card-projects {
+    justify-content: flex-start;
+  }
+
+  .impact-number {
+    font-family: "Roboto Slab", serif;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    line-height: 1;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+  }
+
+  .impact-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7280;
+  }
+
+  .impact-categories {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    font-size: 0.8rem;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .impact-categories li::before {
+    content: "· ";
+    color: var(--color-urban);
+  }
+
+  @media (max-width: 800px) {
+    .impact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .impact-card {
+      min-height: 0;
+    }
+  }
+</style>

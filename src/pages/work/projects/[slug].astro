@@ -57,10 +57,12 @@ const { Content } = await render(project);
 
 	<div class="project-meta">
 
-		<div>
-			<strong>Country</strong>
-			<span>{country}</span>
-		</div>
+		{country && (
+			<div>
+				<strong>Country</strong>
+				<span>{country}</span>
+			</div>
+		)}
 
 	{location && (
     <div>
@@ -69,12 +71,16 @@ const { Content } = await render(project);
     </div>
   )}
 
-  <div>
-    <strong>Period</strong>
-    <span>
-      {endYear ? `${startYear}–${endYear}` : startYear}
-    </span>
-  </div>
+  {(startYear || endYear) && (
+    <div>
+      <strong>Period</strong>
+      <span>
+        {startYear && endYear
+          ? `${startYear}–${endYear}`
+          : endYear || startYear}
+      </span>
+    </div>
+  )}
 
 
 
@@ -136,6 +142,22 @@ const { Content } = await render(project);
 
 </BaseLayout>
 
+<script>
+  function setOrientation(img) {
+    const { naturalWidth, naturalHeight } = img;
+    if (!naturalWidth || !naturalHeight) return;
+    const cls = naturalWidth >= naturalHeight ? "is-landscape" : "is-portrait";
+    img.classList.add(cls);
+  }
+
+  document.querySelectorAll(".hero-image").forEach((img) => {
+    if (img.complete) {
+      setOrientation(img);
+    } else {
+      img.addEventListener("load", () => setOrientation(img));
+    }
+  });
+</script>
 
 <style>
 
@@ -147,12 +169,21 @@ const { Content } = await render(project);
 
 
 .hero-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
   display: block;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
+}
+
+.hero-image.is-landscape {
+  width: 100%;
+}
+
+.hero-image.is-portrait {
+  width: auto;
+  max-width: 80%;
+  max-height: 75vh;
 }
 
 

@@ -3,9 +3,26 @@ import { getCollection } from "astro:content";
 
 const base = import.meta.env.BASE_URL;
 
-const projects = (await getCollection("projects"))
-  .filter(({ data }) => data.featured)
-  ;
+const allProjects = await getCollection("projects");
+
+const byRecency = (list) =>
+  [...list].sort(
+    (a, b) =>
+      (b.data.endYear ?? b.data.startYear ?? 0) -
+      (a.data.endYear ?? a.data.startYear ?? 0)
+  );
+
+const featured = allProjects.filter(({ data }) => data.featured);
+
+const pickTheme = (themeId, count) =>
+  byRecency(
+    featured.filter((p) => (p.data.themes || []).includes(themeId))
+  ).slice(0, count);
+
+const projects = [
+  ...pickTheme("ecological-balance", 3),
+  ...pickTheme("resilience", 3),
+];
 ---
 
 <section class="home-section home-projects">
