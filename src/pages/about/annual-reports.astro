@@ -31,8 +31,7 @@ const reports = (await getCollection("annual-reports")).sort(
         loading="lazy"
       />
     )}
-    <h3>{report.data.title}</h3>
-    {report.data.summary && <p>{report.data.summary}</p>}
+        
     <span class="report-download">Download</span>
   </a>
 ))}

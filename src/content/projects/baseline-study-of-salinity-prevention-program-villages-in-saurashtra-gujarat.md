@@ -1,7 +1,7 @@
 ---
 title: Baseline Study of Salinity Prevention Program Villages in Saurashtra, Gujarat
-summary: "‘People in Centre’ Consulting undertook preparation of baseline information of the programme villages of Agakhan Rural Support Programme (India) under Kharah Vistarutthan Yojana (KVY) phase -3 supported by Sir Rattan Tata Trust. The study focused on Mangrol block of Junagadh, Bhatia region of Jamnagar and Ghed area of Porbandar. Alka P ‘People in Centre’ Consulting"
-description: "‘People in Centre’ Consulting undertook preparation of baseline information of the programme villages of Agakhan Rural Support Programme (India) under Kharah Vistarutthan Yojana (KVY) phase -3 supported by Sir Rattan Tata Trust. The study focused on Mangrol block of Junagadh, Bhatia region of Jamnagar and Ghed area of Porbandar."
+summary: "Prepared baseline information for the salinity-prevention programme villages of AKRSP (India) under KVY Phase-3 in Saurashtra, Gujarat."
+description: "People in Centre prepared baseline information for the programme villages of the Aga Khan Rural Support Programme (India) under the Kharah Vistarutthan Yojana (KVY) Phase-3, supported by the Sir Ratan Tata Trust. The study focused on the Mangrol block of Junagadh, the Bhatia region of Jamnagar and the Ghed area of Porbandar."
 endYear: 2012
 
 themes:
@@ -12,8 +12,4 @@ coverImage: /images/projects/baseline-study-of-salinity-prevention-program-villa
 
 ---
 
-‘People in Centre’ Consulting undertook preparation of baseline information of the programme villages of Agakhan Rural Support Programme (India) under Kharah Vistarutthan Yojana (KVY) phase -3 supported by Sir Rattan Tata Trust. The study focused on Mangrol block of Junagadh, Bhatia region of Jamnagar and Ghed area of Porbandar.
-
-Alka P
-
-‘People in Centre’ Consulting
+People in Centre prepared baseline information for the programme villages of the Aga Khan Rural Support Programme (India) under the Kharah Vistarutthan Yojana (KVY) Phase-3, supported by the Sir Ratan Tata Trust. The study focused on the Mangrol block of Junagadh, the Bhatia region of Jamnagar and the Ghed area of Porbandar.

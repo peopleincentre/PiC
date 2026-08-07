@@ -1,7 +1,7 @@
 ---
 title: Feasibility Study for Promoting Social Entrepreneurship for Water Treatment Systems
-summary: "PiC undertook a feasibility study to look into possibilities of promoting community based systems for water treatment through social entrpreneurship model. The study focused on Western Rajasthan and Kutch, Gujarat. Both these are arid and water scarce regions where drinking water quality is generally poor and there is need of treatment facilities. The report made…"
-description: PiC undertook a feasibility study to look into possibilities of promoting community based systems for water treatment through social entrpreneurship model. The study focused on Western Rajasthan and Kutch, Gujarat. Both these are arid and water scarce regions where drinking water quality is generally poor and there is need of treatment facilities. The report made recommendations on how social entrepreneurship could be promoted.
+summary: "Studied how community-based water treatment systems could be promoted through social entrepreneurship in the arid regions of Western Rajasthan and Kutch."
+description: "People in Centre undertook a feasibility study into the possibilities of promoting community-based systems for water treatment through a social entrepreneurship model. The study focused on Western Rajasthan and Kutch, Gujarat — arid, water-scarce regions where drinking water quality is generally poor and treatment facilities are needed. The report made recommendations on how social entrepreneurship could be promoted."
 endYear: 2013
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/feasibility-study-for-promoting-social-entrepreneur
 
 ---
 
-PiC undertook a feasibility study to look into possibilities of promoting community based systems for water treatment through social entrpreneurship model. The study focused on Western Rajasthan and Kutch, Gujarat. Both these are arid and water scarce regions where drinking water quality is generally poor and there is need of treatment facilities. The report made recommendations on how social entrepreneurship could be promoted.
+People in Centre undertook a feasibility study into the possibilities of promoting community-based systems for water treatment through a social entrepreneurship model. The study focused on Western Rajasthan and Kutch, Gujarat — arid, water-scarce regions where drinking water quality is generally poor and treatment facilities are needed. The report made recommendations on how social entrepreneurship could be promoted.

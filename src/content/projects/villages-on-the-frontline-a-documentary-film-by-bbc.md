@@ -1,7 +1,7 @@
 ---
 title: "Villages on the Frontline – A Documentary Film by BBC"
-summary: "Salinity ingress in coastal Saurasthra is a cause of great distress for the local communities. People face shortages of drinking water and frequent problems of health. BBC documentary series ’Villages on the Frontline' in 2007 focused an episode on Alka’s work on drinking water issues in coastal Gujarat. You can watch the BBC documentary here."
-description: "Salinity ingress in coastal Saurasthra is a cause of great distress for the local communities. People face shortages of drinking water and frequent problems of health. BBC documentary series ’Villages on the Frontline' in 2007 focused an episode on Alka’s work on drinking water issues in coastal Gujarat. You can watch the BBC documentary here."
+summary: "Featured an episode on drinking water issues in coastal Gujarat in the BBC documentary series 'Villages on the Frontline'."
+description: "Salinity ingress in coastal Saurashtra is a cause of great distress for local communities, who face shortages of drinking water and frequent health problems. The BBC documentary series 'Villages on the Frontline' (2007) focused an episode on Alka Palrecha's work on drinking water issues in coastal Gujarat. The documentary is available on request."
 endYear: 2009
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/villages-on-the-frontline-a-documentary-film-by-bbc
 
 ---
 
-Salinity ingress in coastal Saurasthra is a cause of great distress for the local communities. People face shortages of drinking water and frequent problems of health. BBC documentary series ’Villages on the Frontline' in 2007 focused an episode on Alka’s work on drinking water issues in coastal Gujarat. You can watch the BBC documentary here.
+Salinity ingress in coastal Saurashtra is a cause of great distress for local communities, who face shortages of drinking water and frequent health problems. The BBC documentary series 'Villages on the Frontline' (2007) focused an episode on Alka Palrecha's work on drinking water issues in coastal Gujarat. The documentary is available on request.

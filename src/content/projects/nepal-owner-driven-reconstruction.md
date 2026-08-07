@@ -1,9 +1,9 @@
 ---
 title: Nepal Owner-Driven Reconstruction
 
-summary: Technical and policy support to owner-driven reconstruction following the 2015 Nepal earthquake.
+summary: Provided technical and policy support to Nepal's owner-driven reconstruction following the 2015 earthquake.
 
-description: Support to reconstruction policy, technical guidance and capacity building.
+description: Support to reconstruction policy, technical guidance and capacity building for owner-driven reconstruction after the 2015 Nepal earthquake.
 
 country: Nepal
 location: Gorkha district
@@ -31,8 +31,6 @@ gallery:
 
 featured: true
 ---
-
-**Brief Description**
 
 Following the 2015 Gorkha Earthquake, Nepal adopted an owner-driven reconstruction approach for housing recovery. People in Centre supported the National Reconstruction Authority and development partners through technical guidance, policy inputs and capacity building.
 

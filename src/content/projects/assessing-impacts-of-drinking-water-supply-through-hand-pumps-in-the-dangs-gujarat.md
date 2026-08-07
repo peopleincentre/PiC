@@ -1,7 +1,7 @@
 ---
 title: Assessing Impacts of Drinking Water Supply through Hand Pumps in The Dangs, Gujarat
-summary: "WAPCOS Limited in collaboration with Dhruva BAIF and AKRSP (I) supported installation of hand pumps for drinking water supply in five water scarce villages of the Dangs district in Gujarat. ‘People in Centre’ Consulting assessed impact of this intervention on the families using these hand pumps. The assessment looked into social, economic, health and environmental…"
-description: "WAPCOS Limited in collaboration with Dhruva BAIF and AKRSP (I) supported installation of hand pumps for drinking water supply in five water scarce villages of the Dangs district in Gujarat. ‘People in Centre’ Consulting assessed impact of this intervention on the families using these hand pumps. The assessment looked into social, economic, health and environmental impacts. The report is [available here](_wp_link_placeholder)."
+summary: "Assessed the social, economic, health and environmental impacts of hand-pump drinking water supply in five water-scarce villages of the Dangs, Gujarat."
+description: "WAPCOS Limited, in collaboration with Dhruva BAIF and AKRSP (I), supported the installation of hand pumps for drinking water supply in five water-scarce villages of the Dangs district in Gujarat. People in Centre assessed the impact of this intervention on the families using these hand pumps, examining its social, economic, health and environmental effects. The report is available on request."
 endYear: 2013
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/assessing-impacts-of-drinking-water-supply-through-
 
 ---
 
-WAPCOS Limited in collaboration with Dhruva BAIF and AKRSP (I) supported installation of hand pumps for drinking water supply in five water scarce villages of the Dangs district in Gujarat. ‘People in Centre’ Consulting assessed impact of this intervention on the families using these hand pumps. The assessment looked into social, economic, health and environmental impacts. The report is [available here](_wp_link_placeholder).
+WAPCOS Limited, in collaboration with Dhruva BAIF and AKRSP (I), supported the installation of hand pumps for drinking water supply in five water-scarce villages of the Dangs district in Gujarat. People in Centre assessed the impact of this intervention on the families using these hand pumps, examining its social, economic, health and environmental effects. The report is available on request.

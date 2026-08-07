@@ -1,7 +1,7 @@
 ---
 title: Functionality and Management of Irrigation Typologies in the Dangs
-summary: People in Centre collaborated with Hindustan Lever Foundation and AKRSP(I) to undertake a study of irrigation systems in the Dangs, Gujarat and understand their functionality, management and associated costs. The report is available here.
-description: "People in Centre collaborated with Hindustan Lever Foundation and AKRSP(I) to undertake a study of irrigation systems in the Dangs, Gujarat and understand their functionality, management and associated costs. The report is available [here.](_wp_link_placeholder)"
+summary: "Collaborated with Hindustan Lever Foundation and AKRSP(I) to study the functionality, management and costs of irrigation systems in the Dangs, Gujarat."
+description: "People in Centre collaborated with Hindustan Lever Foundation and AKRSP(I) to undertake a study of irrigation systems in the Dangs, Gujarat and understand their functionality, management and associated costs. The report is available on request."
 endYear: 2016
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/functionality-and-management-of-irrigation-typologi
 
 ---
 
-People in Centre collaborated with Hindustan Lever Foundation and AKRSP(I) to undertake a study of irrigation systems in the Dangs, Gujarat and understand their functionality, management and associated costs. The report is available [here.](_wp_link_placeholder)
+People in Centre collaborated with Hindustan Lever Foundation and AKRSP(I) to undertake a study of irrigation systems in the Dangs, Gujarat and understand their functionality, management and associated costs. The report is available on request.

@@ -1,7 +1,7 @@
 ---
 title: Integrated Regional Development Status of Saurashtra, Gujarat
-summary: "A status report was prepared for Diamond Jubilee Trust on regional development status of Saurashtra region. The report looked on socio-economic development status of all the districts of Saurashtra focussing on economy, education, health, housing, water and sanitation and proposed a composite livelihood framework to understand comparative status of the communities across different districts. Report…"
-description: "A status report was prepared for Diamond Jubilee Trust on regional development status of Saurashtra region. The report looked on socio-economic development status of all the districts of Saurashtra focussing on economy, education, health, housing, water and sanitation and proposed a composite livelihood framework to understand comparative status of the communities across different districts.[Report is available here](https://badal.peopleincentre.org/s/5r5q4ndFApNCbyP)"
+summary: "Prepared a status report on the regional development of Saurashtra, proposing a composite livelihood framework across its districts."
+description: "A status report was prepared for the Diamond Jubilee Trust on the regional development status of the Saurashtra region. The report examined the socio-economic development status of all districts of Saurashtra, focusing on economy, education, health, housing, water and sanitation, and proposed a composite livelihood framework to understand the comparative status of communities across districts. [The report is available here](https://badal.peopleincentre.org/s/5r5q4ndFApNCbyP)."
 endYear: 2017
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/integrated-regional-development-status-of-saurashtr
 
 ---
 
-A status report was prepared for Diamond Jubilee Trust on regional development status of Saurashtra region. The report looked on socio-economic development status of all the districts of Saurashtra focussing on economy, education, health, housing, water and sanitation and proposed a composite livelihood framework to understand comparative status of the communities across different districts.[Report is available here](https://badal.peopleincentre.org/s/5r5q4ndFApNCbyP)
+A status report was prepared for the Diamond Jubilee Trust on the regional development status of the Saurashtra region. The report examined the socio-economic development status of all districts of Saurashtra, focusing on economy, education, health, housing, water and sanitation, and proposed a composite livelihood framework to understand the comparative status of communities across districts. [The report is available here](https://badal.peopleincentre.org/s/5r5q4ndFApNCbyP).

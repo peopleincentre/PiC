@@ -1,7 +1,7 @@
 ---
 title: Training Masons for Hazard Resistant Construction in Jammu & Kashmir
-summary: "People in Centre collaborated with TARU-VMS LLP to provide services to Jammu Tawi Flood Recovery Project (JTFRP). Towards this, training curriculum for trainers and resource material were prepared. The training of trainers was conducted in Srinagar in last week of July 2019. Handbooks for masons on stone masonry and confined masonry were also developed and…"
-description: People in Centre collaborated with TARU-VMS LLP to provide services to Jammu Tawi Flood Recovery Project (JTFRP). Towards this, training curriculum for trainers and resource material were prepared. The training of trainers was conducted in Srinagar in last week of July 2019. Handbooks for masons on stone masonry and confined masonry were also developed and shared with JTFRP for use by the masons.
+summary: "Prepared trainer curricula and mason handbooks for hazard-resistant construction under the Jammu Tawi Flood Recovery Project."
+description: People in Centre collaborated with TARU-VMS LLP to provide services to the Jammu Tawi Flood Recovery Project (JTFRP). Towards this, a training curriculum for trainers and resource material were prepared, and the training of trainers was conducted in Srinagar in the last week of July 2019. Handbooks for masons on stone masonry and confined masonry were also developed and shared with the JTFRP for use by masons.
 endYear: 2020
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/training-masons-for-hazard-resistant-construction-i
 
 ---
 
-People in Centre collaborated with TARU-VMS LLP to provide services to Jammu Tawi Flood Recovery Project (JTFRP). Towards this, training curriculum for trainers and resource material were prepared. The training of trainers was conducted in Srinagar in last week of July 2019. Handbooks for masons on stone masonry and confined masonry were also developed and shared with JTFRP for use by the masons.
+People in Centre collaborated with TARU-VMS LLP to provide services to the Jammu Tawi Flood Recovery Project (JTFRP). Towards this, a training curriculum for trainers and resource material were prepared, and the training of trainers was conducted in Srinagar in the last week of July 2019. Handbooks for masons on stone masonry and confined masonry were also developed and shared with the JTFRP for use by masons.

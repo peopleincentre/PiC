@@ -1,10 +1,8 @@
 ---
 title: "Assessing Damage after Disasters – A Participatory Framework and Toolkit"
-summary: "Damage assessment is a critical issue after the disasters as it lays foundation for subsequent reconstruction processes. It is critical that affected community can participate in damage assessment. Therefore, the methodology for damage assessment has to be credible, transparent, inclusive, flexible and participatory. It is with this perspective, myself and Dinesh Prajapati with UNNATI support…"
+summary: "Developed a participatory damage assessment toolkit with UNNATI so that affected communities can be actively involved in post-disaster assessment."
 description: |
-  Damage assessment is a critical issue after the disasters as it lays foundation for subsequent reconstruction processes. It is critical that affected community can participate in damage assessment. Therefore, the methodology for damage assessment has to be credible, transparent, inclusive, flexible and participatory. It is with this perspective, myself and Dinesh Prajapati with UNNATI support developed a toolkit for the same. This damage assessment toolkit has been published by UNNATI, Ahmedabad. It is 
-  [available here](http://www.peopleincentre.org/documents/damage_assessment_toolkit.pdf)
-   for download and use. Feedback and comments are welcome.
+  Damage assessment lays the foundation for all subsequent reconstruction processes, so it is critical that affected communities can participate in it. The methodology must therefore be credible, transparent, inclusive, flexible and participatory. With this perspective, Vivek Rawal and Dinesh Prajapati, with UNNATI's support, developed a damage assessment toolkit, published by UNNATI, Ahmedabad. It is [available here](http://www.peopleincentre.org/documents/damage_assessment_toolkit.pdf) for download and use, and is also available at the Library of Congress (LCCN: [2008330618](http://lccn.loc.gov/2008330618)). Feedback and comments are welcome.
 endYear: 2007
 
 themes:
@@ -13,14 +11,4 @@ featured: false
 
 ---
 
-Damage assessment is a critical issue after the disasters as it lays foundation for subsequent reconstruction processes. It is critical that affected community can participate in damage assessment. Therefore, the methodology for damage assessment has to be credible, transparent, inclusive, flexible and participatory. It is with this perspective, myself and Dinesh Prajapati with UNNATI support developed a toolkit for the same. This damage assessment toolkit has been published by UNNATI, Ahmedabad. It is 
-[available here](http://www.peopleincentre.org/documents/damage_assessment_toolkit.pdf)
- for download and use. Feedback and comments are welcome.
-
-It is also available at Library of Congress (LCCN: 
-[2008330618](http://lccn.loc.gov/2008330618)
- and LC: HV551.5.A-ZI+)
-
-Vivek R
-
-‘People in Centre’ Consulting
+Damage assessment lays the foundation for all subsequent reconstruction processes, so it is critical that affected communities can participate in it. The methodology must therefore be credible, transparent, inclusive, flexible and participatory. With this perspective, Vivek Rawal and Dinesh Prajapati, with UNNATI's support, developed a damage assessment toolkit, published by UNNATI, Ahmedabad. It is [available here](http://www.peopleincentre.org/documents/damage_assessment_toolkit.pdf) for download and use, and is also available at the Library of Congress (LCCN: [2008330618](http://lccn.loc.gov/2008330618)). Feedback and comments are welcome.

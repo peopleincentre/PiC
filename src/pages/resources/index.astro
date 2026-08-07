@@ -25,6 +25,7 @@ const paperThemes = [
 
 const videoGroups = [
   {
+    id: "videos-water",
     title: "On Water and Wastewater",
     accent: "var(--color-ecology)",
     youtubeIds: [
@@ -37,6 +38,7 @@ const videoGroups = [
     ],
   },
   {
+    id: "videos-housing",
     title: "On Post Disaster Housing Reconstruction",
     accent: "var(--color-resilience)",
     youtubeIds: ["kw-mK5uV5v8"],
@@ -53,6 +55,12 @@ function paperLink(pdf) {
   return (pdf || "").startsWith("http") ? pdf : null;
 }
 
+function linkType(url) {
+  const u = (url || "").trim().toLowerCase();
+  if (!u) return null;
+  return u.split("?")[0].endsWith(".pdf") ? "pdf" : "download";
+}
+
 const videoById = new Map(videos.map((v) => [v.data.youtube, v]));
 const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
 
@@ -67,6 +75,26 @@ const iconDoc = `
 const iconPlay = `
   <svg class="tab-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
     <path fill="currentColor" d="M8 5.14v13.72c0 .8.87 1.3 1.56.88l11-6.86a1.04 1.04 0 0 0 0-1.76l-11-6.86A1.03 1.03 0 0 0 8 5.14z"/>
+  </svg>`;
+
+const iconPdf = `
+  <svg class="icon-btn-svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+    <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+    <path d="M12 18v-6"/>
+    <path d="m9 15 3 3 3-3"/>
+  </svg>`;
+
+const iconDownload = `
+  <svg class="icon-btn-svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <path d="m7 10 5 5 5-5"/>
+    <path d="M12 15V3"/>
+  </svg>`;
+
+const iconQuote = `
+  <svg class="icon-btn-svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path fill="currentColor" d="M6 17h3l2-4V7H5v6h3l-2 4zm8 0h3l2-4V7h-6v6h3l-2 4z"/>
   </svg>`;
 
 const themeIcons = {
@@ -132,6 +160,43 @@ const themeIcons = {
   </button>
 </div>
 
+<nav
+  class="theme-nav"
+  id="theme-nav-papers"
+  aria-label="Jump to thematic area"
+>
+  {paperThemes.map((theme) => (
+    <button
+      class="theme-pill"
+      type="button"
+      data-target-group={`papers-${theme.id}`}
+      style={`--pill-accent: ${theme.accent}`}
+    >
+      <span class="pill-dot" aria-hidden="true"></span>
+      {theme.label}
+    </button>
+  ))}
+</nav>
+
+<nav
+  class="theme-nav"
+  id="theme-nav-videos"
+  aria-label="Jump to video theme"
+  hidden
+>
+  {videoGroups.map((group) => (
+    <button
+      class="theme-pill"
+      type="button"
+      data-target-group={group.id}
+      style={`--pill-accent: ${group.accent}`}
+    >
+      <span class="pill-dot" aria-hidden="true"></span>
+      {group.title}
+    </button>
+  ))}
+</nav>
+
 <section
   class="tab-panel"
   id="panel-papers"
@@ -147,6 +212,7 @@ const themeIcons = {
     return (
       <div
         class="group"
+        id={`papers-${theme.id}`}
         style={`--accent: ${theme.accent}`}
       >
         <h3>
@@ -160,21 +226,62 @@ const themeIcons = {
         <ul class="papers-grid">
           {themePapers.map((paper) => {
             const link = paperLink(paper.data.pdf);
+            const linkKind = link ? linkType(link) : null;
             return (
               <li class="paper-card">
                 <span class="paper-year">{paper.data.year}</span>
                 <span class="paper-citation">{paper.data.summary}</span>
-                {link && (
-                  <a
-                    class="paper-link"
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View resource
-                    <span class="arrow" aria-hidden="true">→</span>
-                  </a>
-                )}
+                <div class="paper-actions">
+                  {linkKind === "pdf" && (
+                    <a
+                      class="paper-icon-btn paper-pdf-link"
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open PDF"
+                      title="Open PDF"
+                    >
+                      <Fragment set:html={iconPdf} />
+                    </a>
+                  )}
+                  {linkKind === "download" && (
+                    <a
+                      class="paper-icon-btn paper-download-link"
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Download resource"
+                      title="Download resource"
+                    >
+                      <Fragment set:html={iconDownload} />
+                    </a>
+                  )}
+                  <div class="cite-wrap">
+                    <button
+                      class="paper-icon-btn cite-btn"
+                      type="button"
+                      aria-label="Export citation (Zotero or BibTeX)"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      title="Export citation (Zotero or BibTeX)"
+                      data-authors={paper.data.authors}
+                      data-year={paper.data.year}
+                      data-title={paper.data.title}
+                      data-url={link || ""}
+                      data-summary={paper.data.summary}
+                    >
+                      <Fragment set:html={iconQuote} />
+                    </button>
+                    <div class="citation-popover" role="menu" hidden>
+                      <button type="button" role="menuitem" data-format="ris">
+                        Zotero (.ris)
+                      </button>
+                      <button type="button" role="menuitem" data-format="bib">
+                        BibTeX (.bib)
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </li>
             );
           })}
@@ -216,6 +323,7 @@ const themeIcons = {
     return (
       <div
         class="group"
+        id={group.id}
         style={`--accent: ${group.accent}`}
       >
         <h3>
@@ -275,9 +383,190 @@ const themeIcons = {
       }
     });
 
+    toggleThemeNav(target);
+    setupScrollSpy(target);
+
     const activeTab = tabs.find((tab) => tab.dataset.target === target);
     if (activeTab) {
       activeTab.focus();
+    }
+  }
+
+  /* Theme selector nav */
+
+  const themeNavs = {
+    papers: document.querySelector("#theme-nav-papers"),
+    videos: document.querySelector("#theme-nav-videos"),
+  };
+
+  const groupSets = {
+    papers: Array.from(document.querySelectorAll('[id^="papers-"]')),
+    videos: Array.from(document.querySelectorAll('[id^="videos-"]')),
+  };
+
+  function toggleThemeNav(target) {
+    if (!themeNavs.papers || !themeNavs.videos) return;
+    themeNavs.papers.hidden = target !== "papers";
+    themeNavs.videos.hidden = target !== "videos";
+  }
+
+  let spyObserver = null;
+
+  function setupScrollSpy(target) {
+    if (spyObserver) spyObserver.disconnect();
+    spyObserver = null;
+    const nav = themeNavs[target];
+    const groups = groupSets[target];
+    if (!nav || !groups || groups.length === 0) return;
+
+    const pills = Array.from(nav.querySelectorAll(".theme-pill"));
+    pills.forEach((pill) => pill.classList.remove("is-active"));
+
+    spyObserver = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+          );
+        const current = visible[0];
+        if (!current) return;
+        const id = current.target.id;
+        pills.forEach((pill) => {
+          pill.classList.toggle(
+            "is-active",
+            pill.dataset.targetGroup === id
+          );
+        });
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+    );
+
+    groups.forEach((group) => spyObserver.observe(group));
+  }
+
+  document.querySelectorAll(".theme-pill").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const target = document.getElementById(pill.dataset.targetGroup);
+      if (!target) return;
+      const header = document.querySelector("header");
+      const nav = document.querySelector(".theme-nav:not([hidden])");
+      let offset = header ? header.offsetHeight : 0;
+      if (nav && getComputedStyle(nav).position === "sticky") {
+        offset += nav.offsetHeight;
+      }
+      const top = target.getBoundingClientRect().top + window.scrollY - offset - 12;
+      window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
+    });
+  });
+
+  /* Citation export popover */
+
+  const citeBtns = Array.from(document.querySelectorAll(".cite-btn"));
+
+  function closeAllPopovers(except) {
+    citeBtns.forEach((btn) => {
+      if (btn === except) return;
+      btn.setAttribute("aria-expanded", "false");
+      const pop = btn.parentElement.querySelector(".citation-popover");
+      if (pop) pop.hidden = true;
+    });
+  }
+
+  citeBtns.forEach((btn) => {
+    const pop = btn.parentElement.querySelector(".citation-popover");
+
+    btn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      closeAllPopovers(btn);
+      const nowOpen = !expanded;
+      btn.setAttribute("aria-expanded", nowOpen ? "true" : "false");
+      if (pop) pop.hidden = !nowOpen;
+    });
+
+    if (pop) {
+      pop.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const item = event.target.closest("[data-format]");
+        if (!item) return;
+        exportCitation(btn, item.dataset.format);
+        btn.setAttribute("aria-expanded", "false");
+        pop.hidden = true;
+      });
+    }
+  });
+
+  document.addEventListener("click", () => closeAllPopovers(null));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeAllPopovers(null);
+  });
+
+  function splitAuthors(authors) {
+    if (!authors) return [];
+    return authors
+      .split(/\s*(?:&|and)\s*|,\s*/i)
+      .map((part) => part.replace(/^[,.\s]+|[,.\s]+$/g, "").trim())
+      .filter(Boolean);
+  }
+
+  function bibKey(authors, year) {
+    const first = splitAuthors(authors)[0] || "paper";
+    const surname = first.split(",")[0].trim().toLowerCase();
+    const clean = surname.replace(/[^a-z]/g, "") || "paper";
+    return year ? `${clean}${year}` : clean;
+  }
+
+  function escapeBib(text) {
+    return String(text || "")
+      .replace(/\\/g, "\\\\")
+      .replace(/([&%#_~])/g, "\\$1");
+  }
+
+  function downloadFile(filename, content, mime) {
+    const blob = new Blob([content], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function exportCitation(btn, format) {
+    const authors = splitAuthors(btn.dataset.authors);
+    const year = parseInt(btn.dataset.year, 10) || "";
+    const title = btn.dataset.title || "";
+    const url = btn.dataset.url || "";
+    const summary = btn.dataset.summary || "";
+    const key = bibKey(btn.dataset.authors, year);
+
+    if (format === "bib") {
+      const lines = [
+        `@misc{${key},`,
+        `  author = {${authors.join(" and ")}},`,
+        `  title = {${escapeBib(title)}},`,
+      ];
+      if (year) lines.push(`  year = {${year}},`);
+      if (url) lines.push(`  url = {${url}},`);
+      lines.push(`  note = {${escapeBib(summary)}}`);
+      lines.push("}");
+      downloadFile(`${key}.bib`, lines.join("\n"), "application/x-bibtex");
+    } else {
+      const lines = ["TY  - GEN"];
+      authors.forEach((a) => lines.push(`AU  - ${a}`));
+      if (year) lines.push(`PY  - ${year}`);
+      lines.push(`TI  - ${title}`);
+      if (url) lines.push(`UR  - ${url}`);
+      if (summary) lines.push(`AB  - ${summary}`);
+      lines.push("ER  - ");
+      downloadFile(
+        `${key}.ris`,
+        lines.join("\n"),
+        "application/x-research-info-systems"
+      );
     }
   }
 
@@ -351,7 +640,7 @@ const themeIcons = {
   background: #e8ecee;
   padding: 0.375rem;
   border-radius: 999px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
   flex-wrap: wrap;
 }
 
@@ -402,6 +691,68 @@ const themeIcons = {
 .tab[aria-selected="true"] .tab-count {
   background: rgba(255, 255, 255, 0.22);
   color: #fff;
+}
+
+/* Theme selector nav */
+
+.theme-nav[hidden] {
+  display: none;
+}
+
+.theme-nav {
+  position: sticky;
+  top: 74px;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.7rem 0 0.85rem;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.theme-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.theme-pill:hover {
+  border-color: var(--pill-accent);
+  color: var(--pill-accent);
+}
+
+.theme-pill.is-active {
+  background: var(--pill-accent);
+  border-color: var(--pill-accent);
+  color: #fff;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--pill-accent) 35%, transparent);
+}
+
+.pill-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pill-accent);
+  flex-shrink: 0;
+}
+
+.theme-pill.is-active .pill-dot {
+  background: #fff;
 }
 
 /* Panels */
@@ -499,23 +850,106 @@ const themeIcons = {
   color: var(--color-text);
 }
 
-.paper-link {
-  align-self: flex-start;
+.paper-actions {
   margin-top: auto;
-  font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.paper-icon-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
-.paper-link .arrow {
-  transition: transform 0.2s ease;
+.paper-pdf-link {
+  color: #e02b22;
 }
 
-.paper-link:hover .arrow {
-  transform: translateX(3px);
+.paper-download-link {
+  color: #2563eb;
+}
+
+.cite-btn {
+  color: #0f766e;
+}
+
+.paper-pdf-link:hover,
+.paper-pdf-link:focus-visible {
+  color: #c2231b;
+  border-color: #e02b22;
+  background: #fdf1f0;
+}
+
+.paper-download-link:hover,
+.paper-download-link:focus-visible {
+  color: #1d4fd7;
+  border-color: #2563eb;
+  background: #eef3fe;
+}
+
+.cite-btn:hover,
+.cite-btn:focus-visible {
+  color: #0a5d5b;
+  border-color: #0f766e;
+  background: #eef9f8;
+}
+
+.paper-icon-btn:focus-visible {
+  outline: none;
+}
+
+.icon-btn-svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.cite-wrap {
+  position: relative;
+}
+
+.citation-popover {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  min-width: 150px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  padding: 0.35rem;
+  z-index: 30;
+}
+
+.citation-popover button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  padding: 0.5rem 0.75rem;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.citation-popover button:hover {
+  background: color-mix(in srgb, var(--accent) 12%, #fff);
+  color: var(--accent);
 }
 
 /* Videos */
@@ -665,6 +1099,16 @@ const themeIcons = {
 
   .group-count {
     display: none;
+  }
+
+  .theme-nav {
+    position: static;
+    margin-bottom: 1.25rem;
+  }
+
+  .theme-pill {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
   }
 }
 

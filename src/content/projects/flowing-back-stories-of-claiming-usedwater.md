@@ -1,6 +1,6 @@
 ---
 title: "Flowing Back: Stories of Claiming Usedwater"
-summary: Usedwater reuse for the farmers is essential for their livelihoods and they are the first claimants. However, the policy framework needs to be supportive. The film identifies challenges and examples to learn from.
+summary: "The film examines urban–rural water inequities and the informal yet essential use of wastewater by farmers, identifying challenges and examples of claiming used water."
 description: "The film examines urban–rural water inequities, unrecognised wastewater users, policy gaps, and the conveyance of wastewater from cities to villages. It foregrounds the informal yet essential use of wastewater by farmers for irrigation, a practice that persists despite limited institutional support and contributes largely to food security and livelihoods."
 endYear: 2026
 

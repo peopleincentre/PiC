@@ -1,7 +1,7 @@
 ---
 title: Facilitating Transitional Shelters for Earthquake Affected Communities in Afghanistan
-summary: "People in Centre is providing UNDP technical support for providing transitional shelter support to the earthquake affected families in Chahak village of Herat province in Afghanistan. More than two hundred transitional shelters were built by the affected families themselves with financial assistance from UNDP and technical guidelines by PiC. The transitional shelters were built using…"
-description: People in Centre is providing UNDP technical support for providing transitional shelter support to the earthquake affected families in Chahak village of Herat province in Afghanistan. More than two hundred transitional shelters were built by the affected families themselves with financial assistance from UNDP and technical guidelines by PiC. The transitional shelters were built using the salvaged adobe blocks and additional materials like bamboo, wooden poles, planks and CGI sheets. All the families were safely sheltered before severe winter season.
+summary: "Provided UNDP technical support that enabled over 200 earthquake-affected families in Chahak, Afghanistan to build transitional shelters before winter."
+description: "People in Centre provided UNDP technical support for transitional shelter to families affected by the earthquake in Chahak village of Herat province, Afghanistan. More than two hundred transitional shelters were built by the affected families themselves, with financial assistance from UNDP and technical guidelines from People in Centre. The shelters were built using salvaged adobe blocks and additional materials such as bamboo, wooden poles, planks and CGI sheets, ensuring that all families were safely sheltered before the severe winter season."
 endYear: 2024
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/facilitating-transitional-shelters-for-earthquake-a
 
 ---
 
-People in Centre is providing UNDP technical support for providing transitional shelter support to the earthquake affected families in Chahak village of Herat province in Afghanistan. More than two hundred transitional shelters were built by the affected families themselves with financial assistance from UNDP and technical guidelines by PiC. The transitional shelters were built using the salvaged adobe blocks and additional materials like bamboo, wooden poles, planks and CGI sheets. All the families were safely sheltered before severe winter season.
+People in Centre provided UNDP technical support for transitional shelter to families affected by the earthquake in Chahak village of Herat province, Afghanistan. More than two hundred transitional shelters were built by the affected families themselves, with financial assistance from UNDP and technical guidelines from People in Centre. The shelters were built using salvaged adobe blocks and additional materials such as bamboo, wooden poles, planks and CGI sheets, ensuring that all families were safely sheltered before the severe winter season.

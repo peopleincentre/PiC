@@ -2,9 +2,9 @@
 
 title: Facilitating Transitional Shelters after the 2025 Sagaing Earthquake in Myanmar
 
-summary: Technical advice and guidance to reconstruct transitional housing for the affected families.
+summary: Prepared design options and technical guidelines for wooden-bamboo transitional shelters after the 2025 Sagaing earthquake in Myanmar.
 
-description: Technical support for transitional shelter reconstruction following the 2025 Sagaing earthquake.
+description: Technical support to reconstruct transitional shelters for families affected by the 2025 Sagaing earthquake.
 
 country: Myanmar
 location: Sagaing
@@ -40,4 +40,4 @@ featured: true
 ---
 **Brief Description**
 
-7.7M earthquake on March 28, 2025 and multiple aftershocks damaged homes of more than 50000 families – collapsed or rendered unusable. Families were staying in highly inadequate makeshift shelters made with plastic sheets or tarpaulins. People in Centre collaborated with UNDP to quickly prepare design options and technical guidelines for wooden-bamboo houses after studying the vernacular housing typologies, damage patterns, and consultation with the affected families. We supported UNDP to establish an owner driven framework for supporting the families in building these houses using whatever salvage material they had and incorporating hazard resilient features.
+A 7.7 magnitude earthquake on March 28, 2025 and multiple aftershocks damaged or rendered unusable the homes of more than 50,000 families, who were left staying in highly inadequate makeshift shelters made of plastic sheets or tarpaulins. People in Centre collaborated with UNDP to quickly prepare design options and technical guidelines for wooden-bamboo houses, based on a study of vernacular housing typologies, damage patterns and consultations with affected families. People in Centre supported UNDP to establish an owner-driven framework for supporting families in building these houses using whatever salvage material they had and incorporating hazard-resilient features.

@@ -1,9 +1,8 @@
 ---
 title: Training Course on Stabilised Rammed Earth Construction
-summary: "‘People in Centre’ Consulting collaborated with Hunnarshala to design and conduct a two-week training course on Stabilised Rammed Earth during May 27 to July 8, 2013 at Bhuj. PiC developed design of training modules, communication material, learning and reference material and conducted the training sessions. About 20 participants from various parts of India, US and…"
+summary: "Designed and conducted a two-week training course on stabilised rammed earth construction in Bhuj with Hunnarshala."
 description: |
-  ‘People in Centre’ Consulting
-   collaborated with Hunnarshala to design and conduct a two-week training course on Stabilised Rammed Earth during May 27 to July 8, 2013 at Bhuj. PiC developed design of training modules, communication material, learning and reference material and conducted the training sessions. About 20 participants from various parts of India, US and Cambodia participated.
+  People in Centre collaborated with Hunnarshala to design and conduct a two-week training course on Stabilised Rammed Earth, held from May 27 to July 8, 2013 at Bhuj. People in Centre developed the design of training modules, communication material, and learning and reference material, and conducted the training sessions. About 20 participants from various parts of India, the US and Cambodia participated.
 endYear: 2013
 
 themes:
@@ -14,5 +13,4 @@ coverImage: /images/projects/training-course-on-stabilised-rammed-earth-construc
 
 ---
 
-‘People in Centre’ Consulting
- collaborated with Hunnarshala to design and conduct a two-week training course on Stabilised Rammed Earth during May 27 to July 8, 2013 at Bhuj. PiC developed design of training modules, communication material, learning and reference material and conducted the training sessions. About 20 participants from various parts of India, US and Cambodia participated.
+People in Centre collaborated with Hunnarshala to design and conduct a two-week training course on Stabilised Rammed Earth, held from May 27 to July 8, 2013 at Bhuj. People in Centre developed the design of training modules, communication material, and learning and reference material, and conducted the training sessions. About 20 participants from various parts of India, the US and Cambodia participated.

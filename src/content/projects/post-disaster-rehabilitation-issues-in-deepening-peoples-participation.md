@@ -1,10 +1,8 @@
 ---
 title: "Post Disaster Rehabilitation – Issues in Deepening People’s Participation"
-summary: "A short article was coauthored by Binoy Acharya (UNNATI) and myself on issues of participation in post disaster reconstruction at critical stages such as damage assessment, interim shelters and permanent shelters drawing upon experiences of past disasters in India. This article is available here for download. Vivek R ‘People in Centre’ Consulting"
+summary: "Co-authored an article on deepening people's participation in post-disaster reconstruction, drawing on experiences from past disasters in India."
 description: |
-  A short article was coauthored by Binoy Acharya (UNNATI) and myself on issues of participation in post disaster reconstruction at critical stages such as damage assessment, interim shelters and permanent shelters drawing upon experiences of past disasters in India. This article is available here for 
-  [download](http://www.peopleincentre.org/documents/pdr_participation.pdf)
-  .
+  A short article was co-authored by Binoy Acharya (UNNATI) and People in Centre on issues of participation in post-disaster reconstruction at critical stages such as damage assessment, interim shelters and permanent shelters, drawing upon experiences of past disasters in India. This article is available for [download](http://www.peopleincentre.org/documents/pdr_participation.pdf).
 endYear: 2006
 
 themes:
@@ -13,10 +11,4 @@ featured: false
 
 ---
 
-A short article was coauthored by Binoy Acharya (UNNATI) and myself on issues of participation in post disaster reconstruction at critical stages such as damage assessment, interim shelters and permanent shelters drawing upon experiences of past disasters in India. This article is available here for 
-[download](http://www.peopleincentre.org/documents/pdr_participation.pdf)
-.
-
-Vivek R
-
-‘People in Centre’ Consulting
+A short article was co-authored by Binoy Acharya (UNNATI) and People in Centre on issues of participation in post-disaster reconstruction at critical stages such as damage assessment, interim shelters and permanent shelters, drawing upon experiences of past disasters in India. This article is available for [download](http://www.peopleincentre.org/documents/pdr_participation.pdf).

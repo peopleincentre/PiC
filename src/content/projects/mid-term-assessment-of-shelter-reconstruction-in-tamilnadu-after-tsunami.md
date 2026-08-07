@@ -1,12 +1,8 @@
 ---
 title: Mid-term Assessment of Shelter Reconstruction in Tamilnadu after Tsunami
-summary: "Mid-term assessment of shelter reconstruction after tsunami in Tamilnadu was undertaken by Hunnarshala and coordinated by me. This assessment was mandated by Government of Tamilnadu and United Nations team for Tsunami Recovery Support (UNTRS). The assessment reports are available in two parts. The first part is available here and second part is available here. Vivek…"
+summary: "Coordinated a mid-term assessment of post-tsunami shelter reconstruction in Tamil Nadu mandated by the Government and UNTRS."
 description: |
-  Mid-term assessment of shelter reconstruction after tsunami in Tamilnadu was undertaken by Hunnarshala and coordinated by me. This assessment was mandated by Government of Tamilnadu and United Nations team for Tsunami Recovery Support (UNTRS). The assessment reports are available in two parts. The 
-  first part
-   is available [here](http://www.un.org.in/untrs/reports/Mid%20Term%20Shelter%20Assessment%20Tamil%20Nadu.pdf) and 
-  second part
-   is available [here](http://www.un.org.in/untrs/reports/Shelter_Assessment_part_2.pdf).
+  The mid-term assessment of shelter reconstruction after the tsunami in Tamil Nadu was undertaken by Hunnarshala and coordinated by People in Centre. The assessment was mandated by the Government of Tamil Nadu and the United Nations Team for Tsunami Recovery Support (UNTRS). The assessment reports are available in two parts — the [first part](http://www.un.org.in/untrs/reports/Mid%20Term%20Shelter%20Assessment%20Tamil%20Nadu.pdf) and the [second part](http://www.un.org.in/untrs/reports/Shelter_Assessment_part_2.pdf).
 endYear: 2006
 
 themes:
@@ -15,12 +11,4 @@ featured: false
 
 ---
 
-Mid-term assessment of shelter reconstruction after tsunami in Tamilnadu was undertaken by Hunnarshala and coordinated by me. This assessment was mandated by Government of Tamilnadu and United Nations team for Tsunami Recovery Support (UNTRS). The assessment reports are available in two parts. The 
-first part
- is available [here](http://www.un.org.in/untrs/reports/Mid%20Term%20Shelter%20Assessment%20Tamil%20Nadu.pdf) and 
-second part
- is available [here](http://www.un.org.in/untrs/reports/Shelter_Assessment_part_2.pdf).
-
-Vivek R
-
-‘People in Centre’ Consulting
+The mid-term assessment of shelter reconstruction after the tsunami in Tamil Nadu was undertaken by Hunnarshala and coordinated by People in Centre. The assessment was mandated by the Government of Tamil Nadu and the United Nations Team for Tsunami Recovery Support (UNTRS). The assessment reports are available in two parts — the [first part](http://www.un.org.in/untrs/reports/Mid%20Term%20Shelter%20Assessment%20Tamil%20Nadu.pdf) and the [second part](http://www.un.org.in/untrs/reports/Shelter_Assessment_part_2.pdf).

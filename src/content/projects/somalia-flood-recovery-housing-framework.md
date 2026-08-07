@@ -1,7 +1,7 @@
 ---
 title: Housing Recovery Framework following the 2023 Deyr Floods in Somalia
 
-summary: Development of a housing recovery framework to support reconstruction and repair of flood-damaged homes in Somalia following the 2023 Deyr floods.
+summary: Developed a housing recovery framework to support reconstruction and repair of flood-damaged homes in Somalia following the 2023 Deyr floods.
 
 description: Technical support to assess housing damage and develop a framework for resilient housing recovery following the 2023 Deyr floods in Somalia.
 
@@ -31,8 +31,6 @@ gallery:
 
 featured: true
 ---
-**Brief Description**
-
 The 2023 Deyr floods caused widespread destruction across Somalia, damaging homes, livelihoods and essential infrastructure. Thousands of families were displaced as floodwaters affected settlements along river systems and low-lying areas, creating an urgent need for housing recovery and reconstruction support.
 
 People in Centre supported UNDP Somalia in assessing housing damage and developing a framework for resilient housing recovery. The work combined field assessments, stakeholder consultations and analysis of housing needs across affected districts. Particular attention was given to understanding the scale of damage, the needs of vulnerable households and opportunities to reduce future flood risks through improved housing and settlement planning.

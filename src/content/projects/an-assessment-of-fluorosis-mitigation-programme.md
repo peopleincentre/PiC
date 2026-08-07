@@ -1,7 +1,7 @@
 ---
 title: An Assessment of Fluorosis Mitigation Programme
-summary: "An assessment of fluorosis mitigation programme implemented by INREM Foundation and supported by Sir Ratan Tata Trust was carried out during February to April 2013. This programme is implemented in tribal villages of Jhabua district (Madhya Pradesh). The project aimed at mitigating effects of fluorosis caused by poor quality of water through improvements in nutrition…"
-description: "An assessment of fluorosis mitigation programme implemented by INREM Foundation and supported by Sir Ratan Tata Trust was carried out during February to April 2013. This programme is implemented in tribal villages of Jhabua district (Madhya Pradesh). The project aimed at mitigating effects of fluorosis caused by poor quality of water through improvements in nutrition particularly of children. The report may be [accessed here.](_wp_link_placeholder)"
+summary: "Assessed a Sir Ratan Tata Trust-supported programme mitigating fluorosis in the tribal villages of Jhabua district, Madhya Pradesh, through improved nutrition for children."
+description: "People in Centre assessed the fluorosis mitigation programme implemented by INREM Foundation and supported by Sir Ratan Tata Trust in the tribal villages of Jhabua district, Madhya Pradesh, between February and April 2013. The programme aimed to mitigate the effects of fluorosis — caused by poor-quality water — through improvements in nutrition, particularly for children. The report is available on request."
 endYear: 2013
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/an-assessment-of-fluorosis-mitigation-programme/an-
 
 ---
 
-An assessment of fluorosis mitigation programme implemented by INREM Foundation and supported by Sir Ratan Tata Trust was carried out during February to April 2013. This programme is implemented in tribal villages of Jhabua district (Madhya Pradesh). The project aimed at mitigating effects of fluorosis caused by poor quality of water through improvements in nutrition particularly of children. The report may be [accessed here.](_wp_link_placeholder)
+People in Centre assessed the fluorosis mitigation programme implemented by INREM Foundation and supported by Sir Ratan Tata Trust in the tribal villages of Jhabua district, Madhya Pradesh, between February and April 2013. The programme aimed to mitigate the effects of fluorosis — caused by poor-quality water — through improvements in nutrition, particularly for children. The report is available on request.

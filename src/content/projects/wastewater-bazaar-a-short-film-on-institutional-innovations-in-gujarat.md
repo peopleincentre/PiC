@@ -1,7 +1,7 @@
 ---
 title: "Wastewater Bazaar – a Short Film on Institutional Innovations in Gujarat"
-summary: PiC and IWMI-Tata program have been collaborating on studying and developing a perspective on use of wastewater generated in the cities for agriculture in peri-urban villages. A short film produced by PiC and IWMI documents the innovations by municipalities in Gujarat for managing the wastewater.
-description: PiC and IWMI-Tata program have been collaborating on studying and developing a perspective on use of wastewater generated in the cities for agriculture in peri-urban villages. A short film produced by PiC and IWMI documents the innovations by municipalities in Gujarat for managing the wastewater.
+summary: "Produced a short film with IWMI documenting municipal innovations in Gujarat for managing wastewater."
+description: People in Centre and the IWMI-Tata programme have been collaborating on studying and developing a perspective on the use of wastewater generated in cities for agriculture in peri-urban villages. A short film produced by People in Centre and IWMI documents the innovations by municipalities in Gujarat for managing wastewater.
 endYear: 2016
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/wastewater-bazaar-a-short-film-on-institutional-inn
 
 ---
 
-PiC and IWMI-Tata program have been collaborating on studying and developing a perspective on use of wastewater generated in the cities for agriculture in peri-urban villages. A short film produced by PiC and IWMI documents the innovations by municipalities in Gujarat for managing the wastewater.
+People in Centre and the IWMI-Tata programme have been collaborating on studying and developing a perspective on the use of wastewater generated in cities for agriculture in peri-urban villages. A short film produced by People in Centre and IWMI documents the innovations by municipalities in Gujarat for managing wastewater.

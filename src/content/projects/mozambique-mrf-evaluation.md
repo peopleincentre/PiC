@@ -1,9 +1,9 @@
 ---
 title: Evaluation of the Mozambique Recovery Facility
 
-summary: Evaluation of the multi-partner recovery programme established after Cyclones Idai and Kenneth, assessing effectiveness, sustainability, institutional arrangements and recovery outcomes.
+summary: "Evaluated the Mozambique Recovery Facility, the multi-partner programme established after Cyclones Idai and Kenneth, assessing its effectiveness, sustainability, institutional arrangements and recovery outcomes."
 
-description: Evaluation of the Mozambique Recovery Facility and its contribution to resilient recovery, institutional strengthening and long-term recovery planning following Cyclones Idai and Kenneth.
+description: "People in Centre evaluated the Mozambique Recovery Facility and its contribution to resilient recovery, institutional strengthening and long-term recovery planning following Cyclones Idai and Kenneth."
 
 country: Mozambique
 location: Sofala, Cabo Delgado and Zambezia Provinces

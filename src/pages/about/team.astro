@@ -150,7 +150,7 @@ const past = team
 }
 
 .team-grid.core {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .team-grid.past {
@@ -206,6 +206,11 @@ const past = team
 .team-bio {
   margin: 0;
   font-size: 0.92rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .team-email {

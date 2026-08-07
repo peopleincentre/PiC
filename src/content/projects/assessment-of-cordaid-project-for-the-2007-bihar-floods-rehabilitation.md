@@ -1,9 +1,8 @@
 ---
 title: Assessment of Cordaid Project for the 2007 Bihar Floods Rehabilitation
-summary: "‘People in Centre’ Consulting undertook assessment of Cordaid funded project ‘Mainstreaming Community Managed Disaster Risk Reduction in the 2007 Flood Affected Communities of Bihar’. This three-year long project (2009-11) was implemented by All india Disaster Mitigation Institute (AIDMI) along with its local partners in Bihar with financial support from Cordaid. This project end review focussed…"
+summary: "Undertook the project-end review of a Cordaid-funded community-managed disaster risk reduction programme in the 2007 flood-affected communities of Bihar."
 description: |
-  ‘People in Centre’ Consulting
-   undertook assessment of Cordaid funded project ‘Mainstreaming Community Managed Disaster Risk Reduction in the 2007 Flood Affected Communities of Bihar’. This three-year long project (2009-11) was implemented by All india Disaster Mitigation Institute (AIDMI) along with its local partners in Bihar with financial support from Cordaid. This project end review focussed on components related to construction of semi-permanent shelters and community centres, extensions in school buildings and risk transfer initiatives through micro-insurance. The review mandated by Cordaid looked into issues of programming, delivery mechanism, decision making, partnership, community participation, vulerability reduction and achievement of results.
+  People in Centre undertook the assessment of the Cordaid-funded project 'Mainstreaming Community Managed Disaster Risk Reduction in the 2007 Flood Affected Communities of Bihar'. The three-year project (2009–11) was implemented by the All India Disaster Mitigation Institute (AIDMI) with its local partners in Bihar and financial support from Cordaid. This project-end review focused on the construction of semi-permanent shelters and community centres, extensions to school buildings and risk transfer initiatives through micro-insurance. Mandated by Cordaid, the review examined programming, delivery mechanisms, decision-making, partnership, community participation, vulnerability reduction and achievement of results.
 endYear: 2012
 
 themes:
@@ -14,9 +13,4 @@ coverImage: /images/projects/assessment-of-cordaid-project-for-the-2007-bihar-fl
 
 ---
 
-‘People in Centre’ Consulting
- undertook assessment of Cordaid funded project ‘Mainstreaming Community Managed Disaster Risk Reduction in the 2007 Flood Affected Communities of Bihar’. This three-year long project (2009-11) was implemented by All india Disaster Mitigation Institute (AIDMI) along with its local partners in Bihar with financial support from Cordaid. This project end review focussed on components related to construction of semi-permanent shelters and community centres, extensions in school buildings and risk transfer initiatives through micro-insurance. The review mandated by Cordaid looked into issues of programming, delivery mechanism, decision making, partnership, community participation, vulerability reduction and achievement of results.
-
-Vivek R
-
-‘People in Centre’ Consulting
+People in Centre undertook the assessment of the Cordaid-funded project 'Mainstreaming Community Managed Disaster Risk Reduction in the 2007 Flood Affected Communities of Bihar'. The three-year project (2009–11) was implemented by the All India Disaster Mitigation Institute (AIDMI) with its local partners in Bihar and financial support from Cordaid. This project-end review focused on the construction of semi-permanent shelters and community centres, extensions to school buildings and risk transfer initiatives through micro-insurance. Mandated by Cordaid, the review examined programming, delivery mechanisms, decision-making, partnership, community participation, vulnerability reduction and achievement of results.

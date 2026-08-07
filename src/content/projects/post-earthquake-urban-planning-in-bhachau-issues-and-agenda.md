@@ -1,10 +1,8 @@
 ---
 title: "Post Earthquake Urban Planning in Bhachau – Issues and Agenda"
-summary: "After earthquake in Bhachau, Kutch in year 2001, new development planning process was initiated under Bhachau Area Development Authority (BhADA). However, it was felt unless critical issues related to the poor are looked into, the whole process might marginalize them. The write up available here explores issues of the poor during reconstruction and develops a…"
+summary: "Developed a working paper on the issues of the poor in post-earthquake urban planning in Bhachau."
 description: |
-  After earthquake in Bhachau, Kutch in year 2001, new development planning process was initiated under Bhachau Area Development Authority (BhADA). However, it was felt unless critical issues related to the poor are looked into, the whole process might marginalize them. The write up available 
-  [here](http://www.peopleincentre.org/documents/bhachau_agenda.pdf)
-   explores issues of the poor during reconstruction and develops a perspective in context of Bhachau. This was a working document prepared by myself and Dinesh Prajapati.
+  After the earthquake in Bhachau, Kutch in 2001, a new development planning process was initiated under the Bhachau Area Development Authority (BhADA). However, it was felt that unless critical issues related to the poor were looked into, the whole process might marginalise them. The write-up available [here](http://www.peopleincentre.org/documents/bhachau_agenda.pdf) explores the issues of the poor during reconstruction and develops a perspective in the context of Bhachau. This working document was prepared by Vivek Rawal and Dinesh Prajapati.
 endYear: 2002
 
 themes:
@@ -13,10 +11,4 @@ featured: false
 
 ---
 
-After earthquake in Bhachau, Kutch in year 2001, new development planning process was initiated under Bhachau Area Development Authority (BhADA). However, it was felt unless critical issues related to the poor are looked into, the whole process might marginalize them. The write up available 
-[here](http://www.peopleincentre.org/documents/bhachau_agenda.pdf)
- explores issues of the poor during reconstruction and develops a perspective in context of Bhachau. This was a working document prepared by myself and Dinesh Prajapati.
-
-Vivek R
-
-‘People in Centre’ Consulting
+After the earthquake in Bhachau, Kutch in 2001, a new development planning process was initiated under the Bhachau Area Development Authority (BhADA). However, it was felt that unless critical issues related to the poor were looked into, the whole process might marginalise them. The write-up available [here](http://www.peopleincentre.org/documents/bhachau_agenda.pdf) explores the issues of the poor during reconstruction and develops a perspective in the context of Bhachau. This working document was prepared by Vivek Rawal and Dinesh Prajapati.

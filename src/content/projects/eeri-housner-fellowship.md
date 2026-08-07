@@ -1,9 +1,8 @@
 ---
 title: EERI-Housner Fellowship
-summary: "EERI-Housner Fellowship for year 2012 has been offered to Vivek Rawal of ‘People in Centre’ Consulting. He is one of total eight fellows selected by Earthquake Engineering Research Institute (EERI). As EERI Housner fellow, he joins a two-year long mentoring programme of EERI with commitment to work more intensively on earthquake safety issues and strengthen…"
+summary: "Vivek Rawal was named an EERI-Housner Fellow for 2012, joining an intensive two-year mentoring programme on earthquake safety."
 description: |
-  EERI-Housner Fellowship
-   for year 2012 has been offered to Vivek Rawal of ‘People in Centre’ Consulting. He is one of total eight fellows selected by Earthquake Engineering Research Institute (EERI). As EERI Housner fellow, he joins a two-year long mentoring programme of EERI with commitment to work more intensively on earthquake safety issues and strengthen ‘People in Centre’ Consulting to be more effective and rigorous in its work. Further details about EERI-Housner fellowship 2012 are available [here](http://www.eeri.org/2012/02/first-class-of-eeri-housner-fellows-selected/)
+  The EERI-Housner Fellowship for 2012 was awarded to Vivek Rawal of People in Centre, one of eight fellows selected by the Earthquake Engineering Research Institute (EERI). As an EERI-Housner Fellow, he joined a two-year mentoring programme with a commitment to work more intensively on earthquake safety issues and to strengthen People in Centre's work to be more effective and rigorous. Further details are available [here](http://www.eeri.org/2012/02/first-class-of-eeri-housner-fellows-selected/).
 endYear: 2012
 
 themes:
@@ -17,7 +16,4 @@ gallery:
 
 ---
 
-EERI-Housner Fellowship
- for year 2012 has been offered to Vivek Rawal of ‘People in Centre’ Consulting. He is one of total eight fellows selected by Earthquake Engineering Research Institute (EERI). As EERI Housner fellow, he joins a two-year long mentoring programme of EERI with commitment to work more intensively on earthquake safety issues and strengthen ‘People in Centre’ Consulting to be more effective and rigorous in its work. Further details about EERI-Housner fellowship 2012 are available [here](http://www.eeri.org/2012/02/first-class-of-eeri-housner-fellows-selected/)
-
-‘People in Centre’ Consulting
+The EERI-Housner Fellowship for 2012 was awarded to Vivek Rawal of People in Centre, one of eight fellows selected by the Earthquake Engineering Research Institute (EERI). As an EERI-Housner Fellow, he joined a two-year mentoring programme with a commitment to work more intensively on earthquake safety issues and to strengthen People in Centre's work to be more effective and rigorous. Further details are available [here](http://www.eeri.org/2012/02/first-class-of-eeri-housner-fellows-selected/).

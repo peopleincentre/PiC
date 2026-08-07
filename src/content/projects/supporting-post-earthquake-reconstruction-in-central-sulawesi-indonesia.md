@@ -1,7 +1,7 @@
 ---
 title: Supporting PDNA after the 2018 Palu disaster in Central Sulawesi, Indonesia
-summary: Vivek Rawal joined UNDP team to support Post Disaster Needs Assessment (JituPASNA in Indonesia) in coordination with the World Bank, Asian Development Bank and JICA. Also provided inputs on reconstruction of community infrastructure and housing for the affected communities in Palu, Central Sulawesi, Indonesia. a brief video clip from Palu is shared here.
-description: Vivek Rawal joined UNDP team to support Post Disaster Needs Assessment (JituPASNA in Indonesia) in coordination with the World Bank, Asian Development Bank and JICA. Also provided inputs on reconstruction of community infrastructure and housing for the affected communities in Palu, Central Sulawesi, Indonesia. a brief video clip from Palu is shared here.
+summary: Supported the Post Disaster Needs Assessment after the 2018 Palu disaster and provided inputs on housing and community infrastructure reconstruction in Central Sulawesi.
+description: Vivek Rawal joined the UNDP team to support the Post Disaster Needs Assessment (JituPASNA in Indonesia) in coordination with the World Bank, the Asian Development Bank and JICA. He also provided inputs on reconstruction of community infrastructure and housing for the affected communities in Palu, Central Sulawesi, Indonesia. A brief video clip from Palu is shared on request.
 endYear: 2019
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/supporting-post-earthquake-reconstruction-in-centra
 
 ---
 
-Vivek Rawal joined UNDP team to support Post Disaster Needs Assessment (JituPASNA in Indonesia) in coordination with the World Bank, Asian Development Bank and JICA. Also provided inputs on reconstruction of community infrastructure and housing for the affected communities in Palu, Central Sulawesi, Indonesia. a brief video clip from Palu is shared here.
+Vivek Rawal joined the UNDP team to support the Post Disaster Needs Assessment (JituPASNA in Indonesia) in coordination with the World Bank, the Asian Development Bank and JICA. He also provided inputs on reconstruction of community infrastructure and housing for the affected communities in Palu, Central Sulawesi, Indonesia. A brief video clip from Palu is shared on request.

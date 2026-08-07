@@ -1,7 +1,7 @@
 ---
 title: "Assessing Post Tsunami Housing Reconstruction in Andaman & Nicobar Islands: A People’s Perspective"
-summary: "An assessment of post tsunami housing reconstruction in Andaman & Nicobar Islands was taken up myself, Rajendra Desai and Dharmesh Jadejaand published by Books for Change. This report articulates perspective of local communities towards the reconstruction process and was part of the collaborative action by Actionaid, TriNet, Housing and Land Rights Network, Society for Andaman…"
-description: "An assessment of post tsunami housing reconstruction in Andaman & Nicobar Islands was taken up myself, Rajendra Desai and Dharmesh Jadejaand published by Books for Change. This report articulates perspective of local communities towards the reconstruction process and was part of the collaborative action by Actionaid, TriNet, Housing and Land Rights Network, Society for Andaman & Nicobar Ecology. It is also available [here](http://www.peopleincentre.org/documents/A&N-report.pdf)for download."
+summary: "Assessed post-tsunami housing reconstruction in the Andaman & Nicobar Islands from the perspective of local communities."
+description: "An assessment of post-tsunami housing reconstruction in the Andaman & Nicobar Islands was undertaken by Vivek Rawal, Rajendra Desai and Dharmesh Jadeja and published by Books for Change. The report articulates the perspective of local communities on the reconstruction process and was part of a collaborative effort by ActionAid, TriNet, the Housing and Land Rights Network and the Society for Andaman & Nicobar Ecology. It is also available [here](http://www.peopleincentre.org/documents/A&N-report.pdf) for download."
 endYear: 2008
 
 themes:
@@ -12,4 +12,4 @@ coverImage: /images/projects/assessing-post-tsunami-housing-reconstruction-in-an
 
 ---
 
-An assessment of post tsunami housing reconstruction in Andaman & Nicobar Islands was taken up myself, Rajendra Desai and Dharmesh Jadejaand published by Books for Change. This report articulates perspective of local communities towards the reconstruction process and was part of the collaborative action by Actionaid, TriNet, Housing and Land Rights Network, Society for Andaman & Nicobar Ecology. It is also available [here](http://www.peopleincentre.org/documents/A&N-report.pdf)for download.
+An assessment of post-tsunami housing reconstruction in the Andaman & Nicobar Islands was undertaken by Vivek Rawal, Rajendra Desai and Dharmesh Jadeja and published by Books for Change. The report articulates the perspective of local communities on the reconstruction process and was part of a collaborative effort by ActionAid, TriNet, the Housing and Land Rights Network and the Society for Andaman & Nicobar Ecology. It is also available [here](http://www.peopleincentre.org/documents/A&N-report.pdf) for download.

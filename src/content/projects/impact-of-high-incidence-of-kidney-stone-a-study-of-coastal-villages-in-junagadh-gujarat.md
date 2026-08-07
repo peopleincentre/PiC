@@ -1,7 +1,7 @@
 ---
 title: "Impact of High Incidence of Kidney Stone – A Study of Coastal Villages in Junagadh, Gujarat"
-summary: "Public health in coastal regions of Saurashtra has become a major concern. High incidence of kidney stones amongst men, women and children is result of contamination of drinking water due to seawater intrusion. This is also confirmed in our field studies. Rajnarayan Indu and myself undertook a study in coastal villages. The paper coauthored by…"
-description: "Public health in coastal regions of Saurashtra has become a major concern. High incidence of kidney stones amongst men, women and children is result of contamination of drinking water due to seawater intrusion. This is also confirmed in our field studies. Rajnarayan Indu and myself undertook a study in coastal villages. The paper coauthored by me and published by AKRSP(i) is shared [here](http://www.peopleincentre.org/documents/kidney_stone_paper.pdf)."
+summary: "Studied the high incidence of kidney stones in coastal villages of Junagadh caused by drinking-water contamination from seawater intrusion."
+description: "Public health in the coastal regions of Saurashtra has become a major concern. The high incidence of kidney stones among men, women and children is a result of contamination of drinking water due to seawater intrusion, as confirmed in field studies. Rajnarayan Indu and People in Centre undertook a study in coastal villages. The paper, published by AKRSP(I), is shared [here](http://www.peopleincentre.org/documents/kidney_stone_paper.pdf)."
 endYear: 2006
 
 themes:
@@ -10,8 +10,4 @@ featured: false
 
 ---
 
-Public health in coastal regions of Saurashtra has become a major concern. High incidence of kidney stones amongst men, women and children is result of contamination of drinking water due to seawater intrusion. This is also confirmed in our field studies. Rajnarayan Indu and myself undertook a study in coastal villages. The paper coauthored by me and published by AKRSP(i) is shared [here](http://www.peopleincentre.org/documents/kidney_stone_paper.pdf).
-
-Alka P
-
-‘People in Centre’ Consulting
+Public health in the coastal regions of Saurashtra has become a major concern. The high incidence of kidney stones among men, women and children is a result of contamination of drinking water due to seawater intrusion, as confirmed in field studies. Rajnarayan Indu and People in Centre undertook a study in coastal villages. The paper, published by AKRSP(I), is shared [here](http://www.peopleincentre.org/documents/kidney_stone_paper.pdf).

@@ -27,6 +27,10 @@ body {
   overflow-x: hidden;
 }
 
+body.work-theme-page {
+  --color-bg: #c2c3c4;
+}
+
 h1,
 h2,
 h3,
