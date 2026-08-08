@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/1822/1822-cover.jpg
+coverImage: /images/projects/revitalising-communities-through-mangroves-restoration/revitalising-communities-through-mangroves-restoration-cover.jpg
 
 ---
 

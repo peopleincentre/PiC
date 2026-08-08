@@ -28,11 +28,25 @@ const directors = governance
 const shareholders = governance
   .filter((g) => g.data.kind === "shareholder" || g.data.isShareholder)
   .sort(sortByName(shareholdersOrder));
+
+const governanceJsonLd = governance.map((person) => ({
+  "@type": "Person",
+  name: person.data.name,
+  ...(person.data.designation ? { jobTitle: person.data.designation } : {}),
+  ...(person.data.photo
+    ? { image: `${base}${person.data.photo.replace(/^\//, "")}` }
+    : {}),
+  worksFor: { "@id": `${import.meta.env.SITE}${base}#organization` },
+}));
 ---
 
-<BaseLayout title="Directors and Shareholders">
+<BaseLayout
+  title="Directors and Shareholders"
+  description="Information on the governance structure of People in Centre — its board of directors and shareholders."
+  jsonLd={governanceJsonLd}
+>
 
-<main class="governance-page">
+<div class="governance-page">
 
 <h1>Directors and Shareholders</h1>
 
@@ -50,6 +64,7 @@ const shareholders = governance
           src={`${base}${person.data.photo.replace(/^\//, "")}`}
           alt={person.data.name}
           loading="lazy"
+                  decoding="async"
         />
       )}
     </div>
@@ -80,6 +95,7 @@ const shareholders = governance
           src={`${base}${person.data.photo.replace(/^\//, "")}`}
           alt={person.data.name}
           loading="lazy"
+                  decoding="async"
         />
       )}
     </div>
@@ -93,7 +109,7 @@ const shareholders = governance
 
 </section>
 
-</main>
+</div>
 
 </BaseLayout>
 

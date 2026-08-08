@@ -34,8 +34,10 @@ const accent =
     <div class="image-wrapper">
      <img
       src={`${base}${coverImage.replace(/^\//, "")}`}
-      alt={title}
+      alt=""
       class="card-image"
+      loading="lazy"
+      decoding="async"
      />
     </div>
    ) : (

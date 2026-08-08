@@ -29,7 +29,7 @@ const projects = [
 
   <div class="section-header">
 
-  <h1>Featured Projects</h1>
+  <h2>Featured Projects</h2>
 
 </div>
 
@@ -68,7 +68,9 @@ const projects = [
               <span class="project-image-wrap">
                 <img
                   src={`${base}${project.data.coverImage.replace(/^\//, "")}`}
-                  alt={project.data.title}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
                 />
               </span>
             )

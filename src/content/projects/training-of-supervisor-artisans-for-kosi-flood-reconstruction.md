@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/231/231-cover.jpg
+coverImage: /images/projects/training-of-supervisor-artisans-for-kosi-flood-reconstruction/training-of-supervisor-artisans-for-kosi-flood-reconstruction-cover.jpg
 
 ---
 

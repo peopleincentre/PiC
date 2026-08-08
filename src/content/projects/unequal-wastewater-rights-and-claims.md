@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: true
 
-coverImage: /images/projects/unequal-wastewater-rights-and-claims-2/unequal-wastewater-rights-and-claims-2-cover.jpeg
+coverImage: /images/projects/unequal-wastewater-rights-and-claims/unequal-wastewater-rights-and-claims-cover.jpeg
 
 ---
 

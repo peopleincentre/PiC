@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: true
 
-coverImage: /images/projects/sustainable-urban-sanitation-2/sustainable-urban-sanitation-2-cover.jpg
+coverImage: /images/projects/sustainable-urban-sanitation/sustainable-urban-sanitation-cover.jpg
 
 ---
 

@@ -67,6 +67,41 @@ const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
 const papersCount = papers.length;
 const videosCount = videos.length;
 
+const splitAuthors = (authors) =>
+  String(authors || "")
+    .split(/\s*(?:&|and)\s*|,\s*/i)
+    .map((part) => part.replace(/^[,.\s]+|[,.\s]+$/g, "").trim())
+    .filter(Boolean);
+
+const papersJsonLd = papers.map((paper) => ({
+  "@type": "ScholarlyArticle",
+  name: paper.data.title,
+  headline: paper.data.title,
+  ...(paper.data.authors && paper.data.authors !== "People in Centre"
+    ? {
+        author: splitAuthors(paper.data.authors).map((a) => ({
+          "@type": "Person",
+          name: a,
+        })),
+      }
+    : {}),
+  ...(paper.data.year ? { datePublished: String(paper.data.year) } : {}),
+  ...(paper.data.journal ? { publisher: { "@type": "Organization", name: paper.data.journal } } : {}),
+  ...(paper.data.pdf ? { url: paper.data.pdf, isAccessibleForFree: true } : {}),
+}));
+
+const videosJsonLd = videos.map((video) => ({
+  "@type": "VideoObject",
+  name: video.data.title,
+  description: video.data.summary,
+  ...(video.data.year ? { uploadDate: `${video.data.year}-01-01` } : {}),
+  thumbnailUrl: `https://img.youtube.com/vi/${video.data.youtube}/0.jpg`,
+  contentUrl: `https://www.youtube.com/watch?v=${video.data.youtube}`,
+  embedUrl: `https://www.youtube.com/embed/${video.data.youtube}`,
+}));
+
+const resourcesJsonLd = [...papersJsonLd, ...videosJsonLd];
+
 const iconDoc = `
   <svg class="tab-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
     <path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm0 2.5L18.5 9H14V4.5zM8 13h8v2H8zm0 4h8v2H8z"/>
@@ -113,9 +148,13 @@ const themeIcons = {
 };
 ---
 
-<BaseLayout title="Knowledge Resources">
+<BaseLayout
+  title="Knowledge Resources"
+  description="Research papers, publications and films by People in Centre, organised by thematic area — ecology, resilience and urban space."
+  jsonLd={resourcesJsonLd}
+>
 
-<main class="resources-page">
+<div class="resources-page">
 
 <header class="page-head">
   <h1>Knowledge Resources</h1>
@@ -215,14 +254,14 @@ const themeIcons = {
         id={`papers-${theme.id}`}
         style={`--accent: ${theme.accent}`}
       >
-        <h3>
+        <h2>
           <Fragment set:html={themeIcons[theme.id] || ""} />
           <span class="group-title">{theme.label}</span>
           <span class="group-count">
             {themePapers.length}{" "}
             {themePapers.length === 1 ? "paper" : "papers"}
           </span>
-        </h3>
+        </h2>
         <ul class="papers-grid">
           {themePapers.map((paper) => {
             const link = paperLink(paper.data.pdf);
@@ -310,7 +349,7 @@ const themeIcons = {
           allowfullscreen
         ></iframe>
       </div>
-      <h3>{featuredVideo.data.title}</h3>
+      <h2>{featuredVideo.data.title}</h2>
       <p>{featuredVideo.data.summary}</p>
     </div>
   )}
@@ -326,13 +365,13 @@ const themeIcons = {
         id={group.id}
         style={`--accent: ${group.accent}`}
       >
-        <h3>
+        <h2>
           <Fragment set:html={iconPlay} />
           <span class="group-title">{group.title}</span>
           <span class="group-count">
             {groupVideos.length} {groupVideos.length === 1 ? "video" : "videos"}
           </span>
-        </h3>
+        </h2>
         <div class="videos-grid">
           {groupVideos.map((video) => (
             <a
@@ -349,7 +388,7 @@ const themeIcons = {
                 />
                 <span class="play" aria-hidden="true"></span>
               </div>
-              <h4>{video.data.title}</h4>
+              <h3>{video.data.title}</h3>
               <p>{video.data.summary}</p>
               <span class="video-watch">Watch on YouTube</span>
             </a>
@@ -360,7 +399,7 @@ const themeIcons = {
   })}
 </section>
 
-</main>
+</div>
 
 </BaseLayout>
 
@@ -771,7 +810,7 @@ const themeIcons = {
   padding: 1.5rem;
 }
 
-.group > h3 {
+.group > h2 {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -979,7 +1018,7 @@ const themeIcons = {
   border: 0;
 }
 
-.featured-video h3 {
+.featured-video h2 {
   margin: 0 0 0.5rem;
 }
 
@@ -1055,7 +1094,7 @@ const themeIcons = {
   transform: translate(-50%, -50%) scale(1.08);
 }
 
-.video-card h4 {
+.video-card h3 {
   margin: 0 0 0.4rem;
   font-size: 1.05rem;
   line-height: 1.3;
