@@ -31,7 +31,7 @@ const partners = [
   {
     name: "Owner Driven Reconstruction Collaborative (ODRC)",
     slug: "ODRC",
-    url: "https://odrcollaborative.net/",
+    url: "",
   },
   {
     name: "CEPT University",
@@ -51,7 +51,7 @@ const partners = [
   {
     name: "Hunnarshala Foundation",
     slug: "hunnarshala",
-    url: "https://www.hunnarshala.org/",
+    url: "http://www.hunnarshala.org/",
   },
   {
     name: "Biome Environmental Trust",
@@ -73,26 +73,34 @@ const partners = [
   <div class="partners-viewport">
     <div class="partners-track">
       {
-        [...partners, ...partners].map((partner) => (
-          <a
-            class="partner-item"
-            href={partner.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={partner.name}
-          >
-            {partner.chip ? (
-              <span class="partner-chip">{partner.name}</span>
-            ) : (
-              <img
-                src={`${base}images/partners/${partner.slug}.png`}
-                alt={partner.name}
-                loading="lazy"
-                draggable="false"
-              />
-            )}
-          </a>
-        ))
+        [...partners, ...partners].map((partner) => {
+          const classAttr = "partner-item";
+          const inner = partner.chip ? (
+            <span class="partner-chip">{partner.name}</span>
+          ) : (
+            <img
+              src={`${base}images/partners/${partner.slug}.png`}
+              alt={partner.name}
+              loading="lazy"
+              draggable="false"
+            />
+          );
+          return partner.url ? (
+            <a
+              class={classAttr}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={partner.name}
+            >
+              {inner}
+            </a>
+          ) : (
+            <span class={classAttr} title={partner.name}>
+              {inner}
+            </span>
+          );
+        })
       }
     </div>
   </div>
@@ -177,7 +185,7 @@ const partners = [
     height: auto;
     object-fit: contain;
     filter: grayscale(100%);
-    opacity: 0.75;
+    opacity: 1;
     transition: filter 0.3s ease, opacity 0.3s ease;
   }
 
