@@ -756,6 +756,9 @@ const themeIcons = {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   border: 1px solid var(--color-border);
   background: #fff;
   border-radius: 999px;
@@ -1146,7 +1149,9 @@ const themeIcons = {
   }
 
   .theme-pill {
-    padding: 0.4rem 0.85rem;
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    padding: 0.55rem 0.85rem;
     font-size: 0.8rem;
   }
 }

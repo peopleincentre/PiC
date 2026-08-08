@@ -20,12 +20,20 @@
   --color-capacity: #6e5a2f;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
   font-size: clamp(16px, 0.95rem + 0.25vw, 18px);
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: clip;
+  overflow-y: auto;
 }
 
 body {
@@ -35,6 +43,7 @@ body {
 }
 
 body {
+  margin: 0;
   background: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
