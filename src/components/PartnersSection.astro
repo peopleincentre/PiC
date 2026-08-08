@@ -2,7 +2,7 @@
 const base = import.meta.env.BASE_URL;
 
 const partners = [
-  { name: "UNDP", slug: "undp", url: "https://www.undp.org/", tall: true },
+  { name: "UNDP", slug: "undp", url: "https://www.undp.org/" },
   {
     name: "International Water Management Institute (IWMI)",
     slug: "iwmi",
@@ -75,24 +75,22 @@ const partners = [
       {
         [...partners, ...partners].map((partner) => (
           <a
-            class={`partner-item${partner.tall ? " partner-item--tall" : ""}`}
+            class="partner-item"
             href={partner.url}
             target="_blank"
             rel="noopener noreferrer"
             title={partner.name}
           >
-            {
-              partner.chip ? (
-                <span class="partner-chip">{partner.name}</span>
-              ) : (
-                <img
-                  src={`${base}images/partners/${partner.slug}.png`}
-                  alt={partner.name}
-                  loading="lazy"
-                  draggable="false"
-                />
-              )
-            }
+            {partner.chip ? (
+              <span class="partner-chip">{partner.name}</span>
+            ) : (
+              <img
+                src={`${base}images/partners/${partner.slug}.png`}
+                alt={partner.name}
+                loading="lazy"
+                draggable="false"
+              />
+            )}
           </a>
         ))
       }
@@ -102,13 +100,14 @@ const partners = [
 
 <style>
   .partners-section {
-    background: var(--color-bg);
-    padding: 3rem 2rem;
+    background: var(--color-surface);
+    padding: 4rem 2rem;
     overflow: hidden;
   }
 
   .section-header {
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   .section-header h2 {
@@ -117,8 +116,10 @@ const partners = [
 
   .partners-subtitle {
     margin: 0;
-    color: #6b7280;
-    font-size: 0.95rem;
+    color: var(--color-muted);
+    font-size: 1rem;
+    max-width: 640px;
+    margin-inline: auto;
   }
 
   .partners-viewport {
@@ -151,60 +152,71 @@ const partners = [
   .partner-item {
     display: inline-flex;
     align-items: center;
-    margin-right: 3rem;
+    justify-content: center;
+    width: 220px;
+    height: 88px;
+    margin-right: 2.5rem;
+    padding: 0 1rem;
     text-decoration: none;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .partner-item:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-card-hover);
   }
 
   .partner-item img {
-    height: 44px;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
-    max-width: 240px;
+    height: auto;
     object-fit: contain;
-    filter: grayscale(1);
-    opacity: 0.7;
-    transition:
-      filter 0.3s ease,
-      opacity 0.3s ease;
-  }
-
-  .partner-item--tall img {
-    height: 60px;
-    max-width: none;
+    filter: grayscale(100%);
+    opacity: 0.75;
+    transition: filter 0.3s ease, opacity 0.3s ease;
   }
 
   .partner-item:hover img {
-    filter: grayscale(0);
+    filter: grayscale(0%);
     opacity: 1;
   }
 
   .partner-chip {
     display: inline-flex;
     align-items: center;
-    height: 44px;
-    padding: 0 1.1rem;
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    background: #fff;
-    color: var(--color-heading);
+    justify-content: center;
     font-family: "Roboto Slab", serif;
     font-weight: 500;
-    font-size: 0.95rem;
-    white-space: nowrap;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.4;
+    color: var(--color-heading);
+    white-space: normal;
+    opacity: 0.75;
+    transition: opacity 0.3s ease, color 0.3s ease;
   }
 
   .partner-item:hover .partner-chip {
     opacity: 1;
+    color: var(--color-accent);
   }
 
   @media (prefers-reduced-motion: reduce) {
     .partners-track {
       animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      gap: 1.25rem;
     }
 
-    .partners-viewport {
-      overflow-x: auto;
+    .partner-item {
+      margin-right: 0;
     }
   }
 
@@ -214,15 +226,9 @@ const partners = [
     }
 
     .partner-item {
-      margin-right: 2rem;
-    }
-
-    .partner-item img {
-      height: 36px;
-    }
-
-    .partner-item--tall img {
-      height: 50px;
+      width: 180px;
+      height: 76px;
+      margin-right: 1.5rem;
     }
   }
 </style>

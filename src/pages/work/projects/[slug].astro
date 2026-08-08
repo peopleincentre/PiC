@@ -29,17 +29,50 @@ const {
   partners,
   coverImage,
   gallery,
+  themes,
 } = project.data;
 
 const base = import.meta.env.BASE_URL;
 
 const { Content } = await render(project);
 
+const themeLabels = {
+  "ecological-balance": "Ecological Balance",
+  resilience: "Resilience to Disasters",
+  "urban-space": "Urban Space",
+  "institutional-initiatives": "Institutional Initiatives",
+};
+const themeId = themes?.[0];
+
 ---
 
 <BaseLayout title={title}>
 
   <main class="project-page">
+
+    {themeId && (
+      <a
+        class="back-link"
+        href={`${base}work/${themeId}/`}
+        aria-label={`Back to ${themeLabels[themeId] ?? "Projects"}`}
+        title={`Back to ${themeLabels[themeId] ?? "Projects"}`}
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M19 12H5"></path>
+          <path d="m12 19-7-7 7-7"></path>
+        </svg>
+      </a>
+    )}
 
     {coverImage && (
       <img
@@ -187,6 +220,25 @@ const { Content } = await render(project);
 }
 
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
 h1 {
   margin-bottom: 0.25rem;
   line-height: 2.5rem
@@ -205,8 +257,8 @@ h1 {
   gap: 0.5rem 0.25rem;
   margin: 1rem 0 1rem;
   padding: 0 0;
-  border-top: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .project-meta div {
@@ -215,8 +267,8 @@ h1 {
 }
 
 .project-meta strong {
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.9rem;
+  color: var(--color-muted);
   margin-bottom: 0.25rem;
 }
 

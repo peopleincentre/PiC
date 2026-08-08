@@ -65,10 +65,12 @@ const projects = [
 
           {
             project.data.coverImage && (
-              <img
-                src={`${base}${project.data.coverImage.replace(/^\//, "")}`}
-                alt={project.data.title}
-              />
+              <span class="project-image-wrap">
+                <img
+                  src={`${base}${project.data.coverImage.replace(/^\//, "")}`}
+                  alt={project.data.title}
+                />
+              </span>
             )
           }
 

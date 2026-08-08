@@ -10,24 +10,24 @@ const {
 
 <article class="theme-card">
 
-  <h3>{title}</h3>
-  <img
-   src={`${base}${image}`}
-   alt={title}
-   class="theme-image"
-  />
-  <p>
-    {description}
-  </p>
+  <div class="theme-image-wrap">
+    <img
+     src={`${base}${image.replace(/^\//, "")}`}
+     alt={title}
+     class="theme-image"
+     loading="lazy"
+    />
+  </div>
 
-  <a href={link}>
-    View Projects →
-  </a>
+  <div class="theme-card-content">
+    <h3>{title}</h3>
+    <p>
+      {description}
+    </p>
+
+    <a href={`${base}${link.replace(/^\//, "")}`}>
+      View Projects <span aria-hidden="true">→</span>
+    </a>
+  </div>
 
 </article>
-
-
-<style>
-
-
-</style>

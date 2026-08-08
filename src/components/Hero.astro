@@ -21,6 +21,14 @@ const rotatingPhrases = [
       <h1 class="hero-headline" id="hero-headline" aria-live="polite">
         {rotatingPhrases[0]}
       </h1>
+      <p class="hero-intro-line">
+        We bring poor and vulnerable communities to the centre of development —
+        as active participants shaping, managing and owning their own future.
+      </p>
+      <div class="hero-ctas">
+        <a class="cta cta-primary" href={`${base}work/`}>Our Work</a>
+        <a class="cta cta-outline" href={`${base}contact/`}>Contact Us</a>
+      </div>
     </div>
   </div>
 </section>
@@ -156,6 +164,72 @@ const rotatingPhrases = [
     opacity: 0;
   }
 
+  .hero-intro-line {
+    margin: 0 0 2rem;
+    max-width: 56ch;
+    margin-inline: auto;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.9rem;
+    border-radius: 999px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+      background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .cta:hover {
+    transform: translateY(-2px);
+  }
+
+  .cta-primary {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+  }
+
+  .cta-primary:hover {
+    background: var(--color-accent-dark);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
+  }
+
+  .cta-outline {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(4px);
+  }
+
+  .cta-outline:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: #fff;
+  }
+
+  @media (max-width: 560px) {
+    .hero-ctas .cta {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+
   .hero-intro {
     width: 100vw;
     margin-left: calc(50% - 50vw);
@@ -219,9 +293,9 @@ const rotatingPhrases = [
 
   .pillar p {
     margin: 0;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: #5b6368;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-text);
   }
 
   @media (max-width: 700px) {

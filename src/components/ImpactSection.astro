@@ -34,55 +34,71 @@ const countryCount = countrySet.size;
 const projectCount = allProjects.length;
 ---
 
-<section class="home-section impact-section">
-  <div class="section-header">
-    <h1>Our Impact</h1>
-    <p class="impact-subtitle">
-      Numbers from our work across geographies and thematic areas.
-    </p>
-  </div>
-
-  <div class="impact-grid">
-    <div class="impact-card">
-      <span class="impact-number">{countryCount}</span>
-      <span class="impact-label">Countries worked in</span>
+<section class="impact-section" aria-label="Our impact in numbers">
+  <div class="impact-inner">
+    <div class="impact-head">
+      <p class="impact-eyebrow">Our Impact</p>
+      <h2 class="impact-title">Working with people, where it counts</h2>
     </div>
 
-    <div class="impact-card impact-card-projects">
-      <span class="impact-number">{projectCount}</span>
-      <span class="impact-label">Projects managed</span>
-      <ul class="impact-categories">
-        <li>Assessment and evaluation</li>
-        <li>Project implementation and Facilitation</li>
-        <li>Research and Communication</li>
-      </ul>
-    </div>
+    <div class="impact-grid">
+      <div class="impact-stat">
+        <span class="impact-number">{countryCount}</span>
+        <span class="impact-label">Countries worked in</span>
+      </div>
 
-    <div class="impact-card">
-      <span class="impact-number">40,000+</span>
-      <span class="impact-label">Households served</span>
+      <div class="impact-stat impact-stat-projects">
+        <span class="impact-number">{projectCount}</span>
+        <span class="impact-label">Projects managed</span>
+        <ul class="impact-categories">
+          <li>Assessment and evaluation</li>
+          <li>Project implementation and facilitation</li>
+          <li>Research and communication</li>
+        </ul>
+      </div>
+
+      <div class="impact-stat">
+        <span class="impact-number">40,000+</span>
+        <span class="impact-label">Households served</span>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .impact-section {
-    background: var(--color-bg);
-    padding: 3rem 2rem;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: var(--color-heading);
+    padding: 4rem 1.25rem;
   }
 
-  .section-header {
-    margin-bottom: 2rem;
+  .impact-inner {
+    max-width: 1280px;
+    margin: 0 auto;
   }
 
-  .section-header h1 {
+  .impact-head {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .impact-eyebrow {
     margin: 0 0 0.5rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #93c5fd;
   }
 
-  .impact-subtitle {
+  .impact-title {
     margin: 0;
-    color: #6b7280;
-    font-size: 0.95rem;
+    font-family: "Roboto Slab", serif;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 500;
+    color: #fff;
   }
 
   .impact-grid {
@@ -90,69 +106,66 @@ const projectCount = allProjects.length;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     align-items: stretch;
+    text-align: center;
   }
 
-  .impact-card {
-    background: #ffffff;
-    border: 1px solid #eef1f3;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(35, 64, 74, 0.08);
-    padding: 2.25rem 1.75rem;
+  .impact-stat {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    min-height: 180px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .impact-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(35, 64, 74, 0.12);
-  }
-
-  .impact-card-projects {
-    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 2rem 1.5rem;
+    background: rgba(37, 99, 235, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.28);
+    border-radius: var(--radius-card);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
   }
 
   .impact-number {
     font-family: "Roboto Slab", serif;
     font-weight: 700;
-    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
     line-height: 1;
-    color: var(--color-heading);
-    margin-bottom: 0.75rem;
+    color: #ffffff;
   }
 
   .impact-label {
-    font-size: 0.9rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #4b5c66;
+    letter-spacing: 0.1em;
+    color: #cbd5e1;
+    line-height: 1.5;
   }
 
   .impact-categories {
     list-style: none;
-    margin: 1rem 0 0;
+    margin: 0.75rem 0 0;
     padding: 0;
-    font-size: 0.8rem;
-    color: var(--color-text);
-    line-height: 1.5;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.6;
   }
 
   .impact-categories li::before {
     content: "· ";
-    color: color-mix(in srgb, var(--color-heading) 55%, #ffffff);
+    color: #93c5fd;
   }
 
   @media (max-width: 800px) {
-    .impact-grid {
-      grid-template-columns: 1fr;
+    .impact-section {
+      padding: 3rem 1.25rem;
     }
 
-    .impact-card {
-      min-height: 0;
+    .impact-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .impact-stat {
+      padding: 1.5rem 1.25rem;
     }
   }
 </style>
