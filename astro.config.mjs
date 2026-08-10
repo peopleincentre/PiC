@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://peopleincentre.github.io',
-  base: '/peopleincentre-website/',
+  base: '/PiC',
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/404'),
