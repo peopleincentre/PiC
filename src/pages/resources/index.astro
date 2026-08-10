@@ -486,6 +486,12 @@ const themeIcons = {
 
   document.querySelectorAll(".theme-pill").forEach((pill) => {
     pill.addEventListener("click", () => {
+      pill
+        .closest(".theme-nav")
+        ?.querySelectorAll(".theme-pill")
+        .forEach((other) => {
+          other.classList.toggle("is-active", other === pill);
+        });
       const target = document.getElementById(pill.dataset.targetGroup);
       if (!target) return;
       const header = document.querySelector("header");

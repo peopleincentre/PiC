@@ -90,17 +90,20 @@ const themes = [
           aria-expanded="false"
           aria-controls={`panel-${theme.id}`}
         >
-          <img
-            src={`${base}${theme.image.replace(/^\//, "")}`}
-            alt=""
-            class="theme-thumb"
-            loading="lazy"
-          />
-          <span class="theme-title-block">
-            <span class="theme-name">{theme.name}</span>
-            <span class="theme-geographies">{theme.geographies}</span>
+          <span class="theme-thumb">
+            <img
+              src={`${base}${theme.image.replace(/^\//, "")}`}
+              alt=""
+              loading="lazy"
+            />
           </span>
-          <span class="theme-plus" aria-hidden="true"></span>
+          <span class="theme-toggle-body">
+            <span class="theme-title-block">
+              <span class="theme-name">{theme.name}</span>
+              <span class="theme-geographies">{theme.geographies}</span>
+            </span>
+            <span class="theme-plus" aria-hidden="true"></span>
+          </span>
         </button>
       </h2>
 
@@ -137,6 +140,21 @@ const themes = [
     document.querySelectorAll(".themes-accordion .theme-item")
   );
 
+  function openItem(item) {
+    items.forEach((other) => {
+      if (other !== item) {
+        other.classList.remove("open");
+        other
+          .querySelector(".theme-toggle")
+          .setAttribute("aria-expanded", "false");
+      }
+    });
+    item.classList.add("open");
+    item
+      .querySelector(".theme-toggle")
+      .setAttribute("aria-expanded", "true");
+  }
+
   items.forEach((item) => {
     const toggle = item.querySelector(".theme-toggle");
     const panel = document.getElementById(toggle.getAttribute("aria-controls"));
@@ -157,6 +175,15 @@ const themes = [
       }
     });
   });
+
+  const themeParam = new URLSearchParams(window.location.search).get("theme");
+  if (themeParam) {
+    const target = document.querySelector(`[data-theme="${themeParam}"]`);
+    if (target) {
+      openItem(target);
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 </script>
 
 <style>
@@ -188,14 +215,17 @@ const themes = [
 .theme-item {
   background: #fff;
   border: 1px solid var(--color-border);
+  border-top: 4px solid var(--accent);
   border-radius: 16px;
   overflow: hidden;
   transition: box-shadow 0.2s ease;
+  scroll-margin-top: 88px;
 }
 
 .theme-item.open {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border-color: color-mix(in srgb, var(--accent) 40%, #fff);
+  border-top-color: var(--accent);
 }
 
 .theme-item h2 {
@@ -205,9 +235,9 @@ const themes = [
 .theme-toggle {
   width: 100%;
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 1rem 1.25rem;
+  align-items: stretch;
+  min-height: 6.5rem;
+  padding: 0;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -221,11 +251,25 @@ const themes = [
 
 .theme-thumb {
   width: 120px;
-  height: 84px;
-  object-fit: cover;
-  border-radius: 10px;
   flex-shrink: 0;
   display: block;
+  overflow: hidden;
+}
+
+.theme-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.theme-toggle-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
 }
 
 .theme-title-block {
@@ -345,14 +389,17 @@ const themes = [
   }
 
   .theme-toggle {
-    gap: 0.9rem;
-    padding: 0.85rem 1rem;
+    min-height: 10.5rem;
     align-items: flex-start;
   }
 
   .theme-thumb {
     width: 88px;
-    height: 66px;
+  }
+
+  .theme-toggle-body {
+    gap: 0.9rem;
+    padding: 0.85rem 1rem;
   }
 
   .theme-name {

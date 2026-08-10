@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import ProjectsGrid from "../components/ProjectsGrid.astro";
 import ThemesSection from "../components/ThemesSection.astro";
 import ImpactSection from "../components/ImpactSection.astro";
-import FeaturedProjects from "../components/FeaturedProjects.astro";
 import PartnersSection from "../components/PartnersSection.astro";
+import Reveal from "../components/Reveal.astro";
 ---
 
 <BaseLayout
@@ -18,9 +19,9 @@ import PartnersSection from "../components/PartnersSection.astro";
 
   <ImpactSection />
 
-  <FeaturedProjects />
+  <ProjectsGrid />
 
   <PartnersSection />
+
+  <Reveal />
 </BaseLayout>
-
-

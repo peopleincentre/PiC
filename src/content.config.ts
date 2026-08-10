@@ -132,6 +132,55 @@ const annualReports = defineCollection({
 });
 
 
+const pages = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/pages",
+  }),
+
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    introLead: z.string().optional(),
+    introBody: z.string().optional(),
+    cards: z
+      .array(
+        z.object({
+          heading: z.string(),
+          eyebrow: z.string(),
+          body: z.string(),
+          button: z.string(),
+        })
+      )
+      .optional(),
+    conversation: z
+      .object({
+        title: z.string(),
+        intro: z.string(),
+        email: z.string(),
+        socials: z
+          .array(
+            z.object({
+              label: z.string(),
+              href: z.string(),
+            })
+          )
+          .optional(),
+      })
+      .optional(),
+    details: z
+      .array(
+        z.object({
+          label: z.string(),
+          email: z.string().optional(),
+          phone: z.string().optional(),
+        })
+      )
+      .optional(),
+  }),
+});
+
+
 export const collections = {
   projects,
   papers,
@@ -139,4 +188,5 @@ export const collections = {
   team,
   governance,
   "annual-reports": annualReports,
+  pages,
 };

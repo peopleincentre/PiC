@@ -109,18 +109,30 @@ const partners = [
 
 <style>
   .partners-section {
+    box-sizing: border-box;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     background: var(--color-surface);
-    padding: 4rem 2rem;
+    padding: 1.5rem 0;
     overflow: hidden;
   }
 
   .section-header {
-    margin-bottom: 2rem;
+    max-width: 1280px;
+    margin: 0 auto 1.5rem;
+    padding-inline: 1rem;
     text-align: center;
   }
 
   .section-header h2 {
     margin: 0 0 0.5rem;
+    font-family: "Roboto Slab", serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 600;
+  }
+
+  .section-header .tagline {
+    justify-content: center;
   }
 
   .partners-subtitle {
@@ -162,9 +174,9 @@ const partners = [
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 220px;
-    height: 88px;
-    margin-right: 2.5rem;
+    width: clamp(140px, 16vw, 220px);
+    height: clamp(60px, 7vw, 88px);
+    margin-right: clamp(1.25rem, 2.5vw, 2.5rem);
     padding: 0 1rem;
     text-decoration: none;
     background: #fff;
@@ -201,7 +213,7 @@ const partners = [
     justify-content: center;
     font-family: "Roboto Slab", serif;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 1.4vw, 0.9rem);
     text-align: center;
     line-height: 1.4;
     color: var(--color-heading);
@@ -229,15 +241,15 @@ const partners = [
     }
   }
 
+  @media (min-width: 768px) {
+    .section-header {
+      padding-inline: 2rem;
+    }
+  }
+
   @media (max-width: 640px) {
     .partners-section {
-      padding: 2.5rem 1rem;
-    }
-
-    .partner-item {
-      width: 180px;
-      height: 76px;
-      margin-right: 1.5rem;
+      padding: 2rem 0;
     }
   }
 </style>

@@ -1,0 +1,211 @@
+---
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+
+const allProjects = await getCollection("projects");
+
+const curatedSlugs = [
+  "farmers-first-for-used-water",
+  "joint-rapid-recovery-needs-assessment-the-2025-eastern-afghanistan-earthquake",
+  "mozambique-mrf-evaluation",
+  "advanced-certificate-programme-on-research-in-political-economy",
+];
+
+const projects = curatedSlugs
+  .map((slug) => allProjects.find((p) => p.id === slug))
+  .filter(Boolean);
+
+const sub = (p) => {
+  const d = p.data;
+  const place = [d.location, d.country].filter(Boolean).join(", ");
+  return [place, d.client].filter(Boolean).join(" · ");
+};
+---
+
+<section class="projects-deck" aria-label="Recent projects">
+  <div class="projects-deck-inner">
+    <h2 class="mega-title mega-title-light">
+      Work that puts people&nbsp;<em>at&nbsp;the&nbsp;centre</em>
+    </h2>
+    <p class="projects-deck-intro">
+      A selection of recent work across disaster resilience, ecological
+      balance, urban space and institutional initiatives.
+    </p>
+  </div>
+
+  <div class="tiles">
+    {
+      projects.map((project, i) => (
+        <a
+          href={`${base}work/projects/${project.id}/`}
+          class="tile reveal"
+          style={`--reveal-delay: ${i * 0.12}s`}
+        >
+          {
+            project.data.coverImage && (
+              <img
+                class="tile-img"
+                src={`${base}${project.data.coverImage.replace(/^\//, "")}`}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            )
+          }
+          <span class="tile-shade"></span>
+          <span class="tile-desc">
+            <span class="tile-title">{project.data.title}</span>
+            {sub(project) && <span class="tile-client">{sub(project)}</span>}
+            <span class="link-icon link-icon-tile" aria-hidden="true">
+              <span class="icon"></span>
+            </span>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="projects-deck-viewall">
+    <a href={`${base}work/`} class="link-text">View All Projects</a>
+  </div>
+</section>
+
+<style>
+  .projects-deck {
+    box-sizing: border-box;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: var(--color-dark);
+    padding: 2.75rem 0 3rem;
+  }
+
+  .projects-deck-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .projects-deck-inner .mega-title {
+    margin-top: 0;
+    font-size: clamp(1.7rem, 3vw, 2.7rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .projects-deck-intro {
+    max-width: 640px;
+    margin: 0.75rem auto 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .tiles {
+    margin-top: 2.25rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    background: var(--color-dark);
+    border-left: 3px solid #fff;
+  }
+
+  .tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 0;
+    padding: clamp(1rem, 1.4vw, 2rem);
+    border-right: 3px solid #fff;
+    clip-path: inset(0);
+    text-decoration: none;
+    isolation: isolate;
+  }
+
+  .tile-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+    z-index: -2;
+  }
+
+  .tile-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(4, 4, 21, 0.05) 0%,
+      rgba(4, 4, 21, 0.25) 40%,
+      rgba(4, 4, 21, 0.88) 100%
+    );
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+
+  .tile-desc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  .tile:hover .tile-desc,
+  .tile:hover .tile-title,
+  .tile:hover .tile-client,
+  .tile:hover .link-icon-tile,
+  .tile:focus-visible .tile-desc,
+  .tile:focus-visible .tile-title,
+  .tile:focus-visible .tile-client,
+  .tile:focus-visible .link-icon-tile {
+    color: var(--color-cyan);
+  }
+
+  .tile-title {
+    width: 100%;
+    min-width: 0;
+    font-family: "Roboto Slab", serif;
+    font-weight: 600;
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
+    line-height: 1.25;
+    overflow-wrap: break-word;
+  }
+
+  .tile-client {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: clamp(0.72rem, 0.7vw, 0.85rem);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .link-icon-tile {
+    margin-top: 0.5rem;
+  }
+
+  .projects-deck-viewall {
+    max-width: 1280px;
+    margin: 2.25rem auto 0;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .tiles {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .tiles {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -6,7 +6,7 @@ endYear: 2013
 
 themes:
   - urban-space
-featured: false
+featured: true
 
 coverImage: /images/projects/design-for-natural-markets-accommodating-the-informal/design-for-natural-markets-accommodating-the-informal-cover.png
 

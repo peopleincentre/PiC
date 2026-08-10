@@ -6,7 +6,7 @@ endYear: 2016
 
 themes:
   - urban-space
-featured: false
+featured: true
 
 coverImage: /images/projects/housing-for-all-demand-assessment-in-towns-of-gujarat/housing-for-all-demand-assessment-in-towns-of-gujarat-cover.jpg
 

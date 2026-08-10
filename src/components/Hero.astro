@@ -2,10 +2,13 @@
 const base = import.meta.env.BASE_URL;
 
 const rotatingPhrases = [
-  "Reinforcing People's Resilience to Disasters",
-  "Restructuring Human Interventions for Ecological Balance",
-  "Reclaiming Urban Space for the People",
-  "Reconnecting Research with the Socio-Economic Realities of Communities",
+  { pre: "Reinforcing People's Resilience ", em: "to Disasters" },
+  { pre: "Restructuring Human Interventions ", em: "for Ecological Balance" },
+  { pre: "Reclaiming Urban Space ", em: "for the People" },
+  {
+    pre: "Reconnecting Research with the Socio-Economic Realities ",
+    em: "of Communities",
+  },
 ];
 ---
 
@@ -17,9 +20,9 @@ const rotatingPhrases = [
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <p class="hero-eyebrow">People in Centre works across four thematic areas</p>
-      <h1 class="hero-headline" id="hero-headline" aria-live="polite">
-        {rotatingPhrases[0]}
+      <h1 class="hero-headline" aria-live="polite">
+        <span class="headline-pre">{rotatingPhrases[0].pre}</span
+        ><em class="headline-em">{rotatingPhrases[0].em}</em>
       </h1>
       <p class="hero-intro-line">
         We bring poor and vulnerable communities to the centre of development —
@@ -34,7 +37,7 @@ const rotatingPhrases = [
 </section>
 
 <section class="hero-intro">
-  <div class="hero-intro-inner">
+  <div class="hero-intro-inner reveal">
     <p class="hero-statement">
       <strong>People in Centre Consulting (PiC)</strong> is committed to
       bringing poor and vulnerable communities to the centre of development
@@ -47,9 +50,7 @@ const rotatingPhrases = [
       achieve lasting change.
     </p>
 
-    <p class="pillars-lead">
-      PiC's approach rests on three fundamental shifts.
-    </p>
+    <p class="pillars-lead">PiC's approach rests on three fundamental shifts.</p>
 
     <div class="pillars">
       <div class="pillar">
@@ -79,22 +80,31 @@ const rotatingPhrases = [
 
 <script>
   const phrases = [
-    "Reinforcing People's Resilience to Disasters",
-    "Restructuring Human Interventions for Ecological Balance",
-    "Reclaiming Urban Space for the People",
-    "Reconnecting Research with the Socio-Economic Realities of Communities",
+    {
+      pre: "Reinforcing People's Resilience ",
+      em: "to Disasters",
+    },
+    { pre: "Restructuring Human Interventions ", em: "for Ecological Balance" },
+    { pre: "Reclaiming Urban Space ", em: "for the People" },
+    {
+      pre: "Reconnecting Research with the Socio-Economic Realities ",
+      em: "of Communities",
+    },
   ];
 
-  const headline = document.getElementById("hero-headline");
+  const pre = document.querySelector(".headline-pre");
+  const em = document.querySelector(".headline-em");
   let index = 0;
 
   const rotate = () => {
     index = (index + 1) % phrases.length;
-    headline?.classList.add("fade-out");
+    const heading = pre?.parentElement;
+    heading?.classList.add("fade-out");
     setTimeout(() => {
-      if (headline) {
-        headline.textContent = phrases[index];
-        headline.classList.remove("fade-out");
+      if (pre && em) {
+        pre.textContent = phrases[index].pre;
+        em.textContent = phrases[index].em;
+        heading?.classList.remove("fade-out");
       }
     }, 250);
   };
@@ -107,13 +117,13 @@ const rotatingPhrases = [
     box-sizing: border-box;
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    background: var(--color-heading);
+    background: var(--color-dark);
     padding: 0;
   }
 
   .hero-bg {
     position: relative;
-    min-height: 72vh;
+    min-height: 74vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -126,39 +136,37 @@ const rotatingPhrases = [
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(18, 32, 38, 0.55) 0%,
-      rgba(18, 32, 38, 0.35) 50%,
-      rgba(18, 32, 38, 0.72) 100%
+      rgba(4, 4, 21, 0.5) 0%,
+      rgba(4, 4, 21, 0.28) 50%,
+      rgba(4, 4, 21, 0.66) 100%
     );
   }
 
   .hero-content {
     position: relative;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 2rem;
+    padding: 1.5rem 2rem;
     text-align: center;
     color: #fff;
   }
 
-  .hero-eyebrow {
-    margin: 0 0 1.25rem;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    opacity: 0.85;
-  }
-
   .hero-headline {
-    margin: 0 0 1.5rem;
+    margin: 0 0 1rem;
     font-family: "Roboto Slab", serif;
     font-weight: 600;
-    font-size: clamp(1.9rem, 4.6vw, 3.6rem);
-    line-height: 1.15;
+    font-size: clamp(1.9rem, 3.6vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
     color: #fff;
     text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
     opacity: 1;
     transition: opacity 0.25s ease;
+  }
+
+  .hero-headline em {
+    font-style: normal;
+    color: inherit;
   }
 
   .hero-headline.fade-out {
@@ -166,13 +174,13 @@ const rotatingPhrases = [
   }
 
   .hero-intro-line {
-    margin: 0 0 2rem;
+    margin: 0 0 1.25rem;
     max-width: 56ch;
     margin-inline: auto;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: clamp(1rem, 1.6vw, 1.2rem);
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.92);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .hero-ctas {
@@ -202,14 +210,14 @@ const rotatingPhrases = [
   }
 
   .cta-primary {
-    background: var(--color-accent);
-    color: #fff;
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+    background: var(--color-cyan);
+    color: #040415;
+    box-shadow: 0 8px 24px rgba(52, 181, 245, 0.4);
   }
 
   .cta-primary:hover {
-    background: var(--color-accent-dark);
-    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
+    background: #5ec2f7;
+    box-shadow: 0 12px 30px rgba(52, 181, 245, 0.5);
   }
 
   .cta-outline {
@@ -235,20 +243,22 @@ const rotatingPhrases = [
     box-sizing: border-box;
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    background: color-mix(in srgb, var(--color-heading) 18%, var(--color-surface));
+    background: var(--color-bg);
     color: var(--color-heading);
     padding: 1rem;
   }
 
   .hero-intro-inner {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 1.25rem 0;
   }
 
   .hero-statement {
     max-width: 980px;
+    margin-top: 0;
     font-family: "Roboto Slab", serif;
-    font-size: clamp(1.15rem, 1.8vw, 1.30rem);
+    font-size: clamp(1.15rem, 1.8vw, 1.3rem);
     font-weight: 400;
     line-height: 1.8;
     color: var(--color-heading);
@@ -260,10 +270,10 @@ const rotatingPhrases = [
   }
 
   .pillars-lead {
-    margin: 1rem 0 0;
-     font-family: "Roboto Slab", serif;
-    font-size: clamp(1.15rem, 1.8vw, 1.30rem);
-    font-weight: 400;
+    margin: 1.25rem 0 0;
+    font-family: "Roboto Slab", serif;
+    font-size: clamp(1.15rem, 1.8vw, 1.3rem);
+    font-weight: 600;
     line-height: 1.8;
     color: var(--color-heading);
   }
@@ -271,7 +281,7 @@ const rotatingPhrases = [
   .pillars {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding-top: 1rem;
+    padding-top: 0.5rem;
   }
 
   .pillar + .pillar {
@@ -287,7 +297,7 @@ const rotatingPhrases = [
   .pillar-title {
     margin: 0 0 0.5rem;
     font-family: "Roboto Slab", serif;
-    font-size: 1.30rem;
+    font-size: 1.3rem;
     font-weight: 600;
     line-height: 1.3;
     color: var(--color-heading);
@@ -302,22 +312,22 @@ const rotatingPhrases = [
 
   @media (max-width: 700px) {
     .hero-bg {
-      min-height: 64vh;
+      min-height: 63vh;
     }
 
     .hero-content {
-      padding: 3rem 1.25rem;
+      padding: 2.25rem 1.25rem;
     }
 
-    .hero-intro {
-      padding: 3rem 1.25rem;
+    .hero-intro-inner {
+      padding: 0.75rem 0;
     }
 
     .pillars {
       grid-template-columns: 1fr;
-      gap: 1.75rem;
-      margin-top: 2.5rem;
-      padding-top: 2rem;
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
     }
 
     .pillar + .pillar {

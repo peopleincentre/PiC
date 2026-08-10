@@ -10,13 +10,13 @@ const currentSection = segments[0] || "home";
 
 const navItems = [
   { label: "Home", href: base, section: "home" },
-  { label: "About Us", href: `${base}about/`, section: "about" },
   { label: "Our Work", href: `${base}work/`, section: "work" },
   {
     label: "Knowledge Resources",
     href: `${base}resources/`,
     section: "resources",
   },
+  { label: "About Us", href: `${base}about/`, section: "about" },
   { label: "Contact", href: `${base}contact/`, section: "contact" },
 ];
 
@@ -143,7 +143,7 @@ header {
   margin-left: calc(50% - 50vw);
 
   padding: 0;
-  background: rgba(30, 41, 59, 0.82);
+  background: rgba(12, 12, 14, 0.88);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   color: white;
@@ -191,24 +191,12 @@ header {
   letter-spacing: 0.01em;
 }
 
-.menu a:hover {
+.menu a:hover:not(.is-active) {
   opacity: 0.85;
 }
 
 .menu a.is-active {
-  position: relative;
-  color: #fff;
-}
-
-.menu a.is-active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--color-accent);
+  color: var(--color-cyan);
 }
 
 .menu-desktop {
@@ -324,12 +312,9 @@ header {
 }
 
 .menu-drawer a.is-active {
-  background: rgba(37, 99, 235, 0.28);
-  border: 1px solid rgba(37, 99, 235, 0.5);
-}
-
-.menu-drawer a.is-active::after {
-  display: none;
+  color: var(--color-cyan);
+  background: rgba(52, 181, 245, 0.16);
+  border: 1px solid rgba(52, 181, 245, 0.5);
 }
 
 @media (min-width: 769px) {

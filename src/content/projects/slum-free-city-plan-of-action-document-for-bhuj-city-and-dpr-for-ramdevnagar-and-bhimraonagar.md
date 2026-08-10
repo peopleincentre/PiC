@@ -6,7 +6,7 @@ endYear: 2014
 
 themes:
   - urban-space
-featured: false
+featured: true
 
 coverImage: /images/projects/slum-free-city-plan-of-action-document-for-bhuj-city-and-dpr-for-ramdevnagar-and-bhimraonagar/slum-free-city-plan-of-action-document-for-bhuj-city-and-dpr-for-ramdevnagar-and-bhimraonagar-cover.jpg
 

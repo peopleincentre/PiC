@@ -70,8 +70,8 @@ const projectCount = allProjects.length;
     box-sizing: border-box;
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    background: var(--color-heading);
-    padding: 4rem 1.25rem;
+    background: var(--color-dark);
+    padding: 2.75rem 1.25rem;
   }
 
   .impact-inner {
@@ -81,17 +81,17 @@ const projectCount = allProjects.length;
 
   .impact-head {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .impact-eyebrow {
     margin: 0 0 0.5rem;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: #93c5fd;
+    color: var(--color-cyan);
   }
 
   .impact-title {
@@ -116,9 +116,9 @@ const projectCount = allProjects.length;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 2rem 1.5rem;
-    background: rgba(37, 99, 235, 0.12);
-    border: 1px solid rgba(99, 102, 241, 0.28);
+    padding: 1.5rem 1.25rem;
+    background: rgba(52, 181, 245, 0.08);
+    border: 1px solid rgba(52, 181, 245, 0.28);
     border-radius: var(--radius-card);
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
   }
@@ -152,12 +152,12 @@ const projectCount = allProjects.length;
 
   .impact-categories li::before {
     content: "· ";
-    color: #93c5fd;
+    color: var(--color-cyan);
   }
 
   @media (max-width: 800px) {
     .impact-section {
-      padding: 3rem 1.25rem;
+      padding: 2.25rem 1.25rem;
     }
 
     .impact-grid {

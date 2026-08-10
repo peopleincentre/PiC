@@ -1,92 +1,257 @@
 ---
-import ThemeCard from "./ThemeCard.astro";
+const base = import.meta.env.BASE_URL;
 
 const themes = [
-
   {
+    slug: "ecological-balance",
     title: "Restructuring Human Interventions for Ecological Balance",
-    description:
-      "Exploring sustainable relationships between people and nature through water management, wastewater reuse, ecological restoration and responsible interventions.",
-    image: "/images/themes/ecological-balance.jpg",  
-    link: "/work/ecological-balance"
+    image: "/images/themes/ecological-balance.jpg",
+    color: "var(--color-ecology-block)",
   },
-
   {
+    slug: "resilience",
     title: "Reinforcing People's Resilience to Disasters",
-    description:
-      "Supporting communities and institutions in disaster recovery, resilient housing, risk reduction and locally appropriate solutions.",
-    image: "/images/themes/resilience.jpg",  
-    link: "/work/resilience"
-  },  
-
-  {
-    title: "Reclaiming Urban Space for the People",
-    description:
-      "Working towards inclusive cities through people-centred planning, housing and public spaces.",
-    image: "/images/themes/urban-space.jpg", 
-    link: "/work/urban-space"
+    image: "/images/themes/resilience.jpg",
+    color: "var(--color-resilience-block)",
   },
-
   {
+    slug: "urban-space",
+    title: "Reclaiming Urban Space for the People",
+    image: "/images/themes/urban-space.jpg",
+    color: "var(--color-urban-block)",
+  },
+  {
+    slug: "institutional-initiatives",
     title: "Reconnecting Research with the Socio-Economic Realities of Communities",
-    description:
-      "Creating and managing platforms for research, learning, capacity building and knowledge exchange.",
-    image: "/images/projects/advanced-certificate-programme-on-research-in-political-economy/advanced-certificate-programme-on-research-in-political-economy-cover.jpg", 
-    link: "/work/institutional-initiatives"
-  }
+    image:
+      "/images/projects/advanced-certificate-programme-on-research-in-political-economy/advanced-certificate-programme-on-research-in-political-economy-cover.jpg",
+    color: "var(--color-capacity-block)",
+  },
 ];
 
+const descImage = "/images/theme.jpg";
 ---
 
-<section class="home-themes">
+<section class="expertise" aria-label="Thematic areas of work">
+  <div class="expertise-wrapper">
+    <div
+      class="desc reveal"
+      style={`background-image: url(${base}${descImage.replace(/^\//, "")});`}
+    >
+      <p class="tagline tagline-light">Areas of Expertise</p>
+      <h2 class="desc-title">
+        Four thematic areas,<br />
+        one people-<em>centred</em> approach
+      </h2>
+      <p class="desc-body">
+        We provide research, planning, implementation support and capacity
+        building for governments, international agencies and civil society —
+        always bringing poor and vulnerable communities to the centre.
+      </p>
+      <a href={`${base}work/`} class="link-text">View All Projects</a>
+    </div>
 
-  <h2>
-    Thematic Areas of Work
-  </h2>
-
-
-  <div class="theme-grid">
-
-    {
-      themes.map((theme) => (
-        <ThemeCard
-          title={theme.title}
-          description={theme.description}
-          image={theme.image}
-          link={theme.link}
-        />
-      ))
-    }
-
+    <div class="item-wrapper">
+      {
+        themes.map((theme, i) => (
+          <a
+            href={`${base}work/?theme=${theme.slug}`}
+            class="item reveal"
+            style={`
+              --theme-color: ${theme.color};
+              --reveal-delay: ${i * 0.12}s;
+              --theme-img: url(${base}${theme.image.replace(/^\//, "")});
+            `}
+          >
+            <span class="item-bg"></span>
+            <span class="item-details">
+              <span class="item-title">{theme.title}</span>
+              <span class="link-icon link-icon-outline">
+                <span class="icon"></span>
+                <span class="text">Explore</span>
+              </span>
+            </span>
+          </a>
+        ))
+      }
+    </div>
   </div>
-
 </section>
 
-
 <style>
-
-section {
-  padding: 2rem 2rem;
-}
-
-.theme-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-
-@media (max-width: 1000px) {
-  .theme-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
-  .theme-grid {
-    grid-template-columns: 1fr;
+  .expertise {
+    box-sizing: border-box;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: var(--color-surface);
   }
 
-}
+  .expertise-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    margin: 0 auto;
+  }
 
+  /* Left descriptive panel */
+  .desc {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(2rem, 4vw, 5rem) clamp(2rem, 6vw, 7.5rem);
+    color: #fff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .desc::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      165deg,
+      rgba(4, 4, 21, 0.62) 0%,
+      rgba(4, 4, 21, 0.42) 55%,
+      rgba(4, 4, 21, 0.26) 100%
+    );
+    z-index: 0;
+  }
+
+  .desc > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .desc-title {
+    margin: 0.75rem 0 0;
+    font-family: "Roboto Slab", serif;
+    font-weight: 600;
+    font-size: clamp(1.7rem, 3vw, 2.7rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: #fff;
+  }
+
+  .desc-title em {
+    font-style: normal;
+    color: inherit;
+  }
+
+  .desc-body {
+    max-width: 46ch;
+    margin: 0.75rem 0 0;
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .desc .link-text {
+    margin-top: clamp(1rem, 1.75vw, 1.75rem);
+  }
+
+  /* 2x2 tile grid */
+  .item-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 0;
+    padding: clamp(1.2rem, 2.5vw, 2rem);
+    background: var(--color-surface);
+    text-decoration: none;
+    isolation: isolate;
+  }
+
+  .item-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--theme-color);
+    z-index: 0;
+  }
+
+  /* Theme image fades in over the colour on hover */
+  .item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(4, 4, 21, 0.15) 0%,
+        rgba(4, 4, 21, 0.85) 100%
+      ),
+      var(--theme-img) center / cover no-repeat;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    z-index: 1;
+  }
+
+  .item:hover::after,
+  .item:focus-visible::after {
+    opacity: 1;
+  }
+
+  .item-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+  }
+
+  .item-title {
+    width: 100%;
+    min-width: 0;
+    margin-top: 0.3rem;
+    font-family: "Roboto Slab", serif;
+    font-weight: 600;
+    font-size: clamp(1.45rem, 2.3vw, 2.1rem);
+    line-height: 1.3;
+    color: #fff;
+    overflow-wrap: break-word;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  }
+
+  .item .link-icon {
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 992px) {
+    .expertise-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .desc {
+      min-height: 0;
+      aspect-ratio: 16 / 9;
+      padding: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    .item-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .item-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .desc {
+      aspect-ratio: auto;
+      min-height: 18rem;
+    }
+  }
 </style>
