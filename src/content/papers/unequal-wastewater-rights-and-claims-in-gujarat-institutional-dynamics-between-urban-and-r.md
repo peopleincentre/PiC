@@ -1,5 +1,6 @@
 ---
-title: "Unequal wastewater rights and claims in Gujarat: Institutional dynamics between urban and rural. Water Alternatives 16(2): 581-605"
+title: "Unequal wastewater rights and claims in Gujarat: Institutional dynamics between urban and rural"
+journal: "Water Alternatives 16(2): 581-605"
 year: 2023
 authors: Palrecha, A. and Sheth, A
 summary: "Palrecha, A. and Sheth, A (2023) Unequal wastewater rights and claims in Gujarat: Institutional dynamics between urban and rural. Water Alternatives 16(2): 581-605"

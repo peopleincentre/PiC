@@ -1,5 +1,6 @@
 ---
-title: Wastewater irrigation in Gujarat (Water Policy Research Highlight 30). International Water Management Institute
+title: Wastewater irrigation in Gujarat (Water Policy Research Highlight 30)
+journal: International Water Management Institute
 year: 2012
 authors: Palrecha, A., Kapoor, D., & Malladi, T
 summary: Palrecha, A., Kapoor, D., & Malladi, T (2012) Wastewater irrigation in Gujarat (Water Policy Research Highlight 30). International Water Management Institute

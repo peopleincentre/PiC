@@ -1,15 +1,5 @@
 ---
 const base = import.meta.env.BASE_URL;
-
-const rotatingPhrases = [
-  { pre: "Reinforcing People's Resilience ", em: "to Disasters" },
-  { pre: "Restructuring Human Interventions ", em: "for Ecological Balance" },
-  { pre: "Reclaiming Urban Space ", em: "for the People" },
-  {
-    pre: "Reconnecting Research with the Socio-Economic Realities ",
-    em: "of Communities",
-  },
-];
 ---
 
 <section class="hero">
@@ -20,13 +10,12 @@ const rotatingPhrases = [
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <h1 class="hero-headline" aria-live="polite">
-        <span class="headline-pre">{rotatingPhrases[0].pre}</span
-        ><em class="headline-em">{rotatingPhrases[0].em}</em>
-      </h1>
+      <h2 class="hero-quote">Putting the last first.</h2>
+      <p class="hero-quote-author">— Robert Chambers</p>
       <p class="hero-intro-line">
-        We bring poor and vulnerable communities to the centre of development —
-        as active participants shaping, managing and owning their own future.
+        We strive to bring poor and vulnerable communities to the centre of
+        development — as active participants shaping, managing and owning their
+        own future.
       </p>
       <div class="hero-ctas">
         <a class="cta cta-primary" href={`${base}work/`}>Our Work</a>
@@ -46,7 +35,8 @@ const rotatingPhrases = [
       and owning their development. Through research, planning, implementation
       support, capacity building, and knowledge generation, we help governments,
       international agencies, and civil society organisations build programmes
-      that strengthen local capacities, promote socially just solutions, and
+      that create space for people's own agency, strengthen institutional capacities 
+      for community-centred processes, promote socially just solutions, and
       achieve lasting change.
     </p>
 
@@ -77,40 +67,6 @@ const rotatingPhrases = [
     </div>
   </div>
 </section>
-
-<script>
-  const phrases = [
-    {
-      pre: "Reinforcing People's Resilience ",
-      em: "to Disasters",
-    },
-    { pre: "Restructuring Human Interventions ", em: "for Ecological Balance" },
-    { pre: "Reclaiming Urban Space ", em: "for the People" },
-    {
-      pre: "Reconnecting Research with the Socio-Economic Realities ",
-      em: "of Communities",
-    },
-  ];
-
-  const pre = document.querySelector(".headline-pre");
-  const em = document.querySelector(".headline-em");
-  let index = 0;
-
-  const rotate = () => {
-    index = (index + 1) % phrases.length;
-    const heading = pre?.parentElement;
-    heading?.classList.add("fade-out");
-    setTimeout(() => {
-      if (pre && em) {
-        pre.textContent = phrases[index].pre;
-        em.textContent = phrases[index].em;
-        heading?.classList.remove("fade-out");
-      }
-    }, 250);
-  };
-
-  setInterval(rotate, 4500);
-</script>
 
 <style>
   .hero {
@@ -151,30 +107,29 @@ const rotatingPhrases = [
     color: #fff;
   }
 
-  .hero-headline {
-    margin: 0 0 1rem;
+  .hero-quote {
+    margin: 0 0 0.25rem;
     font-family: "Roboto Slab", serif;
     font-weight: 600;
-    font-size: clamp(1.9rem, 3.6vw, 3.4rem);
-    line-height: 1.1;
-    letter-spacing: -0.015em;
+    font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
     color: #fff;
     text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
-    opacity: 1;
-    transition: opacity 0.25s ease;
   }
 
-  .hero-headline em {
-    font-style: normal;
-    color: inherit;
-  }
-
-  .hero-headline.fade-out {
-    opacity: 0;
+  .hero-quote-author {
+    margin: 0 0 0.75rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   }
 
   .hero-intro-line {
-    margin: 0 0 1.25rem;
+    margin: 0 auto 1.25rem;
     max-width: 56ch;
     margin-inline: auto;
     font-family: "Plus Jakarta Sans", sans-serif;

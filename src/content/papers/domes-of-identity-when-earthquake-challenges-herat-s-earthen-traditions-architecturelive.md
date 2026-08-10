@@ -1,5 +1,6 @@
 ---
-title: "Domes of Identity: When Earthquake Challenges Herat’s Earthen Traditions. ArchitectureLive!"
+title: "Domes of Identity: When Earthquake Challenges Herat’s Earthen Traditions"
+journal: ArchitectureLive!
 year: 2025
 authors: Desai, J., & Rawal, V
 summary: "Desai, J., & Rawal, V (2025) Domes of Identity: When Earthquake Challenges Herat’s Earthen Traditions. ArchitectureLive!"

@@ -1,5 +1,6 @@
 ---
-title: "Wastewater Irrigation in Maharashtra (Water Policy Research Highlight 09; p. 8). International Water Management Institute"
+title: "Wastewater Irrigation in Maharashtra (Water Policy Research Highlight 09; p. 8)"
+journal: International Water Management Institute
 year: 2016
 authors: Palrecha, A., Sakhare, N., Patkar, S., & Sule, S
 summary: "Palrecha, A., Sakhare, N., Patkar, S., & Sule, S (2016) Wastewater Irrigation in Maharashtra (Water Policy Research Highlight 09; p. 8). International Water Management Institute"

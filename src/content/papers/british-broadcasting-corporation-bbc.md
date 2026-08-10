@@ -1,8 +1,8 @@
 ---
-title: British Broadcasting Corporation (BBC)
+title: Villages on the frontline
 year: 2006
-authors: Villages on the frontline
-summary: Villages on the frontline (2006) British Broadcasting Corporation (BBC)
+authors: BBC
+summary: BBC(2006) Villages on the frontline. British Broadcasting Corporation (BBC)
 pdf: https://youtu.be/QSxx8KnOZUk
 
 themes:

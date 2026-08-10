@@ -61,6 +61,19 @@ function linkType(url) {
   return u.split("?")[0].endsWith(".pdf") ? "pdf" : "download";
 }
 
+function citeHtml(title, summary = "", journal = "") {
+  const s = String(summary);
+  let t = String(title || "").trim();
+  if (journal && t.includes(journal)) {
+    t = t.slice(0, t.indexOf(journal)).trim();
+  }
+  if (t && s.includes(t)) {
+    const i = s.indexOf(t);
+    return `${s.slice(0, i)}<strong>${t}</strong>${s.slice(i + t.length)}`;
+  }
+  return `<strong>${t || s}</strong>`;
+}
+
 const videoById = new Map(videos.map((v) => [v.data.youtube, v]));
 const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
 
@@ -269,7 +282,14 @@ const themeIcons = {
             return (
               <li class="paper-card">
                 <span class="paper-year">{paper.data.year}</span>
-                <span class="paper-citation">{paper.data.summary}</span>
+                <span
+                  class="paper-citation"
+                  set:html={citeHtml(
+                    paper.data.title,
+                    paper.data.summary,
+                    paper.data.journal || ""
+                  )}
+                />
                 <div class="paper-actions">
                   {linkKind === "pdf" && (
                     <a
@@ -813,10 +833,12 @@ const themeIcons = {
 
 .group {
   margin-bottom: 2.25rem;
-  background: color-mix(in srgb, var(--accent) 6%, #fff);
-  border: 1px solid color-mix(in srgb, var(--accent) 22%, #fff);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--accent);
   border-radius: 14px;
   padding: 1.5rem;
+  box-shadow: var(--shadow-card);
 }
 
 .group > h2 {
@@ -843,14 +865,9 @@ const themeIcons = {
 .group-count {
   margin-left: auto;
   flex-shrink: 0;
-  background: var(--accent);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.25rem 0.7rem;
-  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-muted);
 }
 
 /* Papers */
@@ -860,46 +877,50 @@ const themeIcons = {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
 }
 
 .paper-card {
   background: #fff;
   border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 1.25rem;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .paper-card:hover {
   border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
 }
 
 .paper-year {
   align-self: flex-start;
-  background: var(--accent);
-  color: #fff;
-  font-size: 0.78rem;
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
+  line-height: 1.5;
+  color: var(--accent);
 }
 
 .paper-citation {
+  flex: 1;
+  min-width: 0;
   line-height: 1.5;
   font-size: 0.95rem;
   color: var(--color-text);
 }
 
+.paper-citation strong {
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
 .paper-actions {
-  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1138,6 +1159,18 @@ const themeIcons = {
   .tab {
     flex: 1 1 auto;
     justify-content: center;
+  }
+
+  .paper-card {
+    gap: 0.6rem;
+  }
+
+  .paper-citation {
+    flex-basis: 100%;
+  }
+
+  .paper-actions {
+    margin-left: auto;
   }
 
   .papers-grid,
