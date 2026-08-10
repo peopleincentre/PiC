@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://peopleincentre.github.io/peopleincentre-website/sitemap-index.xml
+Sitemap: https://peopleincentre.github.io/PiC/sitemap-index.xml
