@@ -72,43 +72,63 @@ const services = [
 >
 <div class="about-page">
 
-<header class="about-hero">
-  <h1>About People in Centre</h1>
-  <p class="about-hero-sub">
-    A knowledge-driven development consultancy committed to
-    people-centred planning, recovery, and development.
-  </p>
-</header>
 <section class="about-intro">
-<h2>Who We Are</h2>
-<p>
-People in Centre Consulting Services Private Limited (PiC) is a 
-knowledge-driven development consultancy grounded in a people-centred 
-approach to development. We work at the intersection of research, policy 
-and practice, with a particular concern for poor and vulnerable communities. 
-Our work is shaped by the understanding that people are not merely 
-beneficiaries of development, but should be at the centre of processes 
-that affect their lives. This perspective informs our work across housing, 
-post-disaster recovery, environmental planning, urban development and 
-community processes. Our practice draws on subject-matter expertise, 
-extensive field experience and long-standing engagement with governments, 
-international development agencies, practitioners and researchers. 
-We also place importance on nurturing young professionals through 
-mentorship and opportunities to learn through engagement with real-
-world practice.
-</p>
-<p>
-People in Centre Consulting Services Private Limited (PiC) was registered 
-in 2008 with the Registrar of Companies, Ahmedabad (CIN: U74140GJ2008PTC055307). 
-Active since its incorporation, PiC maintains statutory compliance, 
-including timely filing of financial statements and annual returns. The 
-organisation has founder-led governance, stable leadership and transparent 
-ownership. Its Board brings together expertise in social housing, post-disaster 
-recovery, environmental planning, urban development and community processes. 
-PiC's professional standing is built on the expertise and experience of 
-its leadership and team, its field-based practice, and long-standing 
-partnerships with international development agencies.
-  </p>
+  <div class="intro-grid">
+
+    <div class="intro-story">
+      <h2>Who We Are</h2>
+      <p>
+        People in Centre Consulting Services Private Limited (PiC) is a
+        knowledge-driven development consultancy grounded in a people-centred
+        approach to development. We work at the intersection of research, policy
+        and practice, with a particular concern for poor and vulnerable communities.
+        Our work is shaped by the understanding that people are not merely
+        beneficiaries of development, but should be at the centre of processes
+        that affect their lives. This perspective informs our work across housing,
+        post-disaster recovery, environmental planning, urban development and
+        community processes. Our practice draws on subject-matter expertise,
+        extensive field experience and long-standing engagement with governments,
+        international development agencies, practitioners and researchers.
+        We also place importance on nurturing young professionals through
+        mentorship and opportunities to learn through engagement with real-
+        world practice.
+      </p>
+      <p>
+        People in Centre Consulting Services Private Limited (PiC) has been 
+        active since its incorporation. PiC maintains statutory compliance,
+        including timely filing of financial statements and annual returns. The
+        organisation has founder-led governance, stable leadership and transparent
+        ownership. Its Board brings together expertise in social housing, post-disaster
+        recovery, environmental planning, urban development and community processes.
+        PiC's professional standing is built on the expertise and experience of
+        its leadership and team, its field-based practice, peer network and long-standing
+        partnerships with international development agencies.
+      </p>
+    </div>
+
+    <aside class="intro-facts">
+      <h3>Key Information</h3>
+      <ul class="facts-list">
+        <li>
+          <span class="fact-label">Established</span>
+          <span class="fact-value"> Year 2008, Companies Act 2013, Registrar of Companies, Ahmedabad</span>
+        </li>
+        <li>
+          <span class="fact-label">CIN</span>
+          <span class="fact-value">U74140GJ2008PTC055307</span>
+        </li>
+        <li>
+          <span class="fact-label">PAN</span>
+          <span class="fact-value">AAECP8566F</span>
+        </li>
+        <li>
+          <span class="fact-label">GST</span>
+          <span class="fact-value">24AAECP8566F1Z8</span>
+        </li>
+      </ul>
+    </aside>
+
+  </div>
 </section>
 
 <section class="about-services">
@@ -155,42 +175,69 @@ partnerships with international development agencies.
 <style>
 
 .about-page {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
-.about-hero {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-border);
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
 }
 
-.about-hero::before {
-  content: "";
-  display: block;
-  width: 56px;
-  height: 4px;
-  border-radius: 2px;
-  background: var(--color-heading);
-  margin-bottom: 1rem;
+.intro-story p {
+  margin-bottom: 1.25rem;
 }
 
-.about-hero h1 {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.9rem, 4vw, 2.5rem);
-  line-height: 1.25;
+.intro-facts {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-urban);
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
 }
 
-.about-hero-sub {
+.intro-facts h3 {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-urban);
+}
+
+.facts-list {
+  list-style: none;
   margin: 0;
-  max-width: 60ch;
-  font-size: 1.05rem;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.facts-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--color-border);
+}
+
+.fact-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--color-muted);
 }
 
-.about-intro p {
-  margin-bottom: 1.25rem;
+.fact-value {
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-heading);
+  overflow-wrap: anywhere;
 }
 
 .about-services {
@@ -241,11 +288,12 @@ partnerships with international development agencies.
   gap: 0.4rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-urban);
   border-radius: 14px;
   padding: 1.5rem 2.75rem 1.5rem 1.5rem;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 4px 16px rgba(30, 43, 51, 0.06);
+  box-shadow: var(--shadow-card);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -277,6 +325,13 @@ partnerships with international development agencies.
 
 .about-link:hover .link-arrow {
   transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 600px) {
