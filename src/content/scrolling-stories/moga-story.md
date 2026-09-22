@@ -1,6 +1,6 @@
 ---
 title: Moga Story
-summary: A data-led documentary on wastewater infrastructure in Moga, Punjab.
+summary: Planning wastewater infrastructure beyond ownership: A case of Moga, Punjab.
 description: A scrolling story exploring wastewater infrastructure beyond ownership, featuring the case of Moga, Punjab.
 link: /stories/moga-story.html
 ---
