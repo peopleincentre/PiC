@@ -7,8 +7,24 @@ const themes = z.array(
     "ecological-balance",
     "urban-space",
     "institutional-initiatives",
+    "scrolling-stories",
   ])
 );
+
+const scrollingStories = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/scrolling-stories",
+  }),
+
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    description: z.string(),
+    link: z.string(),
+    type: z.enum(["scrolling-story"]).default("scrolling-story"),
+  }),
+});
 
 const projects = defineCollection({
   loader: glob({
@@ -185,6 +201,7 @@ export const collections = {
   projects,
   papers,
   videos,
+  scrollingStories,
   team,
   governance,
   "annual-reports": annualReports,

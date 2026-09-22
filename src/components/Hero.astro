@@ -20,6 +20,7 @@ const base = import.meta.env.BASE_URL;
       <div class="hero-ctas">
         <a class="cta cta-primary" href={`${base}work/`}>Our Work</a>
         <a class="cta cta-outline" href={`${base}contact/`}>Contact Us</a>
+        <a class="cta cta-highlight" href={`${base}stories/moga-story.html`}>Special Highlight</a>
       </div>
     </div>
   </div>
@@ -185,6 +186,17 @@ const base = import.meta.env.BASE_URL;
   .cta-outline:hover {
     background: rgba(255, 255, 255, 0.16);
     border-color: #fff;
+  }
+
+  .cta-highlight {
+    background: var(--color-pink);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(255, 45, 108, 0.4);
+  }
+
+  .cta-highlight:hover {
+    background: #ff4d80;
+    box-shadow: 0 12px 30px rgba(255, 45, 108, 0.5);
   }
 
   @media (max-width: 560px) {

@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 
 const papers = await getCollection("papers");
 const videos = await getCollection("videos");
+const scrollingStories = await getCollection("scrollingStories");
 
 const paperThemes = [
   {
@@ -79,6 +80,7 @@ const featuredVideo = videoById.get(featuredYoutubeId) ?? videos[0];
 
 const papersCount = papers.length;
 const videosCount = videos.length;
+const scrollingStoriesCount = scrollingStories.length;
 
 const splitAuthors = (authors) =>
   String(authors || "")
@@ -145,6 +147,13 @@ const iconQuote = `
     <path fill="currentColor" d="M6 17h3l2-4V7H5v6h3l-2 4zm8 0h3l2-4V7h-6v6h3l-2 4z"/>
   </svg>`;
 
+const iconScroll = `
+  <svg class="tab-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path fill="currentColor" d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+  </svg>`;
+
+const scrollAccent = "var(--color-pink)";
+
 const themeIcons = {
   "ecological-balance": `
     <svg class="group-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -209,6 +218,20 @@ const themeIcons = {
     <Fragment set:html={iconPlay} />
     <span class="tab-label">Videos &amp; Films</span>
     <span class="tab-count">{videosCount}</span>
+  </button>
+
+  <button
+    class="tab"
+    id="tab-scrolling-stories"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-scrolling-stories"
+    data-target="scrolling-stories"
+    type="button"
+  >
+    <Fragment set:html={iconScroll} />
+    <span class="tab-label">Scrolling Stories</span>
+    <span class="tab-count">{scrollingStories.length}</span>
   </button>
 </div>
 
@@ -419,6 +442,29 @@ const themeIcons = {
   })}
 </section>
 
+<section
+  class="tab-panel"
+  id="panel-scrolling-stories"
+  role="tabpanel"
+  aria-labelledby="tab-scrolling-stories"
+  data-panel="scrolling-stories"
+  hidden
+>
+  {scrollingStories.map((story) => (
+    <div class="group" id="scrolling-story" style={`--accent: ${scrollAccent}`}>
+      <h2>
+        <Fragment set:html={iconScroll} />
+        <span class="group-title">{story.data.title}</span>
+        <span class="group-count">1 scrolling story</span>
+      </h2>
+      <div class="scroll-story-card">
+        <p>{story.data.summary}</p>
+        <a class="scroll-story-link" href={story.data.link}>View Story</a>
+      </div>
+    </div>
+  ))}
+</section>
+
 </div>
 
 </BaseLayout>
@@ -456,17 +502,20 @@ const themeIcons = {
   const themeNavs = {
     papers: document.querySelector("#theme-nav-papers"),
     videos: document.querySelector("#theme-nav-videos"),
+    scrollingStories: null,
   };
 
   const groupSets = {
     papers: Array.from(document.querySelectorAll('[id^="papers-"]')),
     videos: Array.from(document.querySelectorAll('[id^="videos-"]')),
+    scrollingStories: Array.from(document.querySelectorAll('[id^="scrolling-"]')),
   };
 
   function toggleThemeNav(target) {
-    if (!themeNavs.papers || !themeNavs.videos) return;
+    if (!themeNavs.papers || !themeNavs.videos || !themeNavs.scrollingStories) return;
     themeNavs.papers.hidden = target !== "papers";
     themeNavs.videos.hidden = target !== "videos";
+    themeNavs.scrollingStories.hidden = target !== "scrolling-stories";
   }
 
   let spyObserver = null;
@@ -635,10 +684,11 @@ const themeIcons = {
     }
   }
 
-  function tabFromHash() {
-    const hash = window.location.hash.replace("#", "");
-    return hash === "videos" ? "videos" : "papers";
-  }
+function tabFromHash() {
+     const hash = window.location.hash.replace("#", "");
+     if (hash === "videos" || hash === "scrolling-stories") return hash;
+     return "papers";
+   }
 
   function setHash(target, update = true) {
     if (update && window.location.hash !== `#${target}`) {
@@ -1187,12 +1237,51 @@ const themeIcons = {
     margin-bottom: 1.25rem;
   }
 
-  .theme-pill {
-    flex: 1 1 100%;
-    justify-content: flex-start;
-    padding: 0.55rem 0.85rem;
-    font-size: 0.8rem;
-  }
-}
+.theme-pill {
+     flex: 1 1 100%;
+     justify-content: flex-start;
+     padding: 0.55rem 0.85rem;
+     font-size: 0.8rem;
+   }
+ }
+
+ /* Scrolling Stories */
+
+ .scroll-story-card {
+   background: #fff;
+   border: 1px solid var(--color-border);
+   border-left: 4px solid var(--color-pink);
+   border-radius: 12px;
+   padding: 1.5rem;
+   margin-top: 1rem;
+ }
+
+ .scroll-story-card p {
+   margin: 0 0 1rem;
+   font-size: 1rem;
+   line-height: 1.7;
+   color: var(--color-text);
+ }
+
+ .scroll-story-link {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   padding: 0.75rem 1.5rem;
+   border-radius: 999px;
+   background: var(--color-pink);
+   color: #fff;
+   font-family: "Plus Jakarta Sans", sans-serif;
+   font-size: 0.95rem;
+   font-weight: 600;
+   text-decoration: none;
+   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+ }
+
+ .scroll-story-link:hover {
+   background: #ff4d80;
+   transform: translateY(-2px);
+   box-shadow: 0 8px 24px rgba(255, 45, 108, 0.4);
+ }
 
 </style>
