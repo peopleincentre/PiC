@@ -152,6 +152,46 @@ const annualReports = defineCollection({
 });
 
 
+const updates = defineCollection({
+  loader: glob({
+    // README.md documents the collection for editors and is not indexed.
+    pattern: ["**/*.md", "!README.md"],
+    base: "./src/content/updates",
+  }),
+
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      date: z.coerce.date(),
+      summary: z.string(),
+      author: z.string().optional(),
+      category: z
+        .enum(["work-update", "event", "reflection"])
+        .default("work-update"),
+      cover: image().optional(),
+      gallery: z
+        .array(
+          z.object({
+            image: image(),
+            caption: z.string().optional(),
+          })
+        )
+        .optional(),
+      themes: z
+        .array(
+          z.enum([
+            "resilience",
+            "ecological-balance",
+            "urban-space",
+            "institutional-initiatives",
+          ])
+        )
+        .optional(),
+      draft: z.boolean().default(false),
+    }),
+});
+
+
 const pages = defineCollection({
   loader: glob({
     pattern: "**/*.md",
@@ -209,5 +249,6 @@ export const collections = {
   team,
   governance,
   "annual-reports": annualReports,
+  updates,
   pages,
 };

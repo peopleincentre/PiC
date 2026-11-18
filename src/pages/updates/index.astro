@@ -1,0 +1,224 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("updates", ({ data }) => !data.draft);
+const posts = allPosts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const base = import.meta.env.BASE_URL;
+
+const themeLabels = {
+  "ecological-balance": "Ecological Balance",
+  resilience: "Resilience to Disasters",
+  "urban-space": "Urban Space",
+  "institutional-initiatives": "Institutional Initiatives",
+};
+
+const categoryLabels = {
+  "work-update": "Work update",
+  event: "Event",
+  reflection: "Reflection",
+};
+
+const formatDate = (date) =>
+  date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+---
+
+<BaseLayout
+  title="Updates"
+  description="Recent updates from the People in Centre team — field work, events, and reflections on people-centred recovery, ecology, urban space and institutions."
+>
+  <div class="updates-page">
+    <header class="page-head">
+      <h1>Updates</h1>
+      <p class="page-intro">
+        About project activities, events, reflections or just anything that we think we should share.
+      </p>
+    </header>
+
+    {
+      posts.length === 0 ? (
+        <div class="updates-empty">
+          <p>
+            Nothing posted here yet. The team will be sharing updates from the
+            field, events and reflections — check back soon.
+          </p>
+          <p>
+            In the meantime, you can browse our{" "}
+            <a href={`${base}work/`}>project work</a> and{" "}
+            <a href={`${base}resources/`}>knowledge resources</a>.
+          </p>
+        </div>
+      ) : (
+        <div class="updates-grid">
+          {posts.map((post) => (
+            <a class="update-card" href={`${base}updates/${post.id}/`}>
+              {post.data.cover && (
+                <div class="card-photo">
+                  <Image
+                    src={post.data.cover}
+                    alt=""
+                    widths={[400, 800]}
+                    sizes="(min-width: 800px) 33vw, 100vw"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              )}
+              <div class="card-body">
+                <p class="update-meta">
+                  <span class="update-category">
+                    {categoryLabels[post.data.category] ?? "Update"}
+                  </span>
+                  <time datetime={post.data.date.toISOString()}>
+                    {formatDate(post.data.date)}
+                  </time>
+                  {post.data.author && <span> · {post.data.author}</span>}
+                </p>
+                <h2>{post.data.title}</h2>
+                <p class="update-summary">{post.data.summary}</p>
+                {post.data.themes && post.data.themes.length > 0 && (
+                  <p class="update-themes">
+                    {post.data.themes.map((t) => themeLabels[t] ?? t).join(" · ")}
+                  </p>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .updates-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+  }
+
+  .page-head h1 {
+    margin-bottom: 0.5rem;
+    line-height: 2.5rem;
+  }
+
+  .page-intro {
+    max-width: 700px;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin: 0 0 2rem;
+  }
+
+  .updates-empty {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 2.5rem 2rem;
+    color: var(--color-muted);
+  }
+
+  .updates-empty p {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+  }
+
+  .updates-empty a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .updates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .update-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .update-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .card-photo {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--color-bg-alt);
+  }
+
+  .card-photo :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+  }
+
+  .update-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--color-muted);
+  }
+
+  .update-category {
+    display: inline-block;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .card-body h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.35;
+    color: var(--color-heading);
+  }
+
+  .update-summary {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.55;
+    font-size: 0.95rem;
+  }
+
+  .update-themes {
+    margin: auto 0 0;
+    padding-top: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+</style>

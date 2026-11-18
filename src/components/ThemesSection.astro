@@ -58,13 +58,12 @@ const descImage = descImg.src;
 
     <div class="item-wrapper">
       {
-        themes.map((theme, i) => (
+        themes.map((theme) => (
           <a
             href={`${base}work/?theme=${theme.slug}`}
-            class="item reveal"
+            class="item"
             style={`
               --theme-color: ${theme.color};
-              --reveal-delay: ${i * 0.12}s;
               --theme-img: url(${theme.image});
             `}
           >
@@ -158,20 +157,22 @@ const descImage = descImg.src;
     margin-top: clamp(1rem, 1.75vw, 1.75rem);
   }
 
-  /* 2x2 tile grid */
+  /* 2x2 tile grid — the 2px gap lets the section background show through
+     as cross grid lines (one vertical, one horizontal) between the cards. */
   .item-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
     align-items: stretch;
-    gap: 0;
+    gap: 2px;
+    background: var(--color-surface);
   }
 
   .item {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     min-width: 0;
     padding: clamp(1.2rem, 2.5vw, 2rem);
     background: var(--color-surface);
@@ -186,7 +187,8 @@ const descImage = descImg.src;
     z-index: 0;
   }
 
-  /* Theme image fades in over the colour on hover */
+  /* Theme image fades in over the colour on hover. The scrim is dark at
+     the top (where the text sits) so the white titles stay legible. */
   .item::after {
     content: "";
     position: absolute;
@@ -194,8 +196,8 @@ const descImage = descImg.src;
     background:
       linear-gradient(
         180deg,
-        rgba(4, 4, 21, 0.15) 0%,
-        rgba(4, 4, 21, 0.85) 100%
+        rgba(4, 4, 21, 0.85) 0%,
+        rgba(4, 4, 21, 0.15) 100%
       ),
       var(--theme-img) center / cover no-repeat;
     opacity: 0;
@@ -208,12 +210,33 @@ const descImage = descImg.src;
     opacity: 1;
   }
 
+  /* Only the card content (title + Explore) reveals — the coloured tiles
+     stay in place, so no white band shows through mid-animation. All four
+     cards reveal together; the 0.2s delay lets the intro panel lead and
+     the grid follow as one unit (both finish at ~0.9s). */
   .item-details {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     z-index: 2;
+
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+  }
+
+  .item-wrapper.is-revealed .item-details {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item-details {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 
   .item-title {
@@ -260,3 +283,51 @@ const descImage = descImg.src;
     }
   }
 </style>
+
+<noscript>
+  <style>
+    /* No JS → no observer; keep card content visible (higher specificity
+       than the .item-details initial-hidden rule). */
+    .item-wrapper .item .item-details {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</noscript>
+
+<script>
+  let gridObserver;
+
+  function initThemeGridReveal() {
+    gridObserver?.disconnect();
+
+    const grids = document.querySelectorAll(".item-wrapper");
+    if (grids.length === 0) return;
+
+    // No IntersectionObserver → reveal everything immediately.
+    if (typeof IntersectionObserver === "undefined") {
+      grids.forEach((el) => el.classList.add("is-revealed"));
+      return;
+    }
+
+    gridObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            // One class on the grid → all four cards reveal together.
+            entry.target.classList.add("is-revealed");
+            gridObserver.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+    );
+
+    grids.forEach((el) => {
+      if (!el.classList.contains("is-revealed")) gridObserver.observe(el);
+    });
+  }
+
+  initThemeGridReveal();
+  document.addEventListener("astro:page-load", initThemeGridReveal);
+</script>

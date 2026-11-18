@@ -114,6 +114,16 @@ const partners = [
 
 <style>
   .partners-section {
+    /* Partner logos are dark-on-transparent artwork — keep this whole strip
+       light in both themes so the logos stay visible (scoped overrides
+       shadow the global dark-theme tokens inside this section only). */
+    --color-surface: #ffffff;
+    --color-heading: #1e293b;
+    --color-text: #334155;
+    --color-muted: #64748b;
+    --color-border: #e2e8f0;
+    --color-accent: #2563eb;
+
     box-sizing: border-box;
     width: 100vw;
     margin-left: calc(50% - 50vw);
