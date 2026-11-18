@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const base = import.meta.env.BASE_URL;
@@ -55,9 +56,7 @@ const peopleJsonLd = team.map((member) => ({
   name: member.data.name,
   ...(member.data.designation ? { jobTitle: member.data.designation } : {}),
   ...(member.data.email ? { email: member.data.email } : {}),
-  ...(member.data.photo
-    ? { image: `${base}${member.data.photo.replace(/^\//, "")}` }
-    : {}),
+  ...(member.data.photo ? { image: member.data.photo.src } : {}),
   worksFor: { "@id": `${import.meta.env.SITE}${base}#organization` },
 }));
 ---
@@ -87,18 +86,19 @@ const peopleJsonLd = team.map((member) => ({
     aria-expanded="false"
     aria-label={`Read full bio of ${member.data.name}`}
     data-name={member.data.name}
-    data-photo={member.data.photo}
+    data-photo={member.data.photo?.src}
     data-designation={member.data.designation}
     data-email={member.data.email}
     data-bio={member.data.bio}
   >
     <div class="card-photo">
       {member.data.photo && (
-        <img
-          src={`${base}${member.data.photo.replace(/^\//, "")}`}
+        <Image
+          src={member.data.photo}
           alt={member.data.name}
+          width={400}
           loading="lazy"
-                  decoding="async"
+          decoding="async"
         />
       )}
     </div>
@@ -126,11 +126,12 @@ const peopleJsonLd = team.map((member) => ({
   <article class="team-card past-card">
     <div class="card-photo">
       {member.data.photo && (
-        <img
-          src={`${base}${member.data.photo.replace(/^\//, "")}`}
+        <Image
+          src={member.data.photo}
           alt={member.data.name}
+          width={400}
           loading="lazy"
-                  decoding="async"
+          decoding="async"
         />
       )}
     </div>
@@ -174,9 +175,12 @@ const peopleJsonLd = team.map((member) => ({
 </BaseLayout>
 
 <script>
-  const cards = Array.from(document.querySelectorAll(".team-card.core-card"));
-  const dialog = document.querySelector(".member-dialog");
-  if (dialog) {
+  function initTeamDialog() {
+    const cards = Array.from(document.querySelectorAll(".team-card.core-card"));
+    const dialog = document.querySelector(".member-dialog");
+    if (!dialog || cards.length === 0) return;
+    if (dialog.dataset.bound) return;
+    dialog.dataset.bound = "true";
     const photoBox = dialog.querySelector("#member-dialog-photo");
     const photo = dialog.querySelector("#member-dialog-photo img");
     const name = dialog.querySelector("#member-dialog-name");
@@ -246,6 +250,9 @@ const peopleJsonLd = team.map((member) => ({
       }
     });
   }
+
+  initTeamDialog();
+  document.addEventListener("astro:page-load", initTeamDialog);
 </script>
 
 <style>
@@ -288,7 +295,7 @@ const peopleJsonLd = team.map((member) => ({
 }
 
 .team-card {
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 12px;
   overflow: hidden;
@@ -304,6 +311,7 @@ const peopleJsonLd = team.map((member) => ({
 .team-card .card-photo img {
   display: block;
   width: 100%;
+  height: auto; /* neutralize the height attr so aspect-ratio applies */
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
@@ -408,6 +416,7 @@ const peopleJsonLd = team.map((member) => ({
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+  background: var(--color-surface);
 }
 
 .dialog-close {
@@ -421,7 +430,7 @@ const peopleJsonLd = team.map((member) => ({
   justify-content: center;
   border: none;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--color-surface);
   color: var(--color-heading);
   font-size: 1.35rem;
   line-height: 1;
@@ -430,7 +439,7 @@ const peopleJsonLd = team.map((member) => ({
 }
 
 .dialog-close:hover {
-  background: #fff;
+  background: var(--color-surface);
 }
 
 .dialog-close:focus-visible {

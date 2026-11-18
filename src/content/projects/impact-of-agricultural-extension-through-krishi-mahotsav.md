@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/impact-of-agricultural-extension-through-krishi-mahotsav/impact-of-agricultural-extension-through-krishi-mahotsav-cover.jpg
+coverImage: /src/assets/projects/impact-of-agricultural-extension-through-krishi-mahotsav/impact-of-agricultural-extension-through-krishi-mahotsav-cover.webp
 
 ---
 

@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/household-and-building-damage-assessment-of-the-easter-flood-in-timor-leste/household-and-building-damage-assessment-of-the-easter-flood-in-timor-leste-cover.png
+coverImage: /src/assets/projects/household-and-building-damage-assessment-of-the-easter-flood-in-timor-leste/household-and-building-damage-assessment-of-the-easter-flood-in-timor-leste-cover.webp
 
 ---
 

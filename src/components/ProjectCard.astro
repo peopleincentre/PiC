@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const { project } = Astro.props;
 
 const base = import.meta.env.BASE_URL;
@@ -32,10 +34,12 @@ const accent =
 
    {coverImage ? (
     <div class="image-wrapper">
-     <img
-      src={`${base}${coverImage.replace(/^\//, "")}`}
+     <Image
+      src={coverImage}
       alt=""
       class="card-image"
+      widths={[320, 640, 960]}
+      sizes="(min-width: 900px) 25vw, (min-width: 560px) 50vw, 100vw"
       loading="lazy"
       decoding="async"
      />
@@ -93,7 +97,7 @@ const accent =
   border: 1px solid var(--color-border);
   border-radius: 6px;
   overflow: hidden;
-  background: white;
+  background: var(--color-surface);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -110,6 +114,7 @@ const accent =
 
 .card-image {
   width: 100%;
+  height: auto; /* neutralize the height attr so aspect-ratio applies */
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;

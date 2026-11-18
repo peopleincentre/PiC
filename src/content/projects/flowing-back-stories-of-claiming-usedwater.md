@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: true
 
-coverImage: /images/projects/flowing-back-stories-of-claiming-usedwater/flowing-back-stories-of-claiming-usedwater-cover.webp
+coverImage: /src/assets/projects/flowing-back-stories-of-claiming-usedwater/flowing-back-stories-of-claiming-usedwater-cover.webp
 
 ---
 

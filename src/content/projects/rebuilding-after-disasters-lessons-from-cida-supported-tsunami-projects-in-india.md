@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/rebuilding-after-disasters-lessons-from-cida-supported-tsunami-projects-in-india/rebuilding-after-disasters-lessons-from-cida-supported-tsunami-projects-in-india-cover.jpg
+coverImage: /src/assets/projects/rebuilding-after-disasters-lessons-from-cida-supported-tsunami-projects-in-india/rebuilding-after-disasters-lessons-from-cida-supported-tsunami-projects-in-india-cover.webp
 
 ---
 

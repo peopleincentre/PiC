@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/developing-alternatives-for-existing-marketplaces-in-ahmedabad/developing-alternatives-for-existing-marketplaces-in-ahmedabad-cover.png
+coverImage: /src/assets/projects/developing-alternatives-for-existing-marketplaces-in-ahmedabad/developing-alternatives-for-existing-marketplaces-in-ahmedabad-cover.webp
 
 ---
 

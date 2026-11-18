@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: true
 
-coverImage: /images/projects/design-for-natural-markets-accommodating-the-informal/design-for-natural-markets-accommodating-the-informal-cover.png
+coverImage: /src/assets/projects/design-for-natural-markets-accommodating-the-informal/design-for-natural-markets-accommodating-the-informal-cover.webp
 
 ---
 

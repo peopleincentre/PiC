@@ -1,7 +1,7 @@
 ---
 name: Vipashyana Priyadarshi
 category: past
-photo: /images/about/team/vipashyana.png
+photo: /src/assets/about/team/vipashyana.webp
 bio: |
   Went on to pursue master degree at University of Sheffield, UK.
 ---

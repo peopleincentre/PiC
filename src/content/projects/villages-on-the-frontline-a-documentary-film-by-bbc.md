@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/villages-on-the-frontline-a-documentary-film-by-bbc/villages-on-the-frontline-a-documentary-film-by-bbc-cover.png
+coverImage: /src/assets/projects/villages-on-the-frontline-a-documentary-film-by-bbc/villages-on-the-frontline-a-documentary-film-by-bbc-cover.webp
 
 ---
 

@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/tsunami-displacement-and-rehabilitation-learning-for-climate-change-adaptation-strategies/tsunami-displacement-and-rehabilitation-learning-for-climate-change-adaptation-strategies-cover.jpg
+coverImage: /src/assets/projects/tsunami-displacement-and-rehabilitation-learning-for-climate-change-adaptation-strategies/tsunami-displacement-and-rehabilitation-learning-for-climate-change-adaptation-strategies-cover.webp
 
 ---
 

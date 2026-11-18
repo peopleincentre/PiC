@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/faecal-sludge-management-plan-for-wadhwan-city-gujarat/faecal-sludge-management-plan-for-wadhwan-city-gujarat-cover.png
+coverImage: /src/assets/projects/faecal-sludge-management-plan-for-wadhwan-city-gujarat/faecal-sludge-management-plan-for-wadhwan-city-gujarat-cover.webp
 
 ---
 

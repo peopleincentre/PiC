@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: true
 
-coverImage: /images/projects/housing-for-all-demand-assessment-in-towns-of-gujarat/housing-for-all-demand-assessment-in-towns-of-gujarat-cover.jpg
+coverImage: /src/assets/projects/housing-for-all-demand-assessment-in-towns-of-gujarat/housing-for-all-demand-assessment-in-towns-of-gujarat-cover.webp
 
 ---
 

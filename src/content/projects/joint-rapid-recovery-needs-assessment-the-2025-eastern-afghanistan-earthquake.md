@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: true
 
-coverImage: /images/projects/joint-rapid-recovery-needs-assessment-the-2025-eastern-afghanistan-earthquake/joint-rapid-recovery-needs-assessment-the-2025-eastern-afghanistan-earthquake-cover.jpg
+coverImage: /src/assets/projects/joint-rapid-recovery-needs-assessment-the-2025-eastern-afghanistan-earthquake/joint-rapid-recovery-needs-assessment-the-2025-eastern-afghanistan-earthquake-cover.webp
 
 ---
 

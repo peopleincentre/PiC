@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/designing-open-marketplaces-in-the-expanding-city/designing-open-marketplaces-in-the-expanding-city-cover.png
+coverImage: /src/assets/projects/designing-open-marketplaces-in-the-expanding-city/designing-open-marketplaces-in-the-expanding-city-cover.webp
 
 ---
 

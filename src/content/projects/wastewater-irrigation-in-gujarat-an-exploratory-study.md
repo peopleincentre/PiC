@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/wastewater-irrigation-in-gujarat-an-exploratory-study/wastewater-irrigation-in-gujarat-an-exploratory-study-cover.png
+coverImage: /src/assets/projects/wastewater-irrigation-in-gujarat-an-exploratory-study/wastewater-irrigation-in-gujarat-an-exploratory-study-cover.webp
 
 ---
 

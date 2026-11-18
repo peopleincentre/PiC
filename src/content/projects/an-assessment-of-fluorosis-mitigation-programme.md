@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/an-assessment-of-fluorosis-mitigation-programme/an-assessment-of-fluorosis-mitigation-programme-cover.png
+coverImage: /src/assets/projects/an-assessment-of-fluorosis-mitigation-programme/an-assessment-of-fluorosis-mitigation-programme-cover.webp
 
 ---
 

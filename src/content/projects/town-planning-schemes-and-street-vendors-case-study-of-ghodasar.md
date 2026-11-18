@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/town-planning-schemes-and-street-vendors-case-study-of-ghodasar/town-planning-schemes-and-street-vendors-case-study-of-ghodasar-cover.jpg
+coverImage: /src/assets/projects/town-planning-schemes-and-street-vendors-case-study-of-ghodasar/town-planning-schemes-and-street-vendors-case-study-of-ghodasar-cover.webp
 
 ---
 

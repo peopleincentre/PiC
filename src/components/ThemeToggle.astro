@@ -1,0 +1,143 @@
+---
+/**
+ * Light / dark / system theme toggle.
+ * Cycles: system → light → dark → system. Preference persists in
+ * localStorage ("theme"). BaseLayout's inline head script resolves the
+ * initial theme before first paint (no FOUC).
+ */
+---
+
+<button
+  class="theme-toggle"
+  id="theme-toggle"
+  type="button"
+  aria-label="Switch colour theme"
+  title="Theme: system"
+  data-mode="system"
+>
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+  </svg>
+  <svg class="icon-system" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+    <path d="M8 21h8M12 17v4"></path>
+  </svg>
+</button>
+
+<script>
+  const KEY = "theme";
+  const MODES = ["system", "light", "dark"];
+  const LABELS = {
+    system: "Theme: system (follows your device)",
+    light: "Theme: light",
+    dark: "Theme: dark",
+  };
+
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const storedMode = () => {
+    try {
+      return localStorage.getItem(KEY);
+    } catch {
+      return null;
+    }
+  };
+
+  const applyMode = (mode) => {
+    const resolved =
+      mode === "system" ? (media.matches ? "dark" : "light") : mode;
+    document.documentElement.dataset.theme = resolved;
+    document.documentElement.style.colorScheme = resolved;
+  };
+
+  function initThemeToggle() {
+    // Query by the component's unique id — the class `.theme-toggle` is also
+    // used by unrelated accordions (e.g. the work-themes accordion), which
+    // must not receive the theme-cycling click handler.
+    document.querySelectorAll("#theme-toggle").forEach((btn) => {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = "true";
+
+      const paint = () => {
+        const mode = storedMode() || "system";
+        btn.dataset.mode = mode;
+        btn.title = LABELS[mode];
+        btn.setAttribute(
+          "aria-label",
+          `Switch colour theme. Current: ${mode}.`
+        );
+      };
+
+      btn.addEventListener("click", () => {
+        const current = storedMode() || "system";
+        const next = MODES[(MODES.indexOf(current) + 1) % MODES.length];
+        if (next === "system") {
+          try {
+            localStorage.removeItem(KEY);
+          } catch {}
+        } else {
+          try {
+            localStorage.setItem(KEY, next);
+          } catch {}
+        }
+        applyMode(next);
+        paint();
+      });
+
+      // Follow OS changes while in "system" mode
+      media.addEventListener("change", () => {
+        if (!storedMode()) {
+          applyMode("system");
+          paint();
+        }
+      });
+
+      paint();
+    });
+  }
+
+  initThemeToggle();
+  document.addEventListener("astro:page-load", initThemeToggle);
+</script>
+
+<style>
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0.45rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .theme-toggle svg {
+    display: none;
+  }
+
+  .theme-toggle[data-mode="system"] .icon-system {
+    display: block;
+  }
+
+  .theme-toggle[data-mode="light"] .icon-sun {
+    display: block;
+  }
+
+  .theme-toggle[data-mode="dark"] .icon-moon {
+    display: block;
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -92,7 +93,7 @@ const breadcrumbJsonLd = {
 <BaseLayout
   title={title}
   description={description || summary}
-  image={coverImage}
+  image={coverImage?.src}
   type="article"
   jsonLd={[breadcrumbJsonLd]}
 >
@@ -124,10 +125,14 @@ const breadcrumbJsonLd = {
     )}
 
     {coverImage && (
-      <img
-        src={`${base}${coverImage.replace(/^\//, "")}`}
+      <Image
+        src={coverImage}
         alt=""
-        class="hero-image"
+        class={`hero-image ${
+          coverImage.width >= coverImage.height ? "is-landscape" : "is-portrait"
+        }`}
+        width={1100}
+        loading="eager"
         fetchpriority="high"
         decoding="async"
       />
@@ -199,10 +204,12 @@ const breadcrumbJsonLd = {
 
           <div class="gallery-item">
 
-            <img
-              src={`${base}${item.image.replace(/^\//, "")}`}
+            <Image
+              src={item.image}
               alt={item.caption || ""}
               class="gallery-image"
+              widths={[400, 800]}
+              sizes="(min-width: 600px) 40vw, 90vw"
               loading="lazy"
               decoding="async"
             />
@@ -238,9 +245,11 @@ const breadcrumbJsonLd = {
           class="related-card"
         >
           {related.data.coverImage && (
-            <img
-              src={`${base}${related.data.coverImage.replace(/^\//, "")}`}
+            <Image
+              src={related.data.coverImage}
               alt=""
+              widths={[320, 640]}
+              sizes="(min-width: 800px) 33vw, 100vw"
               loading="lazy"
               decoding="async"
             />
@@ -263,23 +272,6 @@ const breadcrumbJsonLd = {
   </div>
 
 </BaseLayout>
-
-<script>
-  function setOrientation(img) {
-    const { naturalWidth, naturalHeight } = img;
-    if (!naturalWidth || !naturalHeight) return;
-    const cls = naturalWidth >= naturalHeight ? "is-landscape" : "is-portrait";
-    img.classList.add(cls);
-  }
-
-  document.querySelectorAll(".hero-image").forEach((img) => {
-    if (img.complete) {
-      setOrientation(img);
-    } else {
-      img.addEventListener("load", () => setOrientation(img));
-    }
-  });
-</script>
 
 <style>
 
@@ -317,7 +309,7 @@ const breadcrumbJsonLd = {
   height: 40px;
   border-radius: 50%;
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--color-surface);
   color: var(--color-muted);
   margin-bottom: 1rem;
   transition: color 0.2s ease, border-color 0.2s ease;
@@ -404,7 +396,7 @@ h1 {
 }
 
 .related-card {
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1rem;
@@ -423,6 +415,7 @@ h1 {
 
 .related-card img {
   width: 100%;
+  height: auto; /* neutralize the height attr so aspect-ratio applies */
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 8px;
@@ -473,6 +466,7 @@ h1 {
 
 .gallery-grid img {
   width: 100%;
+  height: auto; /* neutralize the height attr so aspect-ratio applies */
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 6px;

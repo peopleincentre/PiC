@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/project-end-evaluation-of-the-project-livelihood-enhancement-of-tribal-families-through-sustainable-agriculture-and-enterprise-development-in-backward-regions-of-gujarat/project-end-evaluation-of-the-project-livelihood-enhancement-of-tribal-families-through-sustainable-agriculture-and-enterprise-development-in-backward-regions-of-gujarat-cover.png
+coverImage: /src/assets/projects/project-end-evaluation-of-the-project-livelihood-enhancement-of-tribal-families-through-sustainable-agriculture-and-enterprise-development-in-backward-regions-of-gujarat/project-end-evaluation-of-the-project-livelihood-enhancement-of-tribal-families-through-sustainable-agriculture-and-enterprise-development-in-backward-regions-of-gujarat-cover.webp
 
 ---
 

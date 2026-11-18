@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/emergency-makeshift-shelters-for-returning-families-affected-by-ethnic-violence-in-kokrajhar/emergency-makeshift-shelters-for-returning-families-affected-by-ethnic-violence-in-kokrajhar-cover.jpg
+coverImage: /src/assets/projects/emergency-makeshift-shelters-for-returning-families-affected-by-ethnic-violence-in-kokrajhar/emergency-makeshift-shelters-for-returning-families-affected-by-ethnic-violence-in-kokrajhar-cover.webp
 
 ---
 

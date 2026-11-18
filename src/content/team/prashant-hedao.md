@@ -2,7 +2,7 @@
 name: Prashant Hedao
 category: core
 designation: Founder Member and Principal Expert
-photo: /images/about/governance/Prashant.jpg
+photo: /src/assets/about/governance/Prashant.webp
 bio: |
   Dr. Prashant Hedao is an environmental planner and geographer with over
   three decades of international experience in spatial planning, Geographic

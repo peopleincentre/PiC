@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/inclusion-of-the-poor-and-vulnerable-learning-from-the-post-earthquake-reconstruction-in-nepal/inclusion-of-the-poor-and-vulnerable-learning-from-the-post-earthquake-reconstruction-in-nepal-cover.png
+coverImage: /src/assets/projects/inclusion-of-the-poor-and-vulnerable-learning-from-the-post-earthquake-reconstruction-in-nepal/inclusion-of-the-poor-and-vulnerable-learning-from-the-post-earthquake-reconstruction-in-nepal-cover.webp
 
 ---
 

@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/analysis-of-proposed-street-vendors-scheme-for-ahmedabad-with-isanpur-tp-scheme-as-case-study/analysis-of-proposed-street-vendors-scheme-for-ahmedabad-with-isanpur-tp-scheme-as-case-study-cover.jpg
+coverImage: /src/assets/projects/analysis-of-proposed-street-vendors-scheme-for-ahmedabad-with-isanpur-tp-scheme-as-case-study/analysis-of-proposed-street-vendors-scheme-for-ahmedabad-with-isanpur-tp-scheme-as-case-study-cover.webp
 
 ---
 

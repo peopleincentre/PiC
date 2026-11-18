@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/urban-wastewater-for-rural-agriculture-emerging-relations/urban-wastewater-for-rural-agriculture-emerging-relations-cover.jpg
+coverImage: /src/assets/projects/urban-wastewater-for-rural-agriculture-emerging-relations/urban-wastewater-for-rural-agriculture-emerging-relations-cover.webp
 
 ---
 

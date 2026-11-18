@@ -1,7 +1,7 @@
 ---
 name: Rishi Pathak
 category: past
-photo: /images/about/team/Rishi.jpg
+photo: /src/assets/about/team/Rishi.webp
 bio: |
   Working with Dustudio, Auroville.
 ---

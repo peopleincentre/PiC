@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: true
 
-coverImage: /images/projects/ecowas-technical-reference-guide-for-post-disaster-resilient-recovery/ecowas-technical-reference-guide-for-post-disaster-resilient-recovery-cover.png
+coverImage: /src/assets/projects/ecowas-technical-reference-guide-for-post-disaster-resilient-recovery/ecowas-technical-reference-guide-for-post-disaster-resilient-recovery-cover.webp
 
 ---
 

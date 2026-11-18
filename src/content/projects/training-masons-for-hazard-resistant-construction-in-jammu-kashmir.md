@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/training-masons-for-hazard-resistant-construction-in-jammu-kashmir/training-masons-for-hazard-resistant-construction-in-jammu-kashmir-cover.jpg
+coverImage: /src/assets/projects/training-masons-for-hazard-resistant-construction-in-jammu-kashmir/training-masons-for-hazard-resistant-construction-in-jammu-kashmir-cover.webp
 
 ---
 

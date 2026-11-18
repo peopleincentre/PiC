@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/inception-report-for-urban-poverty-reduction-strategy-for-the-city-of-ahmedabad/inception-report-for-urban-poverty-reduction-strategy-for-the-city-of-ahmedabad-cover.png
+coverImage: /src/assets/projects/inception-report-for-urban-poverty-reduction-strategy-for-the-city-of-ahmedabad/inception-report-for-urban-poverty-reduction-strategy-for-the-city-of-ahmedabad-cover.webp
 
 ---
 

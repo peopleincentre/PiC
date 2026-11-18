@@ -20,16 +20,16 @@ partners:
 themes:
   - resilience
 
-coverImage: /images/projects/mozambique-mrf/mozambique-mrf-cover.jpg
+coverImage: /src/assets/projects/mozambique-mrf/mozambique-mrf-cover.webp
 
 gallery:
-  - image: /images/projects/mozambique-mrf/mozambique-mrf-01.jpg
+  - image: /src/assets/projects/mozambique-mrf/mozambique-mrf-01.webp
     caption: Field consultations with recovery stakeholders
 
-  - image: /images/projects/mozambique-mrf/mozambique-mrf-02.jpg
+  - image: /src/assets/projects/mozambique-mrf/mozambique-mrf-02.webp
     caption: Community recovery interventions
 
-  - image: /images/projects/mozambique-mrf/mozambique-mrf-03.jpg
+  - image: /src/assets/projects/mozambique-mrf/mozambique-mrf-03.webp
     caption: Assessment of infrastructure and housing recovery
 
 featured: true

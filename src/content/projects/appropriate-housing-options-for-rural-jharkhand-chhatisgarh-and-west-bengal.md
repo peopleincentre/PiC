@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/appropriate-housing-options-for-rural-jharkhand-chhatisgarh-and-west-bengal/appropriate-housing-options-for-rural-jharkhand-chhatisgarh-and-west-bengal-cover.jpg
+coverImage: /src/assets/projects/appropriate-housing-options-for-rural-jharkhand-chhatisgarh-and-west-bengal/appropriate-housing-options-for-rural-jharkhand-chhatisgarh-and-west-bengal-cover.webp
 
 ---
 

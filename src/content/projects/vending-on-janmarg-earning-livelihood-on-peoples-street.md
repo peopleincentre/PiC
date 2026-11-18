@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/vending-on-janmarg-earning-livelihood-on-peoples-street/vending-on-janmarg-earning-livelihood-on-peoples-street-cover.jpg
+coverImage: /src/assets/projects/vending-on-janmarg-earning-livelihood-on-peoples-street/vending-on-janmarg-earning-livelihood-on-peoples-street-cover.webp
 
 ---
 

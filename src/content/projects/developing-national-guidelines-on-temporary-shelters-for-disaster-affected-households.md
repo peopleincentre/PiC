@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/developing-national-guidelines-on-temporary-shelters-for-disaster-affected-households/developing-national-guidelines-on-temporary-shelters-for-disaster-affected-households-cover.png
+coverImage: /src/assets/projects/developing-national-guidelines-on-temporary-shelters-for-disaster-affected-households/developing-national-guidelines-on-temporary-shelters-for-disaster-affected-households-cover.webp
 
 ---
 

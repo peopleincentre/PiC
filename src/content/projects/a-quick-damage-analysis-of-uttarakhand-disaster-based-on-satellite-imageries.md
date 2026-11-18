@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/a-quick-damage-analysis-of-uttarakhand-disaster-based-on-satellite-imageries/a-quick-damage-analysis-of-uttarakhand-disaster-based-on-satellite-imageries-cover.png
+coverImage: /src/assets/projects/a-quick-damage-analysis-of-uttarakhand-disaster-based-on-satellite-imageries/a-quick-damage-analysis-of-uttarakhand-disaster-based-on-satellite-imageries-cover.webp
 
 ---
 

@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/feasibility-study-for-promoting-social-entrepreneurship-for-water-treatment-systems/feasibility-study-for-promoting-social-entrepreneurship-for-water-treatment-systems-cover.jpg
+coverImage: /src/assets/projects/feasibility-study-for-promoting-social-entrepreneurship-for-water-treatment-systems/feasibility-study-for-promoting-social-entrepreneurship-for-water-treatment-systems-cover.webp
 
 ---
 

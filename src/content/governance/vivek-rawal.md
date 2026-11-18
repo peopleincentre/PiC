@@ -2,7 +2,7 @@
 name: Vivek Rawal
 kind: director
 designation: Director
-photo: /images/about/governance/vivek-rawal.png
+photo: /src/assets/about/governance/vivek-rawal.webp
 isShareholder: true
 bio: |
   Vivek Rawal, founder member and director, leads the thematic area of

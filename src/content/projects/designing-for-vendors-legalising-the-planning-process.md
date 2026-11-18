@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/designing-for-vendors-legalising-the-planning-process/designing-for-vendors-legalising-the-planning-process-cover.jpg
+coverImage: /src/assets/projects/designing-for-vendors-legalising-the-planning-process/designing-for-vendors-legalising-the-planning-process-cover.webp
 
 ---
 

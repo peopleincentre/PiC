@@ -1,5 +1,5 @@
 ---
 name: Dharmesh Jadeja
 kind: shareholder
-photo: /images/about/governance/Dharmesh.jpg
+photo: /src/assets/about/governance/Dharmesh.webp
 ---

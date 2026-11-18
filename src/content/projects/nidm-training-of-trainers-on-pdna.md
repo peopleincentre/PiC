@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/nidm-training-of-trainers-on-pdna/nidm-training-of-trainers-on-pdna-cover.jpeg
+coverImage: /src/assets/projects/nidm-training-of-trainers-on-pdna/nidm-training-of-trainers-on-pdna-cover.webp
 
 ---
 

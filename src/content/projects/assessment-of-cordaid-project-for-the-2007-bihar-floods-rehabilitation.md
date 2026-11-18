@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/assessment-of-cordaid-project-for-the-2007-bihar-floods-rehabilitation/assessment-of-cordaid-project-for-the-2007-bihar-floods-rehabilitation-cover.png
+coverImage: /src/assets/projects/assessment-of-cordaid-project-for-the-2007-bihar-floods-rehabilitation/assessment-of-cordaid-project-for-the-2007-bihar-floods-rehabilitation-cover.webp
 
 ---
 

@@ -20,13 +20,13 @@ partners:
 themes:
   - resilience
 
-coverImage: /images/projects/somalia-deyr-floods/somalia-deyr-floods-cover.jpg
+coverImage: /src/assets/projects/somalia-deyr-floods/somalia-deyr-floods-cover.webp
 
 gallery:
-  - image: /images/projects/somalia-deyr-floods/somalia-deyr-floods-01.jpg
+  - image: /src/assets/projects/somalia-deyr-floods/somalia-deyr-floods-01.webp
     caption: Flood-affected settlements and damaged housing
 
-  - image: /images/projects/somalia-deyr-floods/somalia-deyr-floods-02.jpg
+  - image: /src/assets/projects/somalia-deyr-floods/somalia-deyr-floods-02.webp
     caption: Community reconstructing Aqal type of house
 
 featured: true

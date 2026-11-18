@@ -1,7 +1,7 @@
 ---
 name: Harshit Kothari
 category: past
-photo: /images/about/team/harshit.jpg
+photo: /src/assets/about/team/harshit.webp
 bio: |
   Setup his own architecture practice at Bhopal, Madhya Pradesh.
 ---

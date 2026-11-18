@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: true
 
-coverImage: /images/projects/post-disaster-needs-assessment-herat-earthquakes-2023/post-disaster-needs-assessment-herat-earthquakes-2023-cover.png
+coverImage: /src/assets/projects/post-disaster-needs-assessment-herat-earthquakes-2023/post-disaster-needs-assessment-herat-earthquakes-2023-cover.webp
 
 ---
 

@@ -21,19 +21,19 @@ partners:
 themes:
   - resilience
 
-coverImage: /images/projects/myanmar-sagaing/myanmar-sagaing-cover.jpg
+coverImage: /src/assets/projects/myanmar-sagaing/myanmar-sagaing-cover.webp
 
 gallery:
- - image: /images/projects/myanmar-sagaing/myanmar-sagaing-01.jpg
+ - image: /src/assets/projects/myanmar-sagaing/myanmar-sagaing-01.webp
    caption: Community consultation to understand the impact
 
- - image: /images/projects/myanmar-sagaing/myanmar-sagaing-02.jpg
+ - image: /src/assets/projects/myanmar-sagaing/myanmar-sagaing-02.webp
    caption: House damaged due to earthquake
 
- - image: /images/projects/myanmar-sagaing/myanmar-sagaing-03.jpg
+ - image: /src/assets/projects/myanmar-sagaing/myanmar-sagaing-03.webp
    caption: Bamboo artisans supporting reconstruction of transitional shelters
 
- - image: /images/projects/myanmar-sagaing/myanmar-sagaing-04.jpg
+ - image: /src/assets/projects/myanmar-sagaing/myanmar-sagaing-04.webp
    caption: Disbursing installment for enabling houseowners to reconstruct transitional shelters
 
 featured: true

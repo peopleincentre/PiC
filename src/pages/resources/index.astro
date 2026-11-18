@@ -470,6 +470,7 @@ const themeIcons = {
 </BaseLayout>
 
 <script>
+  function initResources() {
   const tabs = Array.from(document.querySelectorAll("#resources-tabs .tab"));
   const panels = Array.from(document.querySelectorAll("[data-panel]"));
 
@@ -611,10 +612,22 @@ const themeIcons = {
     }
   });
 
-  document.addEventListener("click", () => closeAllPopovers(null));
-  document.addEventListener("keydown", (event) => {
+  /* Global listeners: re-bind on each page load, removing stale ones */
+  window.__resDocClick && document.removeEventListener("click", window.__resDocClick);
+  window.__resDocClick = () => closeAllPopovers(null);
+  document.addEventListener("click", window.__resDocClick);
+
+  window.__resDocKey && document.removeEventListener("keydown", window.__resDocKey);
+  window.__resDocKey = (event) => {
     if (event.key === "Escape") closeAllPopovers(null);
-  });
+  };
+  document.addEventListener("keydown", window.__resDocKey);
+
+  window.__resHash && window.removeEventListener("hashchange", window.__resHash);
+  window.__resHash = () => activate(tabFromHash());
+  window.addEventListener("hashchange", window.__resHash);
+
+  activate(tabFromHash());
 
   function splitAuthors(authors) {
     if (!authors) return [];
@@ -725,6 +738,10 @@ function tabFromHash() {
   });
 
   activate(tabFromHash());
+  }
+
+  initResources();
+  document.addEventListener("astro:page-load", initResources);
 </script>
 
 <style>
@@ -776,7 +793,7 @@ function tabFromHash() {
 }
 
 .tab:hover {
-  background: rgba(30, 43, 51, 0.08);
+  background: var(--color-accent-soft);
 }
 
 .tab[aria-selected="true"] {
@@ -795,7 +812,7 @@ function tabFromHash() {
 }
 
 .tab-count {
-  background: rgba(30, 43, 51, 0.12);
+  background: var(--color-accent-soft);
   color: var(--color-heading);
   font-size: 0.78rem;
   font-weight: 700;
@@ -836,7 +853,7 @@ function tabFromHash() {
   max-width: 100%;
   overflow-wrap: anywhere;
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 999px;
   padding: 0.45rem 1rem;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -870,7 +887,7 @@ function tabFromHash() {
 }
 
 .theme-pill.is-active .pill-dot {
-  background: #fff;
+  background: var(--color-surface);
 }
 
 /* Panels */
@@ -932,7 +949,7 @@ function tabFromHash() {
 }
 
 .paper-card {
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 0.85rem 1rem;
@@ -984,7 +1001,7 @@ function tabFromHash() {
   height: 34px;
   border: 1px solid var(--color-border);
   border-radius: 8px;
-  background: #fff;
+  background: var(--color-surface);
   cursor: pointer;
   padding: 0;
   text-decoration: none;
@@ -1007,14 +1024,14 @@ function tabFromHash() {
 .paper-pdf-link:focus-visible {
   color: #c2231b;
   border-color: #e02b22;
-  background: #fdf1f0;
+  background: var(--color-accent-soft);
 }
 
 .paper-download-link:hover,
 .paper-download-link:focus-visible {
   color: #1d4fd7;
   border-color: #2563eb;
-  background: #eef3fe;
+  background: var(--color-accent-soft);
 }
 
 .cite-btn:hover,
@@ -1043,7 +1060,7 @@ function tabFromHash() {
   right: 0;
   bottom: calc(100% + 8px);
   min-width: 150px;
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 10px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
@@ -1074,7 +1091,7 @@ function tabFromHash() {
 /* Videos */
 
 .featured-video {
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1.5rem;
@@ -1115,7 +1132,7 @@ function tabFromHash() {
 }
 
 .video-card {
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1.25rem;
@@ -1248,7 +1265,7 @@ function tabFromHash() {
  /* Scrolling Stories */
 
  .scroll-story-card {
-   background: #fff;
+   background: var(--color-surface);
    border: 1px solid var(--color-border);
    border-left: 4px solid var(--color-pink);
    border-radius: 12px;

@@ -1,5 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import ecoImg from "../../assets/themes/ecological-balance.webp";
+import resilienceImg from "../../assets/themes/resilience.webp";
+import urbanImg from "../../assets/themes/urban-space.webp";
+import capacityImg from "../../assets/projects/advanced-certificate-programme-on-research-in-political-economy/advanced-certificate-programme-on-research-in-political-economy-cover.webp";
 
 const base = import.meta.env.BASE_URL;
 
@@ -8,7 +13,7 @@ const themes = [
     id: "ecological-balance",
     name: "Restructuring Human Interventions for Ecological Balance",
     geographies: "India",
-    image: "/images/themes/ecological-balance.jpg",
+    image: ecoImg,
     accent: "var(--color-ecology)",
     link: "/work/ecological-balance/",
     description:
@@ -20,7 +25,7 @@ const themes = [
     id: "resilience",
     name: "Reinforcing People's Resilience to Disasters",
     geographies: "India | Nepal | Afghanistan | Indonesia | Myanmar | Somalia | Mozambique",
-    image: "/images/themes/resilience.jpg",
+    image: resilienceImg,
     accent: "var(--color-resilience)",
     link: "/work/resilience/",
     description:
@@ -32,7 +37,7 @@ const themes = [
     id: "urban-space",
     name: "Reclaiming Urban Space for the People",
     geographies: "India",
-    image: "/images/themes/urban-space.jpg",
+    image: urbanImg,
     accent: "var(--color-urban)",
     link: "/work/urban-space/",
     description:
@@ -45,7 +50,7 @@ const themes = [
     name: "Reconnecting Research with the Socio-Economic Realities of Communities",
     geographies: "In-person: India · Online: Africa | Latin America | South East Asia | Europe | North America",
     image:
-      "/images/projects/advanced-certificate-programme-on-research-in-political-economy/advanced-certificate-programme-on-research-in-political-economy-cover.jpg",
+      capacityImg,
     accent: "var(--color-capacity)",
     link: "/work/institutional-initiatives/",
     description:
@@ -91,10 +96,12 @@ const themes = [
           aria-controls={`panel-${theme.id}`}
         >
           <span class="theme-thumb">
-            <img
-              src={`${base}${theme.image.replace(/^\//, "")}`}
+            <Image
+              src={theme.image}
               alt=""
+              width={112}
               loading="lazy"
+              decoding="async"
             />
           </span>
           <span class="theme-toggle-body">
@@ -136,54 +143,62 @@ const themes = [
 </BaseLayout>
 
 <script>
-  const items = Array.from(
-    document.querySelectorAll(".themes-accordion .theme-item")
-  );
+  function initAccordion() {
+    const items = Array.from(
+      document.querySelectorAll(".themes-accordion .theme-item")
+    );
 
-  function openItem(item) {
-    items.forEach((other) => {
-      if (other !== item) {
-        other.classList.remove("open");
-        other
-          .querySelector(".theme-toggle")
-          .setAttribute("aria-expanded", "false");
-      }
+    function openItem(item) {
+      items.forEach((other) => {
+        if (other !== item) {
+          other.classList.remove("open");
+          other
+            .querySelector(".theme-toggle")
+            .setAttribute("aria-expanded", "false");
+        }
+      });
+      item.classList.add("open");
+      item
+        .querySelector(".theme-toggle")
+        .setAttribute("aria-expanded", "true");
+    }
+
+    items.forEach((item) => {
+      const toggle = item.querySelector(".theme-toggle");
+      if (toggle.dataset.bound) return;
+      toggle.dataset.bound = "true";
+
+      const panel = document.getElementById(toggle.getAttribute("aria-controls"));
+
+      toggle.addEventListener("click", () => {
+        const isOpen = item.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+        if (isOpen) {
+          items.forEach((other) => {
+            if (other !== item) {
+              other.classList.remove("open");
+              other
+                .querySelector(".theme-toggle")
+                .setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+      });
     });
-    item.classList.add("open");
-    item
-      .querySelector(".theme-toggle")
-      .setAttribute("aria-expanded", "true");
-  }
 
-  items.forEach((item) => {
-    const toggle = item.querySelector(".theme-toggle");
-    const panel = document.getElementById(toggle.getAttribute("aria-controls"));
-
-    toggle.addEventListener("click", () => {
-      const isOpen = item.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-
-      if (isOpen) {
-        items.forEach((other) => {
-          if (other !== item) {
-            other.classList.remove("open");
-            other
-              .querySelector(".theme-toggle")
-              .setAttribute("aria-expanded", "false");
-          }
-        });
+    const themeParam = new URLSearchParams(window.location.search).get("theme");
+    if (themeParam) {
+      const target = document.querySelector(`[data-theme="${themeParam}"]`);
+      if (target) {
+        openItem(target);
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    });
-  });
-
-  const themeParam = new URLSearchParams(window.location.search).get("theme");
-  if (themeParam) {
-    const target = document.querySelector(`[data-theme="${themeParam}"]`);
-    if (target) {
-      openItem(target);
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }
+
+  initAccordion();
+  document.addEventListener("astro:page-load", initAccordion);
 </script>
 
 <style>
@@ -213,7 +228,7 @@ const themes = [
 }
 
 .theme-item {
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-top: 4px solid var(--accent);
   border-radius: 16px;
@@ -311,7 +326,7 @@ const themes = [
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 2px;
 }
 

@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/supporting-undp-in-the-facilitation-of-owner-driven-housing-reconstruction-after-the-2022-afghanistan-earthquake/supporting-undp-in-the-facilitation-of-owner-driven-housing-reconstruction-after-the-2022-afghanistan-earthquake-cover.jpg
+coverImage: /src/assets/projects/supporting-undp-in-the-facilitation-of-owner-driven-housing-reconstruction-after-the-2022-afghanistan-earthquake/supporting-undp-in-the-facilitation-of-owner-driven-housing-reconstruction-after-the-2022-afghanistan-earthquake-cover.webp
 
 ---
 

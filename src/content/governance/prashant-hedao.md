@@ -1,5 +1,5 @@
 ---
 name: Prashant Hedao
 kind: shareholder
-photo: /images/about/governance/Prashant.jpg
+photo: /src/assets/about/governance/Prashant.webp
 ---

@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/high-density-low-rise-a-design-alternative-to-high-rise/high-density-low-rise-a-design-alternative-to-high-rise-cover.jpg
+coverImage: /src/assets/projects/high-density-low-rise-a-design-alternative-to-high-rise/high-density-low-rise-a-design-alternative-to-high-rise-cover.webp
 
 ---
 

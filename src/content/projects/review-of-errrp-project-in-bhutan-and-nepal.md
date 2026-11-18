@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/review-of-errrp-project-in-bhutan-and-nepal/review-of-errrp-project-in-bhutan-and-nepal-cover.jpg
+coverImage: /src/assets/projects/review-of-errrp-project-in-bhutan-and-nepal/review-of-errrp-project-in-bhutan-and-nepal-cover.webp
 
 ---
 

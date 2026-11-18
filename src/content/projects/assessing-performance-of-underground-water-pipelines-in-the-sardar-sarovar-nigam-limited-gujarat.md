@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: true
 
-coverImage: /images/projects/assessing-performance-of-underground-water-pipelines-in-the-sardar-sarovar-nigam-limited-gujarat/assessing-performance-of-underground-water-pipelines-in-the-sardar-sarovar-nigam-limited-gujarat-cover.png
+coverImage: /src/assets/projects/assessing-performance-of-underground-water-pipelines-in-the-sardar-sarovar-nigam-limited-gujarat/assessing-performance-of-underground-water-pipelines-in-the-sardar-sarovar-nigam-limited-gujarat-cover.webp
 
 ---
 

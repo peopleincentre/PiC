@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/spatial-patterns-of-decentralized-water-harvesting-and-agrarian-growth-in-saurashtra/spatial-patterns-of-decentralized-water-harvesting-and-agrarian-growth-in-saurashtra-cover.png
+coverImage: /src/assets/projects/spatial-patterns-of-decentralized-water-harvesting-and-agrarian-growth-in-saurashtra/spatial-patterns-of-decentralized-water-harvesting-and-agrarian-growth-in-saurashtra-cover.webp
 
 ---
 

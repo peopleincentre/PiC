@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/technical-advisory-support-after-2015-nepal-earthquake/technical-advisory-support-after-2015-nepal-earthquake-cover.png
+coverImage: /src/assets/projects/technical-advisory-support-after-2015-nepal-earthquake/technical-advisory-support-after-2015-nepal-earthquake-cover.webp
 
 ---
 

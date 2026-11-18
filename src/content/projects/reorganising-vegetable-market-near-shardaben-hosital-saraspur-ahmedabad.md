@@ -9,7 +9,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/reorganising-vegetable-market-near-shardaben-hosital-saraspur-ahmedabad/reorganising-vegetable-market-near-shardaben-hosital-saraspur-ahmedabad-cover.jpg
+coverImage: /src/assets/projects/reorganising-vegetable-market-near-shardaben-hosital-saraspur-ahmedabad/reorganising-vegetable-market-near-shardaben-hosital-saraspur-ahmedabad-cover.webp
 
 ---
 

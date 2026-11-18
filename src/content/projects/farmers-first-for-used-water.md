@@ -11,7 +11,7 @@ themes:
   - ecological-balance
 featured: true
 
-coverImage: /images/projects/farmers-first-for-used-water/farmers-first-for-used-water-cover.jpg
+coverImage: /src/assets/projects/farmers-first-for-used-water/farmers-first-for-used-water-cover.webp
 
 ---
 

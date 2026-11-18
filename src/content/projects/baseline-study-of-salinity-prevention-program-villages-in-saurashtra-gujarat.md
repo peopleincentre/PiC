@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/baseline-study-of-salinity-prevention-program-villages-in-saurashtra-gujarat/baseline-study-of-salinity-prevention-program-villages-in-saurashtra-gujarat-cover.png
+coverImage: /src/assets/projects/baseline-study-of-salinity-prevention-program-villages-in-saurashtra-gujarat/baseline-study-of-salinity-prevention-program-villages-in-saurashtra-gujarat-cover.webp
 
 ---
 

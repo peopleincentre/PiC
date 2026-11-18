@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/reconstructing-schools-using-bamboo-in-violence-affected-kokrajhar-assam/reconstructing-schools-using-bamboo-in-violence-affected-kokrajhar-assam-cover.jpg
+coverImage: /src/assets/projects/reconstructing-schools-using-bamboo-in-violence-affected-kokrajhar-assam/reconstructing-schools-using-bamboo-in-violence-affected-kokrajhar-assam-cover.webp
 
 ---
 

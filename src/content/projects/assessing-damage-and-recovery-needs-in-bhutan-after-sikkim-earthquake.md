@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/assessing-damage-and-recovery-needs-in-bhutan-after-sikkim-earthquake/assessing-damage-and-recovery-needs-in-bhutan-after-sikkim-earthquake-cover.jpg
+coverImage: /src/assets/projects/assessing-damage-and-recovery-needs-in-bhutan-after-sikkim-earthquake/assessing-damage-and-recovery-needs-in-bhutan-after-sikkim-earthquake-cover.webp
 
 ---
 

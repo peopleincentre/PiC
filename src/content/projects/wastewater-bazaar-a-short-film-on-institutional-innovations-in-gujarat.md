@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/wastewater-bazaar-a-short-film-on-institutional-innovations-in-gujarat/wastewater-bazaar-a-short-film-on-institutional-innovations-in-gujarat-cover.png
+coverImage: /src/assets/projects/wastewater-bazaar-a-short-film-on-institutional-innovations-in-gujarat/wastewater-bazaar-a-short-film-on-institutional-innovations-in-gujarat-cover.webp
 
 ---
 

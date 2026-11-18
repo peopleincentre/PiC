@@ -1,7 +1,7 @@
 ---
 name: Charmi Patel
 category: past
-photo: /images/about/team/charmi.png
+photo: /src/assets/about/team/charmi.webp
 bio: |
   Went on to work with UNICEF, India.
 ---

@@ -3,20 +3,22 @@
  * Scroll-reveal observer. Include once per page (e.g. in the homepage).
  * Any element with the `.reveal` class gets `.visible` added when it
  * scrolls into view, honouring each element's `--reveal-delay`.
+ * Re-initialises on every Astro view-transition page load.
  */
 ---
 
 <script>
-  const elements = document.querySelectorAll(".reveal");
+  let observer;
 
-  const show = (el) => el.classList.add("visible");
+  function initReveal() {
+    observer?.disconnect();
+    if (typeof IntersectionObserver === "undefined") return;
 
-  if (typeof IntersectionObserver !== "undefined" && elements.length) {
-    const observer = new IntersectionObserver(
+    observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            show(entry.target);
+            entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           }
         }
@@ -24,8 +26,11 @@
       { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
     );
 
-    elements.forEach((el) => observer.observe(el));
-  } else {
-    elements.forEach(show);
+    document.querySelectorAll(".reveal:not(.visible)").forEach((el) =>
+      observer.observe(el)
+    );
   }
+
+  initReveal();
+  document.addEventListener("astro:page-load", initReveal);
 </script>

@@ -32,7 +32,8 @@ const projects = defineCollection({
     base: "./src/content/projects",
   }),
 
-  schema: z.object({
+  schema: ({ image }) =>
+  z.object({
   title: z.string(),
   summary: z.string(),
   description: z.string(),
@@ -51,10 +52,10 @@ const projects = defineCollection({
     ])
   ),
   featured: z.boolean().default(false),
-  coverImage: z.string().optional(),
+  coverImage: image().optional(),
   gallery: z.array(
    z.object({
-     image: z.string(),
+     image: image(),
      caption: z.string().optional(),
     })
    ).optional(),
@@ -104,11 +105,12 @@ const team = defineCollection({
     base: "./src/content/team",
   }),
 
-  schema: z.object({
+  schema: ({ image }) =>
+  z.object({
     name: z.string(),
     category: z.enum(["core", "past"]),
     designation: z.string().optional(),
-    photo: z.string().optional(),
+    photo: image().optional(),
     email: z.string().optional(),
     bio: z.string(),
   }),
@@ -121,11 +123,12 @@ const governance = defineCollection({
     base: "./src/content/governance",
   }),
 
-  schema: z.object({
+  schema: ({ image }) =>
+  z.object({
     name: z.string(),
     kind: z.enum(["director", "shareholder"]),
     designation: z.string().optional(),
-    photo: z.string().optional(),
+    photo: image().optional(),
     bio: z.string().optional(),
     isShareholder: z.boolean().default(false),
   }),
@@ -138,11 +141,12 @@ const annualReports = defineCollection({
     base: "./src/content/annual-reports",
   }),
 
-  schema: z.object({
+  schema: ({ image }) =>
+  z.object({
     title: z.string(),
     year: z.number(),
     summary: z.string().optional(),
-    cover: z.string().optional(),
+    cover: image().optional(),
     pdf: z.string(),
   }),
 });

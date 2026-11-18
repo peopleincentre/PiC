@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/presentation-to-municipal-commissioner-and-the-standing-committee-amc/presentation-to-municipal-commissioner-and-the-standing-committee-amc-cover.jpg
+coverImage: /src/assets/projects/presentation-to-municipal-commissioner-and-the-standing-committee-amc/presentation-to-municipal-commissioner-and-the-standing-committee-amc-cover.webp
 
 ---
 

@@ -2,7 +2,7 @@
 name: Rajendra Makwana
 category: core
 designation: Office Manager
-photo: /images/about/team/rajendra.png
+photo: /src/assets/about/team/rajendra.webp
 email: assist@peopleincentre.org
 bio: |
   Rajendra Makwana manages the PiC office. He is incharge of the office

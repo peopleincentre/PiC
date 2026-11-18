@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/from-removal-to-regulation-planning-for-the-street-vendors/from-removal-to-regulation-planning-for-the-street-vendors-cover.jpg
+coverImage: /src/assets/projects/from-removal-to-regulation-planning-for-the-street-vendors/from-removal-to-regulation-planning-for-the-street-vendors-cover.webp
 
 ---
 

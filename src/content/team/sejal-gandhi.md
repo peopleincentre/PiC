@@ -1,7 +1,7 @@
 ---
 name: Sejal Gandhi
 category: past
-photo: /images/about/team/sejal.png
+photo: /src/assets/about/team/sejal.webp
 bio: |
   Former member of the People in Centre team.
 ---

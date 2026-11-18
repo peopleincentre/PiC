@@ -1,5 +1,5 @@
 ---
 name: P Thamizoli
 kind: shareholder
-photo: /images/about/governance/Thamizoli.jpg
+photo: /src/assets/about/governance/Thamizoli.webp
 ---

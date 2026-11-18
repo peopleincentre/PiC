@@ -2,7 +2,7 @@
 name: Vivek Rawal
 category: core
 designation: Founder Member and Director
-photo: /images/about/team/vivek.png
+photo: /src/assets/about/team/vivek.webp
 email: office@peopleincentre.org
 bio: |
   Vivek Rawal, founder member and director, leads the thematic area of

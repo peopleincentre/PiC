@@ -1,5 +1,5 @@
 ---
 name: Somnath Bandyopadhyay
 kind: shareholder
-photo: /images/about/governance/Somnath-1.jpg
+photo: /src/assets/about/governance/Somnath-1.webp
 ---

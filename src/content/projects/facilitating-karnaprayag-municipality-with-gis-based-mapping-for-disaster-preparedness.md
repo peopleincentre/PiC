@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/facilitating-karnaprayag-municipality-with-gis-based-mapping-for-disaster-preparedness/facilitating-karnaprayag-municipality-with-gis-based-mapping-for-disaster-preparedness-cover.jpeg
+coverImage: /src/assets/projects/facilitating-karnaprayag-municipality-with-gis-based-mapping-for-disaster-preparedness/facilitating-karnaprayag-municipality-with-gis-based-mapping-for-disaster-preparedness-cover.webp
 
 ---
 

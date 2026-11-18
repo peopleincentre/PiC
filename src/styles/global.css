@@ -1,5 +1,54 @@
+/* ---------------------------------------------------------------------------
+   Self-hosted fonts (variable, latin + latin-ext subsets)
+   Plus Jakarta Sans 400-700 · Roboto Slab 500-600
+   --------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/plus-jakarta-sans-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/plus-jakarta-sans-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("/fonts/roboto-slab-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("/fonts/roboto-slab-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --color-bg: #f8fafc;
+  --color-bg-alt: #f1f5f9;
   --color-surface: #ffffff;
   --color-text: #334155;
   --color-heading: #1e293b;
@@ -27,6 +76,62 @@
   --color-ecology-block: #50752a;
   --color-urban-block: #1a6ba3;
   --color-capacity-block: #8a6d24;
+
+  color-scheme: light;
+}
+
+/* Dark theme — applied by the ThemeToggle (data-theme="dark") or, when no
+   preference is stored, by the OS preference (no-JS fallback below). */
+:root[data-theme="dark"] {
+  --color-bg: #0b1220;
+  --color-bg-alt: #0f172a;
+  --color-surface: #101a2e;
+  --color-text: #c7d2e1;
+  --color-heading: #eef2f8;
+  --color-muted: #8fa1b8;
+  --color-border: #22304a;
+
+  --color-accent: #5b9bf6;
+  --color-accent-dark: #7fb0f8;
+  --color-accent-soft: rgba(91, 155, 246, 0.16);
+
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 12px 30px rgba(0, 0, 0, 0.5);
+
+  --color-resilience: #e06c6c;
+  --color-ecology: #8fbf57;
+  --color-urban: #55a9dd;
+  --color-capacity: #c4a869;
+
+  color-scheme: dark;
+}
+
+/* No-JS fallback: follow the OS preference until the ThemeToggle sets an
+   explicit data-theme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --color-bg: #0b1220;
+    --color-bg-alt: #0f172a;
+    --color-surface: #101a2e;
+    --color-text: #c7d2e1;
+    --color-heading: #eef2f8;
+    --color-muted: #8fa1b8;
+    --color-border: #22304a;
+
+    --color-accent: #5b9bf6;
+    --color-accent-dark: #7fb0f8;
+    --color-accent-soft: rgba(91, 155, 246, 0.16);
+
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
+    --shadow-card-hover: 0 12px 30px rgba(0, 0, 0, 0.5);
+
+    --color-resilience: #e06c6c;
+    --color-ecology: #8fbf57;
+    --color-urban: #55a9dd;
+    --color-capacity: #c4a869;
+
+    color-scheme: dark;
+  }
 }
 
 *,
@@ -59,7 +164,7 @@ body {
 }
 
 body.work-theme-page {
-  --color-bg: #f1f5f9;
+  --color-bg: var(--color-bg-alt);
 }
 
 h1,
@@ -186,7 +291,7 @@ section {
   width: clamp(1.4rem, 1.2rem + 1vw, 2rem);
   height: clamp(1.4rem, 1.2rem + 1vw, 2rem);
   border-radius: 50%;
-  background: #fff;
+  background: #fff; /* literal white: sits on dark-section blocks in both themes */
   transition: background 0.3s ease;
 }
 
@@ -257,7 +362,7 @@ section {
   height: clamp(1.7rem, 1.4rem + 1.2vw, 2.6rem);
   flex: 0 0 auto;
   border-radius: 50%;
-  background: #fff;
+  background: #fff; /* literal white: sits on dark-section blocks in both themes */
   transition: background 0.3s ease;
 }
 
@@ -341,5 +446,61 @@ section {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Accessibility
+   --------------------------------------------------------------------------- */
+
+/* Skip link: hidden until focused, then visible as the first focusable element */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2000;
+
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--color-heading);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+
+  transform: translateY(-200%);
+  opacity: 0;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Motion preferences: disable all non-essential motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+    mix-blend-mode: normal !important;
   }
 }

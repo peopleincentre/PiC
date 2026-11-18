@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-
-const base = import.meta.env.BASE_URL;
 
 const reports = (await getCollection("annual-reports")).sort(
   (a, b) => b.data.year - a.data.year
@@ -28,10 +27,12 @@ const reports = (await getCollection("annual-reports")).sort(
     rel="noopener noreferrer"
   >
     {report.data.cover && (
-      <img
-        src={`${base}${report.data.cover.replace(/^\//, "")}`}
-        alt=""
+      <Image
+        src={report.data.cover}
+        alt={`Cover of ${report.data.title}`}
+        width={400}
         loading="lazy"
+        decoding="async"
       />
     )}
 
@@ -68,7 +69,7 @@ const reports = (await getCollection("annual-reports")).sort(
 }
 
 .report-card {
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1.25rem;
@@ -80,6 +81,7 @@ const reports = (await getCollection("annual-reports")).sort(
 
 .report-card img {
   width: 100%;
+  height: auto; /* neutralize the height attr so aspect-ratio applies */
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 8px;

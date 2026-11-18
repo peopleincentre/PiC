@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/regional-training-workshop-on-pdna-bangkok/regional-training-workshop-on-pdna-bangkok-cover.jpg
+coverImage: /src/assets/projects/regional-training-workshop-on-pdna-bangkok/regional-training-workshop-on-pdna-bangkok-cover.webp
 
 ---
 

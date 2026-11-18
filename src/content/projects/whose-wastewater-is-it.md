@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: true
 
-coverImage: /images/projects/whose-wastewater-is-it/whose-wastewater-is-it-cover.jpg
+coverImage: /src/assets/projects/whose-wastewater-is-it/whose-wastewater-is-it-cover.webp
 
 ---
 

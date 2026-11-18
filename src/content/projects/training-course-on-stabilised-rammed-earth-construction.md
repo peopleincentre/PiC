@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/training-course-on-stabilised-rammed-earth-construction/training-course-on-stabilised-rammed-earth-construction-cover.png
+coverImage: /src/assets/projects/training-course-on-stabilised-rammed-earth-construction/training-course-on-stabilised-rammed-earth-construction-cover.webp
 
 ---
 

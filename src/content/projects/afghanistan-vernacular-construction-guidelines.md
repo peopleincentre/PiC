@@ -21,13 +21,13 @@ themes:
   - resilience
 
 
-coverImage: /images/projects/afghanistan-herat/afghanistan-herat-cover.jpg
+coverImage: /src/assets/projects/afghanistan-herat/afghanistan-herat-cover.webp
 
 gallery:
-  - image: /images/projects/afghanistan-herat/afghanistan-herat-01.jpg
+  - image: /src/assets/projects/afghanistan-herat/afghanistan-herat-01.webp
     caption: New house reconstructed with hazard resistant stone masonry
 
-  - image: /images/projects/afghanistan-herat/afghanistan-herat-02.jpg
+  - image: /src/assets/projects/afghanistan-herat/afghanistan-herat-02.webp
     caption: Consulting with the community leaders
 
 featured: true

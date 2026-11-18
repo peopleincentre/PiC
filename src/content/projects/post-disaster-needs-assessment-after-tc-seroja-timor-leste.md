@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/post-disaster-needs-assessment-after-tc-seroja-timor-leste/post-disaster-needs-assessment-after-tc-seroja-timor-leste-cover.png
+coverImage: /src/assets/projects/post-disaster-needs-assessment-after-tc-seroja-timor-leste/post-disaster-needs-assessment-after-tc-seroja-timor-leste-cover.webp
 
 ---
 

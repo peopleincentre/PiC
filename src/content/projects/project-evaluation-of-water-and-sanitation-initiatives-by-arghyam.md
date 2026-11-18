@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/project-evaluation-of-water-and-sanitation-initiatives-by-arghyam/project-evaluation-of-water-and-sanitation-initiatives-by-arghyam-cover.jpg
+coverImage: /src/assets/projects/project-evaluation-of-water-and-sanitation-initiatives-by-arghyam/project-evaluation-of-water-and-sanitation-initiatives-by-arghyam-cover.webp
 
 ---
 

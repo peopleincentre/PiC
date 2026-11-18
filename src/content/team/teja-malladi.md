@@ -1,7 +1,7 @@
 ---
 name: Teja Malladi
 category: past
-photo: /images/about/team/teja.jpg
+photo: /src/assets/about/team/teja.webp
 bio: |
   Joined IIHS, Bangalore.
 ---

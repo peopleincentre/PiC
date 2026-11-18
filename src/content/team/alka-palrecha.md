@@ -2,7 +2,7 @@
 name: Alka Palrecha
 category: core
 designation: Founder Member and Director
-photo: /images/about/team/alka.png
+photo: /src/assets/about/team/alka.webp
 email: office@peopleincentre.org
 bio: |
   Dr. Alka Palrecha, founder member and director, leads the thematic area of

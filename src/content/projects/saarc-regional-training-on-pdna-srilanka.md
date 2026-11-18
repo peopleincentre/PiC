@@ -8,10 +8,10 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/saarc-regional-training-on-pdna-srilanka/saarc-regional-training-on-pdna-srilanka-cover.jpg
+coverImage: /src/assets/projects/saarc-regional-training-on-pdna-srilanka/saarc-regional-training-on-pdna-srilanka-cover.webp
 
 gallery:
-  - image: /images/projects/saarc-regional-training-on-pdna-srilanka/saarc-regional-training-on-pdna-srilanka-gallery-01.jpg
+  - image: /src/assets/projects/saarc-regional-training-on-pdna-srilanka/saarc-regional-training-on-pdna-srilanka-gallery-01.webp
 
 ---
 

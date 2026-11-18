@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/vendors-and-janmarg-a-study-report/vendors-and-janmarg-a-study-report-cover.jpg
+coverImage: /src/assets/projects/vendors-and-janmarg-a-study-report/vendors-and-janmarg-a-study-report-cover.webp
 
 ---
 

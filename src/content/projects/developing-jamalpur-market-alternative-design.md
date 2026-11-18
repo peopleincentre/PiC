@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/developing-jamalpur-market-alternative-design/developing-jamalpur-market-alternative-design-cover.jpg
+coverImage: /src/assets/projects/developing-jamalpur-market-alternative-design/developing-jamalpur-market-alternative-design-cover.webp
 
 ---
 

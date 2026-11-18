@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/guidelines-for-house-construction-with-bamboo/guidelines-for-house-construction-with-bamboo-cover.jpg
+coverImage: /src/assets/projects/guidelines-for-house-construction-with-bamboo/guidelines-for-house-construction-with-bamboo-cover.webp
 
 ---
 

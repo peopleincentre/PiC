@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/rethinking-pradhan-mantri-krishi-sinchai-yojana-pmksy/rethinking-pradhan-mantri-krishi-sinchai-yojana-pmksy-cover.png
+coverImage: /src/assets/projects/rethinking-pradhan-mantri-krishi-sinchai-yojana-pmksy/rethinking-pradhan-mantri-krishi-sinchai-yojana-pmksy-cover.webp
 
 ---
 

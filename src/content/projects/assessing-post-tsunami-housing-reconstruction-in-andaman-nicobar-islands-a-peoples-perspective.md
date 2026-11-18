@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/assessing-post-tsunami-housing-reconstruction-in-andaman-nicobar-islands-a-peoples-perspective/assessing-post-tsunami-housing-reconstruction-in-andaman-nicobar-islands-a-peoples-perspective-cover.png
+coverImage: /src/assets/projects/assessing-post-tsunami-housing-reconstruction-in-andaman-nicobar-islands-a-peoples-perspective/assessing-post-tsunami-housing-reconstruction-in-andaman-nicobar-islands-a-peoples-perspective-cover.webp
 
 ---
 

@@ -1,42 +1,47 @@
 ---
+import ecoImg from "../assets/themes/ecological-balance.webp";
+import resilienceImg from "../assets/themes/resilience.webp";
+import urbanImg from "../assets/themes/urban-space.webp";
+import capacityImg from "../assets/projects/advanced-certificate-programme-on-research-in-political-economy/advanced-certificate-programme-on-research-in-political-economy-cover.webp";
+import descImg from "../assets/theme.webp";
+
 const base = import.meta.env.BASE_URL;
 
 const themes = [
   {
     slug: "ecological-balance",
     title: "Restructuring Human Interventions for Ecological Balance",
-    image: "/images/themes/ecological-balance.jpg",
+    image: ecoImg.src,
     color: "var(--color-ecology-block)",
   },
   {
     slug: "resilience",
     title: "Reinforcing People's Resilience to Disasters",
-    image: "/images/themes/resilience.jpg",
+    image: resilienceImg.src,
     color: "var(--color-resilience-block)",
   },
   {
     slug: "urban-space",
     title: "Reclaiming Urban Space for the People",
-    image: "/images/themes/urban-space.jpg",
+    image: urbanImg.src,
     color: "var(--color-urban-block)",
   },
   {
     slug: "institutional-initiatives",
     title: "Reconnecting Research with the Socio-Economic Realities of Communities",
-    image:
-      "/images/projects/advanced-certificate-programme-on-research-in-political-economy/advanced-certificate-programme-on-research-in-political-economy-cover.jpg",
+    image: capacityImg.src,
     color: "var(--color-capacity-block)",
   },
 ];
 
-const descImage = "/images/theme.jpg";
+const descImage = descImg.src;
 ---
 
 <section class="expertise" aria-label="Thematic areas of work">
   <div class="expertise-wrapper">
     <div
       class="desc reveal"
-      style={`background-image: url(${base}${descImage.replace(/^\//, "")});`}
+      style={`background-image: url(${descImage});`}
     >
       <p class="tagline tagline-light">Areas of Expertise</p>
       <h2 class="desc-title">
@@ -60,7 +65,7 @@ const descImage = "/images/theme.jpg";
             style={`
               --theme-color: ${theme.color};
               --reveal-delay: ${i * 0.12}s;
-              --theme-img: url(${base}${theme.image.replace(/^\//, "")});
+              --theme-img: url(${theme.image});
             `}
           >
             <span class="item-bg"></span>

@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/functionality-and-management-of-irrigation-typologies-in-the-dangs/functionality-and-management-of-irrigation-typologies-in-the-dangs-cover.jpg
+coverImage: /src/assets/projects/functionality-and-management-of-irrigation-typologies-in-the-dangs/functionality-and-management-of-irrigation-typologies-in-the-dangs-cover.webp
 
 ---
 

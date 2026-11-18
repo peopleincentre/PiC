@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/design-alternative-for-gomtipur-marketplace-ahmedabad/design-alternative-for-gomtipur-marketplace-ahmedabad-cover.jpg
+coverImage: /src/assets/projects/design-alternative-for-gomtipur-marketplace-ahmedabad/design-alternative-for-gomtipur-marketplace-ahmedabad-cover.webp
 
 ---
 

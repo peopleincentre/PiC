@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/our-involvement-in-kosi-flood-rehabilitation-bihar/our-involvement-in-kosi-flood-rehabilitation-bihar-cover.jpg
+coverImage: /src/assets/projects/our-involvement-in-kosi-flood-rehabilitation-bihar/our-involvement-in-kosi-flood-rehabilitation-bihar-cover.webp
 
 ---
 

@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/on-site-upgradation-or-resettlement-case-study-of-sorainagar-vasna/on-site-upgradation-or-resettlement-case-study-of-sorainagar-vasna-cover.png
+coverImage: /src/assets/projects/on-site-upgradation-or-resettlement-case-study-of-sorainagar-vasna/on-site-upgradation-or-resettlement-case-study-of-sorainagar-vasna-cover.webp
 
 ---
 

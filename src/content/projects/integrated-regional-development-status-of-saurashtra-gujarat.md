@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/integrated-regional-development-status-of-saurashtra-gujarat/integrated-regional-development-status-of-saurashtra-gujarat-cover.jpg
+coverImage: /src/assets/projects/integrated-regional-development-status-of-saurashtra-gujarat/integrated-regional-development-status-of-saurashtra-gujarat-cover.webp
 
 ---
 

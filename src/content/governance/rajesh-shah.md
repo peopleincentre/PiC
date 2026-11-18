@@ -2,7 +2,7 @@
 name: Rajesh Shah
 kind: director
 designation: Chairperson
-photo: /images/about/governance/rajesh-shah.jpg
+photo: /src/assets/about/governance/rajesh-shah.webp
 isShareholder: true
 bio: |
   An architect by training, Rajesh Shah has over 45 years of experience in the

@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro";
+
 const base = import.meta.env.BASE_URL;
 
 const currentPath = Astro.url.pathname.replace(
@@ -50,6 +52,8 @@ const activeAria = (section) =>
         )
       }
     </div>
+
+    <ThemeToggle />
 
     <button
       class="menu-toggle"
@@ -130,6 +134,9 @@ const activeAria = (section) =>
       close();
     }
   });
+
+  // Reset drawer state after a client-side navigation (view transitions)
+  document.addEventListener("astro:after-swap", close);
 </script>
 
 <style>

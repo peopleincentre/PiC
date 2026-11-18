@@ -1,16 +1,18 @@
 ---
+import heroImg from "../assets/hero.webp";
+
 const base = import.meta.env.BASE_URL;
 ---
 
 <section class="hero">
   <div
     class="hero-bg"
-    style={`background-image: url(${base}images/hero.jpg);`}
+    style={`background-image: url(${heroImg.src});`}
   >
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <h2 class="hero-quote">Putting the last first.</h2>
+      <h1 class="hero-quote">Putting the last first.</h1>
       <p class="hero-quote-author">— Robert Chambers</p>
       <p class="hero-intro-line">
         We strive to bring poor and vulnerable communities to the centre of
@@ -45,21 +47,21 @@ const base = import.meta.env.BASE_URL;
 
     <div class="pillars">
       <div class="pillar">
-        <h3 class="pillar-title">From Infrastructure to People</h3>
+        <h2 class="pillar-title">From Infrastructure to People</h2>
         <p>
           Putting communities at the centre of every intervention, not just
           buildings and systems.
         </p>
       </div>
       <div class="pillar">
-        <h3 class="pillar-title">From Projects to Processes</h3>
+        <h2 class="pillar-title">From Projects to Processes</h2>
         <p>
           Supporting the long-term processes, capacities and institutions that
           make change last.
         </p>
       </div>
       <div class="pillar">
-        <h3 class="pillar-title">From Delivery to Participation</h3>
+        <h2 class="pillar-title">From Delivery to Participation</h2>
         <p>
           Enabling people to shape, manage and own their development, rather
           than merely receive it.

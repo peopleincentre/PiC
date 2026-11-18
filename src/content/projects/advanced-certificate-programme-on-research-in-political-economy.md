@@ -10,16 +10,16 @@ themes:
   - institutional-initiatives
 featured: true
 
-coverImage: /images/projects/advanced-certificate-programme-on-research-in-political-economy/advanced-certificate-programme-on-research-in-political-economy-cover.jpg
+coverImage: /src/assets/projects/advanced-certificate-programme-on-research-in-political-economy/advanced-certificate-programme-on-research-in-political-economy-cover.webp
 
 gallery:
-  - image: /images/projects/advanced-certificate-programme-on-research-in-political-economy/IDEAs2022-23.jpg
+  - image: /src/assets/projects/advanced-certificate-programme-on-research-in-political-economy/IDEAs2022-23.webp
     caption: Students conducting field survey 2022-23
-  - image: /images/projects/advanced-certificate-programme-on-research-in-political-economy/Ghana2025-26.jpg
+  - image: /src/assets/projects/advanced-certificate-programme-on-research-in-political-economy/Ghana2025-26.webp
     caption: Field survey in Ghana by international students 2025-26
-  - image: /images/projects/advanced-certificate-programme-on-research-in-political-economy/IDEAs2023-24_2.jpg
+  - image: /src/assets/projects/advanced-certificate-programme-on-research-in-political-economy/IDEAs2023-24_2.webp
     caption: Macroeconomics class 2023-24
-  - image: /images/projects/advanced-certificate-programme-on-research-in-political-economy/IDEAs2024-25.png
+  - image: /src/assets/projects/advanced-certificate-programme-on-research-in-political-economy/IDEAs2024-25.webp
     caption: Lecture on international trade 2023-24
 ---
 

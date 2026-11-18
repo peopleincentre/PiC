@@ -8,7 +8,7 @@ themes:
   - urban-space
 featured: false
 
-coverImage: /images/projects/mansi-market-subhash-chowk-market-and-jivraj-market-consultations/mansi-market-subhash-chowk-market-and-jivraj-market-consultations-cover.jpg
+coverImage: /src/assets/projects/mansi-market-subhash-chowk-market-and-jivraj-market-consultations/mansi-market-subhash-chowk-market-and-jivraj-market-consultations-cover.webp
 
 ---
 

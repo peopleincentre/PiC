@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/assessing-impacts-of-drinking-water-supply-through-hand-pumps-in-the-dangs-gujarat/assessing-impacts-of-drinking-water-supply-through-hand-pumps-in-the-dangs-gujarat-cover.png
+coverImage: /src/assets/projects/assessing-impacts-of-drinking-water-supply-through-hand-pumps-in-the-dangs-gujarat/assessing-impacts-of-drinking-water-supply-through-hand-pumps-in-the-dangs-gujarat-cover.webp
 
 ---
 

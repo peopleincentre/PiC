@@ -9,10 +9,10 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/eeri-housner-fellowship/eeri-housner-fellowship-cover.jpg
+coverImage: /src/assets/projects/eeri-housner-fellowship/eeri-housner-fellowship-cover.webp
 
 gallery:
-  - image: /images/projects/eeri-housner-fellowship/eeri-housner-fellowship-gallery-01.png
+  - image: /src/assets/projects/eeri-housner-fellowship/eeri-housner-fellowship-gallery-01.webp
 
 ---
 

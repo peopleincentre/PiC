@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/supporting-post-earthquake-reconstruction-in-central-sulawesi-indonesia/supporting-post-earthquake-reconstruction-in-central-sulawesi-indonesia-cover.jpeg
+coverImage: /src/assets/projects/supporting-post-earthquake-reconstruction-in-central-sulawesi-indonesia/supporting-post-earthquake-reconstruction-in-central-sulawesi-indonesia-cover.webp
 
 ---
 

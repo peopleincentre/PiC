@@ -1,7 +1,7 @@
 ---
 name: Mahima Gupta
 category: past
-photo: /images/about/team/agri.png
+photo: /src/assets/about/team/agri.webp
 bio: |
   Went on to pursue organic farming at Gandhinagar, Gujarat.
 ---

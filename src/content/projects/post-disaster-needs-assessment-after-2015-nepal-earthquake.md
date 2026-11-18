@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/post-disaster-needs-assessment-after-2015-nepal-earthquake/post-disaster-needs-assessment-after-2015-nepal-earthquake-cover.jpg
+coverImage: /src/assets/projects/post-disaster-needs-assessment-after-2015-nepal-earthquake/post-disaster-needs-assessment-after-2015-nepal-earthquake-cover.webp
 
 ---
 

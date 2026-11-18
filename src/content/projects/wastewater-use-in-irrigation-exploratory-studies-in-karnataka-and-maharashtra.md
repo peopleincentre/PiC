@@ -8,7 +8,7 @@ themes:
   - ecological-balance
 featured: false
 
-coverImage: /images/projects/wastewater-use-in-irrigation-exploratory-studies-in-karnataka-and-maharashtra/wastewater-use-in-irrigation-exploratory-studies-in-karnataka-and-maharashtra-cover.png
+coverImage: /src/assets/projects/wastewater-use-in-irrigation-exploratory-studies-in-karnataka-and-maharashtra/wastewater-use-in-irrigation-exploratory-studies-in-karnataka-and-maharashtra-cover.webp
 
 ---
 

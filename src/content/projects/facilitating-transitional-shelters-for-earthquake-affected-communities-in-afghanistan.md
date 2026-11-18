@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: true
 
-coverImage: /images/projects/facilitating-transitional-shelters-for-earthquake-affected-communities-in-afghanistan/facilitating-transitional-shelters-for-earthquake-affected-communities-in-afghanistan-cover.jpg
+coverImage: /src/assets/projects/facilitating-transitional-shelters-for-earthquake-affected-communities-in-afghanistan/facilitating-transitional-shelters-for-earthquake-affected-communities-in-afghanistan-cover.webp
 
 ---
 

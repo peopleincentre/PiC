@@ -8,7 +8,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/supporting-recovery-of-flood-affected-communities-in-gujarat/supporting-recovery-of-flood-affected-communities-in-gujarat-cover.jpg
+coverImage: /src/assets/projects/supporting-recovery-of-flood-affected-communities-in-gujarat/supporting-recovery-of-flood-affected-communities-in-gujarat-cover.webp
 
 ---
 

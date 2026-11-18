@@ -9,7 +9,7 @@ themes:
   - resilience
 featured: false
 
-coverImage: /images/projects/developing-design-options-for-rural-housing-in-gujarat/developing-design-options-for-rural-housing-in-gujarat-cover.jpg
+coverImage: /src/assets/projects/developing-design-options-for-rural-housing-in-gujarat/developing-design-options-for-rural-housing-in-gujarat-cover.webp
 
 ---
 

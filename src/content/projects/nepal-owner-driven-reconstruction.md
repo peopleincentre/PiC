@@ -20,13 +20,13 @@ partners:
 themes:
   - resilience
 
-coverImage: "/images/projects/nepal-odr/nepal-odr-cover.jpg"
+coverImage: "/src/assets/projects/nepal-odr/nepal-odr-cover.webp"
 
 gallery:
-  - image: /images/projects/nepal-odr/nepal-odr-01.jpg
+  - image: /src/assets/projects/nepal-odr/nepal-odr-01.webp
     caption: Owner Driven Reconstruction in Gorkha District
 
-  - image: /images/projects/nepal-odr/nepal-odr-02.jpg
+  - image: /src/assets/projects/nepal-odr/nepal-odr-02.webp
     caption: Training of Artisans in Hazard Resilient Technologies
 
 featured: true
