@@ -12,7 +12,6 @@ gallery:
     caption: Discussion on post-disaster housing recovery
 themes:
   - resilience
-  - institutional-initiatives
 draft: false
 ---
 
