@@ -5,9 +5,11 @@ summary: "Training for assessing drinking water security at household level in G
 author: Juhi Desai
 category: work-update
 cover: /src/assets/updates/dahod-training.webp
+gallery:
+  - image: /src/assets/updates/dahod-JJM-training.webp
+    caption: Training participants, Dahod
 themes:
   - ecological-balance
 draft: false
 ---
-
-PiC is collaborating with Pravah to undertake an assessment of drinking water availability to households through Jal Jivan Mission (JJM). A detailed survey is being undertaken with support from Pravah members. On behalf of PiC, I conducted a two-day training on the survey formats for a pilot in dahod district for the Prakriti Foundation. Prakriti Foundation is doing this pilot assessment in their district. The assessment includes household and village surveys. It also includes water quality testing.  
+PRAVAAH, a network of organisations working in the water sector, has initiated a study to understand the Functionality and Resilience of Rural Household Piped Water Supply in Gujarat under Jal Jeevan Mission. As part of this initiative, People in Centre (PiC) has developed the study methodology and survey tools. On behalf of PiC, I conducted a training workshop on 16-17 November 2026 for field enumerators of the Prakriti Foundation to familiarise them with the study objectives and field data collection processes. The training also included a field-testing exercise, allowing enumerators to practically engage with the survey tool and understand its implementation on the ground.  
