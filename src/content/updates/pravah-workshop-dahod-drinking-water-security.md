@@ -1,7 +1,7 @@
 ---
-title: "Pravah traning for assessing drinking water security in Gujarat"
+title: "Training for assessing drinking water security at household level in Gujarat - Pilot training, Dahod, Gujarat."
 date: 2026-11-16
-summary: "Training for assessing drinking water security at household level in Gujarat - Pilot training, Dahod, Gujarat."
+summary: "Enumerator training workshop (November 16-17, 2026) at Prakriti Foundation in Dahod district for the Pilot study on Functionality and Resilience of Rural Household Piped Water Supply in Gujarat under Jal Jeevan Mission"
 author: Juhi Desai
 category: work-update
 cover: /src/assets/updates/dahod-training.webp
